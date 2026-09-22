@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lil guide for my pirulin &lt;3</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* M3 Anti-Glare Paper Canvas */
+      --md-canvas: #EAE6E2;
+      --md-surface: #F6F3F0;
+      --md-surface-low: #EFECE8;
+      --md-surface-subtle: #E6E1DC;
+      
+      /* Typography & Neutrals */
+      --md-text-primary: #2C2728;
+      --md-text-secondary: #655E60;
+      --md-outline: #D9D2CD;
+      --md-outline-subtle: #E2DBD6;
+
+      /* Muted Pastel Rose Accents */
+      --md-accent-primary: #9C5369;
+      --md-accent-container: #EAD5DB;
+      --md-accent-text: #4A222F;
+      --md-accent-hover: #8B485C;
+      --md-accent-active-fg: #FFFFFF;
+
+      /* Status Feedback */
+      --md-status-success-bg: #DCEBE0;
+      --md-status-success-text: #1C5232;
+      --md-status-error-bg: #F4DBD9;
+      --md-status-error-text: #7A2424;
+
+      /* Shape & Elevation */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --shadow-paper: 0 1px 2px rgba(44, 39, 40, 0.04), 0 4px 14px rgba(44, 39, 40, 0.03);
+      --transition-standard: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--md-canvas);
+      color: var(--md-text-primary);
+      line-height: 1.6;
+      padding: 2.2rem 1.25rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--md-accent-primary);
+      text-align: center;
+      margin-bottom: 1.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* M3 Carousel Navigation */
+    .nav-carousel-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.75rem;
+      width: 100%;
+    }
+
+    .nav-arrow-btn {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline);
+      color: var(--md-text-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      line-height: 0;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(44, 39, 40, 0.08);
+      transition: var(--transition-standard);
+      user-select: none;
+    }
+
+    .nav-arrow-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      display: block;
+      pointer-events: none;
+    }
+
+    .nav-arrow-btn:hover:not(:disabled) {
+      background: var(--md-accent-container);
+      color: var(--md-accent-text);
+      transform: scale(1.05);
+      border-color: #D3B3BD;
+    }
+
+    .nav-arrow-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      box-shadow: none;
+      border-color: var(--md-outline-subtle);
+    }
+
+    .nav-track-container {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 4px 6px;
+      width: 100%;
+      scrollbar-width: none;
+      transition: mask-image 0.2s ease;
+    }
+    nav::-webkit-scrollbar { display: none; }
+
+    nav.fade-both {
+      mask-image: linear-gradient(to right, transparent, black 32px, black calc(100% - 32px), transparent);
+    }
+    nav.fade-right {
+      mask-image: linear-gradient(to right, black calc(100% - 36px), transparent);
+    }
+    nav.fade-left {
+      mask-image: linear-gradient(to right, transparent, black 36px);
+    }
+
+    .tab-btn {
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline);
+      color: var(--md-text-secondary);
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-standard);
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 1px 2px rgba(44, 39, 40, 0.03);
+    }
+
+    .tab-btn:hover {
+      background: var(--md-surface-subtle);
+      color: var(--md-text-primary);
+    }
+
+    .tab-btn.active {
+      background: var(--md-accent-primary);
+      border-color: var(--md-accent-primary);
+      color: var(--md-accent-active-fg);
+      box-shadow: 0 2px 6px rgba(156, 83, 105, 0.2);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow-paper);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--md-text-primary);
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--md-text-primary);
+      margin: 1.4rem 0 0.6rem;
+    }
+
+    p {
+      color: var(--md-text-secondary);
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+    }
+
+    code, .math-mono {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--md-surface-low);
+      color: var(--md-accent-text);
+      padding: 2px 7px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid var(--md-outline-subtle);
+    }
+
+    .concept-banner {
+      background: var(--md-surface-low);
+      border-left: 4px solid var(--md-accent-primary);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem 1.3rem;
+      margin: 1rem 0;
+    }
+
+    /* Modulus Interactive Ruler */
+    .modulus-sandbox {
+      background: var(--md-surface-low);
+      border: 1px solid var(--md-outline);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.25rem;
+      margin-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .slider-control {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--md-text-secondary);
+      padding: 0 4px;
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--md-outline);
+      outline: none;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--md-accent-primary);
+      cursor: pointer;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.1s ease;
+    }
+
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+
+    .ruler-svg {
+      width: 100%;
+      height: 105px;
+      overflow: visible;
+    }
+
+    .modulus-explanation-pill {
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.4rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Venn Sandbox */
+    .venn-wrapper {
+      background: var(--md-surface-low);
+      border: 1px solid var(--md-outline);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 1.2rem;
+    }
+
+    svg.venn-svg {
+      width: 100%;
+      max-width: 440px;
+      height: 240px;
+      overflow: visible;
+    }
+
+    .venn-circle {
+      fill-opacity: 0.22;
+      stroke-width: 2.2;
+      transition: var(--transition-standard);
+    }
+
+    .circle-a { fill: #D88B9E; stroke: #A85A6E; }
+    .circle-b { fill: #B799B5; stroke: #7F5A7C; }
+    .circle-c { fill: #80CBC4; stroke: #00897B; }
+
+    .venn-label {
+      font-size: 14px;
+      font-weight: 600;
+      fill: var(--md-text-primary);
+      pointer-events: none;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .pill-chip {
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline);
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--md-text-secondary);
+      transition: var(--transition-standard);
+    }
+
+    .pill-chip:hover {
+      background: var(--md-surface-subtle);
+      color: var(--md-text-primary);
+    }
+
+    .pill-chip.active {
+      background: var(--md-accent-container);
+      color: var(--md-accent-text);
+      border-color: #D3B3BD;
+    }
+
+    .venn-result-box {
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline-subtle);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      width: 100%;
+      max-width: 550px;
+      font-size: 0.9rem;
+      color: var(--md-text-primary);
+    }
+
+    /* Textbook Walkthrough Boxes */
+    .exercise-box {
+      background: var(--md-surface-low);
+      border: 1px solid var(--md-outline);
+      padding: 1.4rem;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--md-accent-primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .step-list {
+      margin: 0.75rem 0 0.75rem 1.25rem;
+      color: var(--md-text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .step-list li {
+      margin-bottom: 0.6rem;
+    }
+
+    .compare-card {
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.1rem;
+      margin: 0.8rem 0;
+    }
+
+    .highlight-number {
+      background: var(--md-accent-container);
+      color: var(--md-accent-text);
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #D3B3BD;
+    }
+
+    /* Glossary Search & Grid */
+    .search-input {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--md-outline);
+      background: var(--md-surface);
+      color: var(--md-text-primary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      outline: none;
+      transition: var(--transition-standard);
+    }
+
+    .search-input:focus {
+      border-color: var(--md-accent-primary);
+      box-shadow: 0 0 0 3px var(--md-accent-container);
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .term-card {
+      background: var(--md-surface-low);
+      padding: 1.15rem 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--md-outline);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: var(--transition-standard);
+    }
+
+    .term-card:hover {
+      border-color: #CDB9BE;
+      background: var(--md-surface);
+    }
+
+    .term-lith {
+      font-weight: 700;
+      color: var(--md-accent-primary);
+      font-size: 1.05rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .term-eng {
+      font-weight: 600;
+      color: var(--md-text-primary);
+      font-size: 0.9rem;
+    }
+
+    .term-desc {
+      font-size: 0.85rem;
+      color: var(--md-text-secondary);
+      margin-top: 4px;
+    }
+
+    /* Quiz Cards */
+    .quiz-question {
+      background: var(--md-surface-low);
+      padding: 1.4rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.2rem;
+      border: 1px solid var(--md-outline);
+    }
+
+    .quiz-opts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 0.9rem;
+    }
+
+    .quiz-opt-btn {
+      text-align: left;
+      padding: 11px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--md-outline);
+      background: var(--md-surface);
+      color: var(--md-text-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-standard);
+    }
+
+    .quiz-opt-btn:hover {
+      background: var(--md-surface-subtle);
+      border-color: #D3B3BD;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: none;
+    }
+
+    .feedback.correct {
+      background: var(--md-status-success-bg);
+      color: var(--md-status-success-text);
+      display: block;
+    }
+
+    .feedback.incorrect {
+      background: var(--md-status-error-bg);
+      color: var(--md-status-error-text);
+      display: block;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Hero Title -->
+  <h1 class="hero-title">lil guide for my pirulin &lt;3</h1>
+
+  <!-- Carousel Navigation Bar with centered SVG chevrons -->
+  <div class="nav-carousel-wrapper">
+    <button class="nav-arrow-btn" id="navArrowLeft" onclick="scrollNav(-240)" aria-label="Scroll left">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="nav-track-container">
+      <nav id="navBar" onscroll="updateNavIndicators()">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-modulus')">1. Modulus Demystified</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-basics')">2. Set Operations</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-venn')">3. Visual Venn Sandbox</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-new-tasks')">4. Exercises 23–25 (Simplified)</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-book')">5. Exercises 20–22 (Simplified)</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-glossary')">6. LT-EN Glossary</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-practice')">7. Quick Quiz</button>
+      </nav>
+    </div>
+    <button class="nav-arrow-btn" id="navArrowRight" onclick="scrollNav(240)" aria-label="Scroll right">
+      <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <!-- TAB 1: MODULUS DEMYSTIFIED -->
+  <div id="tab-modulus" class="tab-content">
+    <div class="card">
+      <h2>What is Modulus (|x|) and Why Does it Exist?</h2>
+      
+      <div class="concept-banner">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">1. The Mechanical Job: The "Minus-Eraser Machine"</strong>
+        <p style="margin-top:6px; margin-bottom:0;">Whatever you feed into <span class="math-mono">| &hellip; |</span> comes out non-negative. It leaves positive numbers and zero alone, and simply strips away the minus sign from negative ones:</p>
+        <p style="margin-top:6px; margin-bottom:0;"><span class="math-mono">|5| = 5</span> &bull; <span class="math-mono">|0| = 0</span> &bull; <span class="math-mono">|-5| = 5</span></p>
+      </div>
+
+      <h3>Why do we need this? (Real-World Use Cases)</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 0.8rem;">
+        
+        <div style="background:var(--md-surface-low); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">The Smartwatch / Step Counter</strong>
+          <p style="font-size:0.88rem; margin-top:6px;">Take 4 steps forward: <span class="math-mono">+4</span>.<br>Take 4 steps backward: <span class="math-mono">-4</span>.</p>
+          <p style="font-size:0.85rem; margin-bottom:0;">Your smartwatch doesn't say <em>"you walked 0 steps."</em> It only cares about <strong>how much movement happened</strong>, not the direction: <span class="math-mono">|-4| = 4</span> steps.</p>
+        </div>
+
+        <div style="background:var(--md-surface-low); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">Distance Between Two Locations</strong>
+          <p style="font-size:0.88rem; margin-top:6px;">House A is at km 2. House B is at km 10.<br><span class="math-mono">2 - 10 = -8</span>.</p>
+          <p style="font-size:0.85rem; margin-bottom:0;">You can't say <em>"they are minus 8 km apart."</em> Wrapping it in modulus <span class="math-mono">|2 - 10| = 8</span> means you never have to worry about which number is bigger.</p>
+        </div>
+
+        <div style="background:var(--md-surface-low); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">Engineering "Margin of Error"</strong>
+          <p style="font-size:0.88rem; margin-top:6px;">A factory part must be 10 mm, with at most 0.2 mm error:</p>
+          <p style="font-size:0.85rem; margin-bottom:0;">Instead of two separate equations, engineers write one clean statement: <span class="math-mono">|x - 10| &le; 0.2</span> (the difference from 10, positive or negative, must not exceed 0.2).</p>
+        </div>
+
+      </div>
+
+      <h3 style="margin-top:1.8rem;">Interactive Tape Measure: Distance from Zero</h3>
+      <p>Drag point <span class="math-mono">x</span> below to watch how the tape measure always reads a positive distance:</p>
+
+      <div class="modulus-sandbox">
+        <div class="slider-control">
+          <input type="range" id="modSlider" min="-5" max="5" value="-3" step="1" oninput="updateModulusRuler(this.value)">
+          <div class="slider-labels">
+            <span>-5</span><span>-4</span><span>-3</span><span>-2</span><span>-1</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+          </div>
+        </div>
+
+        <svg class="ruler-svg" viewBox="0 0 500 105" id="rulerSvg">
+          <line x1="25" y1="50" x2="475" y2="50" stroke="var(--md-outline)" stroke-width="3" stroke-linecap="round" />
+          
+          <circle cx="250" cy="50" r="5" fill="var(--md-text-secondary)" />
+          <text id="originLabel" x="250" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="var(--md-text-secondary)" style="transition: opacity 0.2s;">0 (Origin)</text>
+
+          <line id="distBar" x1="115" y1="26" x2="250" y2="26" stroke="var(--md-accent-primary)" stroke-width="3" stroke-linecap="round" style="transition: all 0.2s;" />
+          <text id="distLabel" x="182" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="var(--md-accent-primary)">Distance |x| = 3 steps</text>
+          
+          <circle id="pointX" cx="115" cy="50" r="7" fill="var(--md-accent-primary)" />
+          <text id="pointLabel" x="115" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="var(--md-accent-primary)">x = -3</text>
+        </svg>
+
+        <div class="modulus-explanation-pill" id="modulusText">
+          Loading explanation...
+        </div>
+      </div>
+
+      <h3 style="margin-top:1.8rem;">Why does |x| = 5 have two answers?</h3>
+      <p>When an exam asks to solve <span class="math-mono">|x| = 5</span>, treat it as a riddle:</p>
+      <p style="background:var(--md-surface-low); padding:1rem; border-radius:var(--radius-sm); border:1px solid var(--md-outline-subtle);">
+        <em>"I had a secret number x. I passed it through the minus-eraser machine, and 5 came out. What could my secret number have been?"</em><br>
+        &bull; Maybe it was <strong>+5</strong> (because |5| = 5).<br>
+        &bull; Maybe it was <strong>-5</strong> (because |-5| = 5).<br>
+        Therefore: <strong>x = 5 or x = -5</strong>.
+      </p>
+    </div>
+  </div>
+
+  <!-- TAB 2: SET BASICS -->
+  <div id="tab-basics" class="tab-content hidden">
+    <div class="card">
+      <h2>The Basket Concept: What is a Set? (Kas yra aibė?)</h2>
+      <p>Think of a set (<strong>Aibė</strong>) as a labeled basket holding distinct numbers or objects. If a number is inside, we write <span class="math-mono">x &isin; A</span> (belongs to). If not, <span class="math-mono">x &notin; A</span>.</p>
+      
+      <h3>The Three Fundamental Set Operations</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem;">
+        <div style="background:var(--md-surface-low); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">1. Sąjunga (&cup;) &mdash; Union</strong>
+          <p style="margin-top:6px; font-size:0.88rem;"><strong>"Combine everything."</strong> Combine basket A and basket B together. No duplicates.</p>
+          <code>A &cup; B = {1, 2, 3, 4, 5, 6}</code>
+        </div>
+        <div style="background:var(--md-surface-low); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">2. Sankirta (&cap;) &mdash; Intersection</strong>
+          <p style="margin-top:6px; font-size:0.88rem;"><strong>"Shared items only."</strong> Numbers that are in BOTH basket A and basket B at the same time.</p>
+          <code>A &cap; B = {3, 4}</code>
+        </div>
+        <div style="background:var(--md-surface-low); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">3. Skirtumas (\) &mdash; Difference</strong>
+          <p style="margin-top:6px; font-size:0.88rem;"><strong>"Take away set B."</strong> Start with set A and remove any item that is also in set B.</p>
+          <code>A \ B = {1, 2}</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: VENN SANDBOX -->
+  <div id="tab-venn" class="tab-content hidden">
+    <div class="card">
+      <h2>Interactive Venn Sandbox</h2>
+      <p>Click any operation below to see the exact region and elements light up:</p>
+      
+      <div class="pill-group">
+        <button class="pill-chip active" onclick="setVennMode(event, 'all')">Show Both Sets</button>
+        <button class="pill-chip" onclick="setVennMode(event, 'union')">A &cup; B (Sąjunga)</button>
+        <button class="pill-chip" onclick="setVennMode(event, 'intersection')">A &cap; B (Sankirta)</button>
+        <button class="pill-chip" onclick="setVennMode(event, 'diffAB')">A \ B (Tik A)</button>
+        <button class="pill-chip" onclick="setVennMode(event, 'diffBA')">B \ A (Tik B)</button>
+      </div>
+
+      <div class="venn-wrapper">
+        <svg class="venn-svg" viewBox="0 0 400 240">
+          <defs>
+            <clipPath id="clip-a">
+              <circle cx="160" cy="120" r="85" />
+            </clipPath>
+          </defs>
+
+          <circle id="v-circle-a" class="venn-circle circle-a" cx="160" cy="120" r="85" />
+          <circle id="v-circle-b" class="venn-circle circle-b" cx="240" cy="120" r="85" />
+          <circle id="v-circle-intersect" cx="240" cy="120" r="85" clip-path="url(#clip-a)" fill="#9C5369" fill-opacity="0" style="transition: var(--transition-standard);" />
+
+          <text x="110" y="125" class="venn-label">A: {1, 2}</text>
+          <text x="187" y="125" class="venn-label" style="font-size:13px;">{3, 4}</text>
+          <text x="250" y="125" class="venn-label">B: {5, 6}</text>
+        </svg>
+
+        <div id="venn-explanation" class="venn-result-box">
+          <strong>Showing Both Sets:</strong> Set A = {1, 2, 3, 4} and Set B = {3, 4, 5, 6}.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: SIMPLIFIED EXERCISES 23-25 (SIDE-BY-SIDE STEPPER) -->
+  <div id="tab-new-tasks" class="tab-content hidden">
+    <div class="card">
+      <h2>Exercises 23, 24 &amp; 25 Explained in Plain English</h2>
+      <p>No confusing formulas. Solved using step-by-step visual coloring, hopscotch counting, and riddles.</p>
+
+      <!-- EXERCISE 23: SIDE-BY-SIDE INTERACTIVE STEPPER -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 23: The Visual Recipe Proof</strong>
+        <p style="margin-top:4px; font-size:0.88rem;"><em>Goal:</em> Prove that <strong>Left Formula</strong> and <strong>Right Formula</strong> color the exact same spots on your paper.</p>
+
+        <!-- Stepper Buttons -->
+        <div class="pill-group" style="margin: 1rem 0 0.5rem;">
+          <button class="pill-chip active" onclick="setStep(event, 1)">Step 1: The First Action</button>
+          <button class="pill-chip" onclick="setStep(event, 2)">Step 2: The Second Action</button>
+          <button class="pill-chip" onclick="setStep(event, 3)">Step 3: Compare Final Results!</button>
+        </div>
+
+        <!-- Side-by-side visual comparison -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 1rem;">
+          
+          <!-- Left Recipe Box -->
+          <div class="compare-card" style="text-align: center;">
+            <strong style="color:var(--md-accent-primary); font-size:0.95rem;">Left Side: (A ∪ B) ∩ C</strong>
+            <p id="left-recipe-desc" style="font-size:0.84rem; min-height:46px; margin-top:6px;">
+              <strong>Step 1:</strong> Color all of <strong>(A ∪ B)</strong> with pink ink.
+            </p>
+            
+            <svg class="venn-svg" viewBox="0 0 320 220" style="max-height:175px;">
+              <defs>
+                <clipPath id="clip-c-left">
+                  <circle cx="160" cy="135" r="55" />
+                </clipPath>
+              </defs>
+
+              <circle id="left-a" cx="125" cy="85" r="55" fill="#9C5369" fill-opacity="0.55" stroke="#A85A6E" stroke-width="2" style="transition: all 0.3s;" />
+              <circle id="left-b" cx="195" cy="85" r="55" fill="#9C5369" fill-opacity="0.55" stroke="#7F5A7C" stroke-width="2" style="transition: all 0.3s;" />
+              <circle id="left-c" cx="160" cy="135" r="55" fill="#80CBC4" fill-opacity="0.05" stroke="#00897B" stroke-width="2" style="transition: all 0.3s;" />
+
+              <!-- Permanent Overlap Cutters for Step 3 -->
+              <circle id="left-petal-ac" cx="125" cy="85" r="55" clip-path="url(#clip-c-left)" fill="#9C5369" fill-opacity="0" style="transition: all 0.3s;" />
+              <circle id="left-petal-bc" cx="195" cy="85" r="55" clip-path="url(#clip-c-left)" fill="#9C5369" fill-opacity="0" style="transition: all 0.3s;" />
+
+              <text x="95" y="65" class="venn-label" style="font-size:12px;">A</text>
+              <text x="220" y="65" class="venn-label" style="font-size:12px;">B</text>
+              <text x="160" y="198" class="venn-label" style="font-size:12px;">C</text>
+            </svg>
+          </div>
+
+          <!-- Right Recipe Box -->
+          <div class="compare-card" style="text-align: center;">
+            <strong style="color:var(--md-accent-primary); font-size:0.95rem;">Right Side: (A ∩ C) ∪ (B ∩ C)</strong>
+            <p id="right-recipe-desc" style="font-size:0.84rem; min-height:46px; margin-top:6px;">
+              <strong>Step 1:</strong> Color just the first slice: <strong>(A ∩ C)</strong>.
+            </p>
+
+            <svg class="venn-svg" viewBox="0 0 320 220" style="max-height:175px;">
+              <defs>
+                <clipPath id="clip-c-right">
+                  <circle cx="160" cy="135" r="55" />
+                </clipPath>
+              </defs>
+
+              <circle cx="125" cy="85" r="55" fill="none" stroke="#A85A6E" stroke-width="2" />
+              <circle cx="195" cy="85" r="55" fill="none" stroke="#7F5A7C" stroke-width="2" />
+              <circle cx="160" cy="135" r="55" fill="none" stroke="#00897B" stroke-width="2" />
+
+              <!-- Petal AC -->
+              <circle id="right-ac" cx="125" cy="85" r="55" clip-path="url(#clip-c-right)" fill="#9C5369" fill-opacity="0.75" style="transition: all 0.3s;" />
+              <!-- Petal BC -->
+              <circle id="right-bc" cx="195" cy="85" r="55" clip-path="url(#clip-c-right)" fill="#9C5369" fill-opacity="0.06" style="transition: all 0.3s;" />
+
+              <text x="95" y="65" class="venn-label" style="font-size:12px;">A</text>
+              <text x="220" y="65" class="venn-label" style="font-size:12px;">B</text>
+              <text x="160" y="198" class="venn-label" style="font-size:12px;">C</text>
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- Summary Banner -->
+        <div id="stepper-summary" class="venn-result-box" style="margin-top: 1rem; text-align: left; max-width: 100%;">
+          <strong>Step 1 Takeaway:</strong> Notice they start differently. The left side grabs two whole big circles, while the right side only grabs one tiny overlap petal.
+        </div>
+      </div>
+
+      <!-- EXERCISE 24: NUMBER LISTS -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 24: The Hopscotch Number Lists</strong>
+        <p style="margin-top:4px; font-size:0.88rem;"><em>Goal:</em> Find which numbers appear in both baskets without confusing equations.</p>
+
+        <p style="font-size:0.9rem; margin-top:8px;">Just write down the numbers and spot the matches:</p>
+        
+        <div class="compare-card" style="font-family:'JetBrains Mono', monospace; font-size:0.86rem; line-height:1.8;">
+          <div><strong style="color:var(--md-accent-primary); font-family:'Plus Jakarta Sans';">Basket A (jumps by +3):</strong> 2, 5, 8, 11, 14, <span class="highlight-number">17</span>, 20, 23, 26, 29, <span class="highlight-number">32</span>, 35, 38, 41, 44, <span class="highlight-number">47</span>...</div>
+          <div><strong style="color:var(--md-accent-primary); font-family:'Plus Jakarta Sans';">Basket B (jumps by +5):</strong> 7, 12, <span class="highlight-number">17</span>, 22, 27, <span class="highlight-number">32</span>, 37, 42, <span class="highlight-number">47</span>, 52, 57...</div>
+          <div><strong style="color:var(--md-accent-primary); font-family:'Plus Jakarta Sans';">Basket C (just odd numbers):</strong> 3, 5, 7, 9, 11, 13, 15, <span class="highlight-number">17</span>, 19...</div>
+        </div>
+
+        <ol class="step-list" style="margin-top:0.8rem;">
+          <li><strong>a) A &cap; B (Numbers in BOTH A and B):</strong>
+            <br>Look at the highlighted matches: <strong>17, 32, 47, 62, 77...</strong> (They jump by +15 each step!)
+          </li>
+          <li><strong>b) A &cap; C (Numbers in Basket A that are ODD):</strong>
+            <br>Look at List A and circle the odd ones: <strong>5, 11, 17, 23, 29...</strong> (They jump by +6 each step!)
+          </li>
+          <li><strong>c) A &cap; B &cap; C (Numbers in all three):</strong>
+            <br>Look at your matches from part (a) and keep only the ODD ones:
+            <br>17 is odd (&check;), 32 is even (&cross;), 47 is odd (&check;), 62 is even (&cross;)...
+            <br>&rarr; <strong>17, 47, 77, 107...</strong> (They jump by +30 each step!)
+          </li>
+          <li><strong>d) (A &cap; B) &cup; C (Combine them into one big basket):</strong>
+            <br>Dump Basket C (all odd numbers) and the matches from A &cap; B into one pile.
+            <br>The odd ones (17, 47, 77...) were already in C! So you get <strong>all odd numbers &ge; 3, plus the even numbers {32, 62, 92, ...}</strong>.
+          </li>
+        </ol>
+      </div>
+
+      <!-- EXERCISE 25: THE RIDDLE -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 25: The Two-Digit Riddle</strong>
+        <p style="margin-top:4px; font-size:0.88rem;"><em>In Plain English:</em> "Find a 2-digit number that is 3 times bigger than the sum of its digits."</p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-text-primary);">Test numbers until one clicks:</strong>
+          <p style="margin-top:6px; font-size:0.9rem;">
+            &bull; Try <strong>18</strong>: Digits are 1 + 8 = 9. Multiply by 3 &rarr; 3 &times; 9 = 27. (Does 27 = 18? No, wrong!)<br>
+            &bull; Try <strong>24</strong>: Digits are 2 + 4 = 6. Multiply by 3 &rarr; 3 &times; 6 = 18. (Does 18 = 24? No, wrong!)<br>
+            &bull; Try <strong>27</strong>: Digits are 2 + 7 = 9. Multiply by 3 &rarr; 3 &times; 9 = 27. (Does 27 = 27? <strong>YES! MATCH!</strong>)
+          </p>
+          <div style="background:var(--md-status-success-bg); color:var(--md-status-success-text); padding:8px 12px; border-radius:var(--radius-sm); font-weight:700; margin-top:8px;">
+            The secret number is 27!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: EXERCISES 20-22 (SIMPLIFIED) -->
+  <div id="tab-book" class="tab-content hidden">
+    <div class="card">
+      <h2>Exercises 20, 21 &amp; 22 Explained in Plain English</h2>
+      <p>Simplified step-by-step guides using physical analogies instead of heavy algebra.</p>
+
+      <!-- EXERCISE 20: TWO MINI-RIDDLES -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 20: The Two Mini-Riddles</strong>
+        <p style="margin-top:4px; font-size:0.88rem;"><em>Text:</em> "Aibė A yra sprendiniai lygties 19 - 3x = -8, o aibė B yra sprendiniai lygties x² - 81 = 0."</p>
+        <p style="margin-top:2px; font-size:0.88rem;">Before doing any set operations, we just need to solve the two secret numbers inside each basket:</p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Basket A: What is x in `19 - 3x = -8`?</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            Think backwards: 19 minus what gives -8?<br>
+            &bull; <span class="math-mono">19 - 27 = -8</span>. So <span class="math-mono">3x = 27</span>.<br>
+            &bull; What number times 3 is 27? <strong>x = 9</strong>.<br>
+            So Basket A has just one number: <span class="math-mono">A = {9}</span>.
+          </p>
+
+          <strong style="color:var(--md-accent-primary); display:block; margin-top:10px;">Basket B: What is x in `x² - 81 = 0`?</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            This asks: <em>"What number times itself equals 81?"</em><br>
+            &bull; <span class="math-mono">9 &times; 9 = 81</span>.<br>
+            &bull; And remember: <span class="math-mono">(-9) &times; (-9) = 81</span> too!<br>
+            So Basket B has two numbers: <span class="math-mono">B = {-9, 9}</span>.
+          </p>
+        </div>
+
+        <ol class="step-list">
+          <li><strong>A &cup; B (Union &mdash; dump both together):</strong>
+            <br>Put 9, -9, and 9 into one box. Drop the duplicate 9:
+            <br>&rarr; <span class="math-mono">A &cup; B = {-9, 9}</span>
+          </li>
+          <li><strong>A &cap; B (Intersection &mdash; what do they share?):</strong>
+            <br>Both baskets share only the number 9:
+            <br>&rarr; <span class="math-mono">A &cap; B = {9}</span>
+          </li>
+          <li><strong>A \ B (Difference &mdash; start with A, remove anything in B):</strong>
+            <br>Basket A only has 9. But Basket B also has 9, so we throw it out!
+            <br>Basket A is now completely empty:
+            <br>&rarr; <span class="math-mono">A \ B = &empty;</span> (Tuščioji aibė / Empty set!)
+          </li>
+          <li><strong>B \ A (Difference &mdash; start with B, remove anything in A):</strong>
+            <br>Basket B has -9 and 9. Remove the 9 (because it's in A). Only -9 survives:
+            <br>&rarr; <span class="math-mono">B \ A = {-9}</span>
+          </li>
+        </ol>
+      </div>
+
+      <!-- EXERCISE 21: THE TRAPPED NUMBER & THE ROADBLOCK -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 21: The Trapped Number &amp; The Roadblock</strong>
+        <p style="margin-top:4px; font-size:0.88rem;"><em>Text:</em> "Aibė C yra nelygybės 15x² - 17x + 4 &le; 0 sprendiniai, o aibė D yra nelygybės 11 - x &ge; 6 sprendiniai."</p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">1. Basket D (The Roadblock): `11 - x &ge; 6`</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            11 minus what gives at least 6? If x is 5: <span class="math-mono">11 - 5 = 6</span> (&check;). If x is smaller, like 4: <span class="math-mono">11 - 4 = 7 &ge; 6</span> (&check;).<br>
+            So x can be <strong>5 or anything smaller</strong>. It goes all the way left to minus infinity!<br>
+            &rarr; <span class="math-mono">D = (-&infin;, 5]</span>
+          </p>
+
+          <strong style="color:var(--md-accent-primary); display:block; margin-top:10px;">2. Basket C (The Trapped Zone): `15x² - 17x + 4 &le; 0`</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            When solving a quadratic with &le; 0, the solutions are trapped between its two roots.<br>
+            The two roots are tiny fractions: <span class="math-mono">x = 1/3 (approx 0.33)</span> and <span class="math-mono">x = 4/5 (0.8)</span>.<br>
+            So Basket C is the tiny interval between them: <span class="math-mono">C = [1/3, 4/5]</span>.
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-text-primary);">Now look at them on the number line:</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            Basket D goes all the way up to <strong>5</strong>.<br>
+            Basket C lives between <strong>0.33 and 0.8</strong>. That entire zone is <em>already inside</em> Basket D!<br>
+            Think of Basket C as a small shoe box, and Basket D as a huge room containing the box:
+          </p>
+          <p style="margin-top:6px; font-size:0.9rem;">
+            &bull; <strong>Overlap <span class="math-mono">C &cap; D</span>:</strong> Since C is completely inside D, their overlap is just <strong>C</strong> (<span class="math-mono">[1/3, 4/5]</span>).<br>
+            &bull; <strong>Combine <span class="math-mono">C &cup; D</span>:</strong> Putting the small box inside the big room just gives the big room: <strong>D</strong> (<span class="math-mono">(-&infin;, 5]</span>).<br>
+            &bull; <strong>Difference <span class="math-mono">C \ D</span>:</strong> Take C and remove anything in D. But everything in C is in D! So you are left with nothing: <strong>&empty;</strong> (empty set)!
+          </p>
+        </div>
+      </div>
+
+      <!-- EXERCISE 22: THE TWO SAFETY RULES -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 22: Finding the Domain (Apibrėžimo sritis)</strong>
+        <p style="margin-top:4px; font-size:0.88rem;">Whenever a problem says <em>"Raskite apibrėžimo sritį"</em> (Find the domain), you are an inspector checking for two illegal math crimes:</p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Rule 1: The Glass Floor (&radic; square roots)</strong>
+          <p style="font-size:0.9rem; margin-top:2px;">You can NEVER have a negative number under a square root. What is inside MUST be &ge; 0.</p>
+
+          <strong style="color:var(--md-accent-primary); display:block; margin-top:8px;">Rule 2: The Black Hole (Denominators)</strong>
+          <p style="font-size:0.9rem; margin-top:2px;">You can NEVER divide by zero. The bottom of a fraction can NEVER equal 0.</p>
+        </div>
+
+        <p style="font-size:0.9rem; margin-top:10px;">In the problem, look at the square root on top: <span class="math-mono">&radic;(x - 16)</span></p>
+        <ol class="step-list">
+          <li>For <span class="math-mono">&radic;(x - 16)</span> to not break Rule 1: <span class="math-mono">x - 16 &ge; 0 &rArr; x &ge; 16</span>.</li>
+          <li>Now look at the other piece on top: <span class="math-mono">(12 - x)</span>. If it's under a square root, <span class="math-mono">12 - x &ge; 0 &rArr; x &le; 12</span>.</li>
+          <li>Notice: Can a number be <strong>bigger than 16</strong> AND <strong>smaller than 12</strong> at the same time? NO! That's impossible!</li>
+          <li>If the conditions contradict each other, no real numbers can survive. The domain is the <strong>Empty Set (&empty;)</strong>!</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 6: GLOSSARY -->
+  <div id="tab-glossary" class="tab-content hidden">
+    <div class="card">
+      <h2>Lithuanian &bull; English Mathematical Glossary</h2>
+      <p>Search any term across both languages instantly.</p>
+      <input type="text" id="glossary-search" class="search-input" placeholder="Search (e.g., aibė, modulis, sankirta, interval)..." oninput="filterGlossary()">
+      
+      <div class="glossary-grid" id="glossary-container"></div>
+    </div>
+  </div>
+
+  <!-- TAB 7: QUIZ -->
+  <div id="tab-practice" class="tab-content hidden">
+    <div class="card">
+      <h2>Concept Check</h2>
+      <p>Select your answer to test your intuition.</p>
+
+      <div class="quiz-question" id="q-mod">
+        <p><strong>1. If |x| = 7, what are all the possible values for x?</strong></p>
+        <div class="quiz-opts">
+          <button class="quiz-opt-btn" onclick="checkAnswer('q-mod', this, false)">A) Only +7, because modulus can never be negative</button>
+          <button class="quiz-opt-btn" onclick="checkAnswer('q-mod', this, true)">B) Both +7 and -7, because both sit 7 steps away from 0</button>
+          <button class="quiz-opt-btn" onclick="checkAnswer('q-mod', this, false)">C) Between 0 and 7 only</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="quiz-question" id="q1">
+        <p><strong>2. Given set A = {2, 5, 7} and set B = {5, 7, 9}, what is the intersection A &cap; B (Sankirta)?</strong></p>
+        <div class="quiz-opts">
+          <button class="quiz-opt-btn" onclick="checkAnswer('q1', this, false)">A) {2, 5, 7, 9}</button>
+          <button class="quiz-opt-btn" onclick="checkAnswer('q1', this, true)">B) {5, 7}</button>
+          <button class="quiz-opt-btn" onclick="checkAnswer('q1', this, false)">C) {2}</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="quiz-question" id="q2">
+        <p><strong>3. If set A = {10, 20} and set B = {20, 30}, what is the set difference A \ B (Skirtumas)?</strong></p>
+        <div class="quiz-opts">
+          <button class="quiz-opt-btn" onclick="checkAnswer('q2', this, true)">A) {10}</button>
+          <button class="quiz-opt-btn" onclick="checkAnswer('q2', this, false)">B) {30}</button>
+          <button class="quiz-opt-btn" onclick="checkAnswer('q2', this, false)">C) {10, 30}</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(evt, tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.remove('hidden');
+      evt.currentTarget.classList.add('active');
+
+      evt.currentTarget.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest'
+      });
+      setTimeout(updateNavIndicators, 250);
+    }
+
+    function scrollNav(amount) {
+      const nav = document.getElementById('navBar');
+      nav.scrollBy({ left: amount, behavior: 'smooth' });
+      setTimeout(updateNavIndicators, 200);
+    }
+
+    function updateNavIndicators() {
+      const nav = document.getElementById('navBar');
+      const arrowLeft = document.getElementById('navArrowLeft');
+      const arrowRight = document.getElementById('navArrowRight');
+
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      const scrollLeft = nav.scrollLeft;
+      const buffer = 8;
+
+      const canScrollLeft = scrollLeft > buffer;
+      const canScrollRight = scrollLeft < (maxScroll - buffer);
+
+      arrowLeft.disabled = !canScrollLeft;
+      arrowRight.disabled = !canScrollRight;
+
+      nav.classList.remove('fade-left', 'fade-right', 'fade-both');
+      if (canScrollLeft && canScrollRight) {
+        nav.classList.add('fade-both');
+      } else if (canScrollRight) {
+        nav.classList.add('fade-right');
+      } else if (canScrollLeft) {
+        nav.classList.add('fade-left');
+      }
+    }
+
+    // Dynamic Tape Measure Slider Logic
+    function updateModulusRuler(val) {
+      const num = parseInt(val, 10);
+      const originX = 250; 
+      const stepWidth = 45; 
+      const pointPosX = originX + (num * stepWidth);
+      const absVal = Math.abs(num);
+
+      const pointX = document.getElementById('pointX');
+      const pointLabel = document.getElementById('pointLabel');
+      const originLabel = document.getElementById('originLabel');
+      const distBar = document.getElementById('distBar');
+      const distLabel = document.getElementById('distLabel');
+      const text = document.getElementById('modulusText');
+
+      pointX.setAttribute('cx', pointPosX);
+
+      if (num === 0) {
+        originLabel.style.opacity = '0';
+        pointLabel.setAttribute('x', originX);
+        pointLabel.textContent = 'x = 0 (At Origin)';
+        
+        distBar.style.opacity = '0';
+        distLabel.setAttribute('x', originX);
+        distLabel.textContent = 'Distance |x| = 0 (No steps taken)';
+
+        text.innerHTML = `<strong>At home:</strong> <span class="math-mono">|0| = 0</span>. Zero steps away from origin.`;
+      } else {
+        originLabel.style.opacity = '1';
+        distBar.style.opacity = '1';
+
+        pointLabel.setAttribute('x', pointPosX);
+        pointLabel.textContent = `x = ${num}`;
+
+        const minX = Math.min(originX, pointPosX);
+        const maxX = Math.max(originX, pointPosX);
+        distBar.setAttribute('x1', minX);
+        distBar.setAttribute('x2', maxX);
+
+        const midX = (minX + maxX) / 2;
+        distLabel.setAttribute('x', midX);
+        distLabel.textContent = `Distance |x| = ${absVal} ${absVal === 1 ? 'step' : 'steps'}`;
+
+        if (num < 0) {
+          text.innerHTML = `Even though the position is <strong>negative (${num})</strong>, the tape measure reads <strong>${absVal} positive steps</strong>. That is why <span class="math-mono">|${num}| = ${absVal}</span>.`;
+        } else {
+          text.innerHTML = `The position is <strong>positive (+${num})</strong>. The tape measure reads <strong>${absVal} steps</strong>. That is why <span class="math-mono">|${num}| = ${absVal}</span>.`;
+        }
+      }
+    }
+
+    // Venn Sandbox Logic (Tab 3)
+    function setVennMode(evt, mode) {
+      document.querySelectorAll('.pill-chip').forEach(el => el.classList.remove('active'));
+      evt.currentTarget.classList.add('active');
+
+      const circleA = document.getElementById('v-circle-a');
+      const circleB = document.getElementById('v-circle-b');
+      const inter = document.getElementById('v-circle-intersect');
+      const text = document.getElementById('venn-explanation');
+
+      circleA.style.fillOpacity = '0.22';
+      circleB.style.fillOpacity = '0.22';
+      inter.setAttribute('fill-opacity', '0');
+
+      if (mode === 'all') {
+        text.innerHTML = "<strong>Showing Both Sets:</strong> Set A = {1, 2, 3, 4} and Set B = {3, 4, 5, 6}.";
+      } else if (mode === 'union') {
+        circleA.style.fillOpacity = '0.55';
+        circleB.style.fillOpacity = '0.55';
+        text.innerHTML = "<strong>Union (Sąjunga A &cup; B):</strong> All elements combined &rarr; <span class='math-mono'>{1, 2, 3, 4, 5, 6}</span>";
+      } else if (mode === 'intersection') {
+        circleA.style.fillOpacity = '0.08';
+        circleB.style.fillOpacity = '0.08';
+        inter.setAttribute('fill-opacity', '0.75');
+        text.innerHTML = "<strong>Intersection (Sankirta A &cap; B):</strong> Overlap only &rarr; <span class='math-mono'>{3, 4}</span>";
+      } else if (mode === 'diffAB') {
+        circleA.style.fillOpacity = '0.65';
+        circleB.style.fillOpacity = '0.04';
+        text.innerHTML = "<strong>Difference (A \\ B):</strong> Elements in A excluding B &rarr; <span class='math-mono'>{1, 2}</span>";
+      } else if (mode === 'diffBA') {
+        circleA.style.fillOpacity = '0.04';
+        circleB.style.fillOpacity = '0.65';
+        text.innerHTML = "<strong>Difference (B \\ A):</strong> Elements in B excluding A &rarr; <span class='math-mono'>{5, 6}</span>";
+      }
+    }
+
+    // Exercise 23 Step-by-Step Interactive Proof Logic
+    function setStep(evt, stepNumber) {
+      evt.target.parentElement.querySelectorAll('.pill-chip').forEach(el => el.classList.remove('active'));
+      evt.currentTarget.classList.add('active');
+
+      const leftDesc = document.getElementById('left-recipe-desc');
+      const rightDesc = document.getElementById('right-recipe-desc');
+      const summary = document.getElementById('stepper-summary');
+
+      const leftA = document.getElementById('left-a');
+      const leftB = document.getElementById('left-b');
+      const leftC = document.getElementById('left-c');
+      const leftPetalAC = document.getElementById('left-petal-ac');
+      const leftPetalBC = document.getElementById('left-petal-bc');
+
+      const rightAC = document.getElementById('right-ac');
+      const rightBC = document.getElementById('right-bc');
+
+      if (stepNumber === 1) {
+        // Left: Highlight (A ∪ B) completely
+        leftA.style.fill = '#9C5369';
+        leftB.style.fill = '#9C5369';
+        leftA.style.fillOpacity = '0.55';
+        leftB.style.fillOpacity = '0.55';
+        leftC.style.fillOpacity = '0.05';
+        leftPetalAC.setAttribute('fill-opacity', '0');
+        leftPetalBC.setAttribute('fill-opacity', '0');
+        leftDesc.innerHTML = "<strong>Step 1:</strong> Color all of <strong>(A ∪ B)</strong> with pink ink.";
+
+        // Right: Highlight just (A ∩ C)
+        rightAC.style.fillOpacity = '0.75';
+        rightBC.style.fillOpacity = '0.06';
+        rightDesc.innerHTML = "<strong>Step 1:</strong> Color just the first slice: <strong>(A ∩ C)</strong>.";
+
+        summary.innerHTML = "<strong>Step 1 Takeaway:</strong> Notice they start differently. The left side grabs two whole big circles, while the right side only grabs one tiny overlap petal.";
+
+      } else if (stepNumber === 2) {
+        // Left: Introduce ∩ C (dim outside of C)
+        leftA.style.fillOpacity = '0.2';
+        leftB.style.fillOpacity = '0.2';
+        leftC.style.fill = '#80CBC4';
+        leftC.style.fillOpacity = '0.35';
+        leftPetalAC.setAttribute('fill-opacity', '0');
+        leftPetalBC.setAttribute('fill-opacity', '0');
+        leftDesc.innerHTML = "<strong>Step 2 (∩ C):</strong> Apply circle C like a stencil. Any ink outside of C must be erased!";
+
+        // Right: Highlight (B ∩ C) too
+        rightAC.style.fillOpacity = '0.75';
+        rightBC.style.fillOpacity = '0.75';
+        rightDesc.innerHTML = "<strong>Step 2 (∪):</strong> Now color the other slice <strong>(B ∩ C)</strong> and join them together.";
+
+        summary.innerHTML = "<strong>Step 2 Takeaway:</strong> On the left, circle C acts like a cookie-cutter trimming away the outside ink. On the right, we simply colored the second missing petal!";
+
+      } else if (stepNumber === 3) {
+        // Left: Clean final result with isolated overlap petals
+        leftA.style.fillOpacity = '0.05';
+        leftB.style.fillOpacity = '0.05';
+        leftC.style.fillOpacity = '0.05';
+        leftPetalAC.setAttribute('fill-opacity', '0.75');
+        leftPetalBC.setAttribute('fill-opacity', '0.75');
+        leftDesc.innerHTML = "<strong>Final Result:</strong> Only the two petals inside Circle C survive!";
+
+        // Right: Clean final result
+        rightAC.style.fillOpacity = '0.75';
+        rightBC.style.fillOpacity = '0.75';
+        rightDesc.innerHTML = "<strong>Final Result:</strong> Both overlap petals joined together!";
+
+        summary.innerHTML = "🎉 <strong>MATCH! Look closely at both diagrams:</strong> The exact same two bottom petals are shaded. That proves both mathematical formulas are identical!";
+      }
+    }
+
+    // Glossary Data
+    const glossary = [
+      { lt: "Aibė", en: "Set", symbol: "A, B", desc: "A collection of distinct objects or numbers." },
+      { lt: "Elementas", en: "Element", symbol: "x ∈ A", desc: "An individual item contained inside a set." },
+      { lt: "Poaibis", en: "Subset", symbol: "A ⊆ B", desc: "A set whose elements are all members of another set." },
+      { lt: "Sąjunga", en: "Union", symbol: "A ∪ B", desc: "The set of all elements belonging to either set." },
+      { lt: "Sankirta", en: "Intersection", symbol: "A ∩ B", desc: "The set of elements shared by both sets." },
+      { lt: "Skirtumas", en: "Difference", symbol: "A \\ B", desc: "Elements in the first set excluding any in the second." },
+      { lt: "Tuščioji aibė", en: "Empty set", symbol: "∅", desc: "A set with no elements (empty box)." },
+      { lt: "Modulis", en: "Absolute value / Modulus", symbol: "|x|", desc: "The non-negative distance from zero on the real number line." },
+      { lt: "MBK", en: "Least Common Multiple (LCM)", symbol: "MBK(a, b)", desc: "The smallest number that two numbers both divide into evenly (like 15 for 3 and 5)." },
+      { lt: "Apibrėžimo sritis", en: "Domain of definition", symbol: "D(f) / X", desc: "Allowable input values for which an expression is valid." },
+      { lt: "Reikšmių sritis", en: "Range of values", symbol: "E(f) / Y", desc: "Set of possible resulting output values." },
+      { lt: "Sprendinys", en: "Solution", symbol: "x", desc: "A value satisfying an equation or inequality." },
+      { lt: "Nelygybė", en: "Inequality", symbol: "<, >, ≤, ≥", desc: "A mathematical statement comparing relative bounds." }
+    ];
+
+    function renderGlossary(items) {
+      const container = document.getElementById('glossary-container');
+      container.innerHTML = '';
+      items.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'term-card';
+        div.innerHTML = `
+          <div class="term-lith">
+            <span>${item.lt}</span>
+            <span style="font-family:'JetBrains Mono'; font-size:0.8rem; color:var(--md-text-secondary);">${item.symbol}</span>
+          </div>
+          <div class="term-eng">${item.en}</div>
+          <div class="term-desc">${item.desc}</div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function filterGlossary() {
+      const q = document.getElementById('glossary-search').value.toLowerCase();
+      const filtered = glossary.filter(i => 
+        i.lt.toLowerCase().includes(q) || 
+        i.en.toLowerCase().includes(q) || 
+        i.desc.toLowerCase().includes(q)
+      );
+      renderGlossary(filtered);
+    }
+
+    // Quiz Check
+    function checkAnswer(qId, buttonElem, isCorrect) {
+      const qBox = document.getElementById(qId);
+      const feedback = qBox.querySelector('.feedback');
+      
+      qBox.querySelectorAll('.quiz-opt-btn').forEach(b => {
+        b.style.borderColor = 'var(--md-outline)';
+      });
+
+      if (isCorrect) {
+        buttonElem.style.borderColor = 'var(--md-status-success-text)';
+        feedback.className = 'feedback correct';
+        feedback.innerHTML = '&#10004; Correct! (Puiku / Well done)';
+      } else {
+        buttonElem.style.borderColor = 'var(--md-status-error-text)';
+        feedback.className = 'feedback incorrect';
+        feedback.innerHTML = '&#10008; Not quite. Remember: distance can never be negative!';
+      }
+    }
+
+    window.addEventListener('resize', updateNavIndicators);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateModulusRuler(-3);
+      renderGlossary(glossary);
+      updateNavIndicators();
+    });
+  </script>
+</body>
+</html>
