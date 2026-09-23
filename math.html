@@ -913,7 +913,7 @@
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The Golden Rule of Fractional Powers: "The Root Tree"</strong>
         <p style="margin-top:6px; margin-bottom:0;">Whenever you see a fraction in the exponent, like <span class="math-mono">x<sup>m/n</sup></span>:</p>
         <p style="margin-top:4px; font-size:0.95rem;">
-          &bull; <strong>The bottom number (n)</strong> is the <strong>ROOT</strong> (like roots of a tree underground &rarr; <span class="math-mono">&radic;[n]</span>).<br>
+          &bull; <strong>The bottom number (n)</strong> is the <strong>ROOT</strong> (underground &rarr; <span class="math-mono">&radic;[n]</span>).<br>
           &bull; <strong>The top number (m)</strong> is the <strong>POWER</strong> (up in the branches).<br>
           Example: <span class="math-mono">125<sup>2/3</sup> = (&radic;[3]{125})² = 5² = 25</span>!
         </p>
@@ -941,150 +941,234 @@
     </div>
   </div>
 
-  <!-- TAB 7: NEW! SOLVED HOMEWORK (NEW!) -->
+  <!-- TAB 7: SOLVED HOMEWORK (NEW!) FULL COMPREHENSIVE BREAKDOWN -->
   <div id="tab-homework" class="tab-content hidden">
     <div class="card">
-      <h2>Solved Homework (New!) &mdash; Step-by-Step Breakdown</h2>
-      <p>Direct solutions for the exact problems assigned: <strong>2a, 2b &bull; 5a, 5c &bull; 6a, 6c, 6e, 6g</strong>.</p>
+      <h2>Solved Homework (New!) &mdash; The Intuitive Guide</h2>
+      <p>Every problem assigned for homework (<strong>2a, 2b &bull; 5a, 5c &bull; 6a, 6c, 6e, 6g</strong>)[cite: 14], explained using the 3 Golden Rules so you actually understand *why* it works.</p>
 
-      <!-- 2a -->
+      <!-- 3 GOLDEN RULES PRIMER BANNER -->
+      <div class="concept-banner" style="background:var(--md-surface); border:1px solid var(--md-outline); border-left:5px solid var(--md-accent-primary); margin-bottom: 1.5rem;">
+        <h3 style="margin-top:0; color:var(--md-accent-primary); font-size:1.15rem;">The 3 Secret Rules to Solve All Homework Problems:</h3>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 0.8rem;">
+          <div style="background:var(--md-surface-low); padding:10px 14px; border-radius:var(--radius-sm);">
+            <strong style="color:var(--md-accent-primary);">Rule 1: The Root Tree (Fractions in Power)</strong>
+            <p style="font-size:0.86rem; margin:4px 0 0;">
+              &bull; <strong>Top number</strong> = power in branches.<br>
+              &bull; <strong>Bottom number</strong> = root underground ($\sqrt{}$).<br>
+              <span class="math-mono">9<sup>1/2</sup> = &radic;9 = 3</span> &bull; <span class="math-mono">125<sup>1/3</sup> = &radic;[3]{125} = 5</span>.
+            </p>
+          </div>
+
+          <div style="background:var(--md-surface-low); padding:10px 14px; border-radius:var(--radius-sm);">
+            <strong style="color:var(--md-accent-primary);">Rule 2: The Elevator (Minus in Power)</strong>
+            <p style="font-size:0.86rem; margin:4px 0 0;">
+              A minus in the power <strong>never</strong> makes a number negative! It just flips it downstairs into the basement:<br>
+              <span class="math-mono">x<sup>-1</sup> = 1/x</span> &bull; <span class="math-mono">(1/5)<sup>-1</sup> = 5</span>.
+            </p>
+          </div>
+
+          <div style="background:var(--md-surface-low); padding:10px 14px; border-radius:var(--radius-sm);">
+            <strong style="color:var(--md-accent-primary);">Rule 3: Power Arithmetic</strong>
+            <p style="font-size:0.86rem; margin:4px 0 0;">
+              &bull; When multiplying (&bull;) &rarr; <strong>ADD</strong> powers.<br>
+              &bull; When dividing (:) &rarr; <strong>SUBTRACT</strong> powers.<br>
+              &bull; When stacked <span class="math-mono">(a²)³</span> &rarr; <strong>MULTIPLY</strong> powers (<span class="math-mono">a<sup>6</sup></span>).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM 2a -->
       <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 2a: Calculating Matching Fractional Powers</strong>
-        <p style="margin-top:4px; font-size:0.9rem;"><strong>Problem:</strong> <span class="math-mono">6<sup>1/2</sup> &bull; 18<sup>1/2</sup> &bull; 2<sup>5/2</sup></span></p>
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 2a: Calculating Shared Roots</strong>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">6<sup>1/2</sup> &bull; 18<sup>1/2</sup> &bull; 2<sup>5/2</sup></span></p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-text-primary);">The Simple Intuition:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">
+            Notice that every single number has <span class="math-mono">/2</span> in its exponent! By Rule 1, a bottom 2 means square root ($\sqrt{}$). They are all cousins living under square root houses.
+          </p>
+        </div>
 
         <ol class="step-list">
-          <li><strong>Notice the secret:</strong> Every single number has <span class="math-mono">/2</span> in its power! That means they are all under square roots!</li>
-          <li><strong>Step 1:</strong> Combine the first two numbers into one roof:
-            <br><span class="math-mono">6<sup>1/2</sup> &bull; 18<sup>1/2</sup> = &radic;(6 &times; 18) = &radic;108</span>
+          <li><strong>Step 1 (Marry the first two):</strong>
+            <br><span class="math-mono">6<sup>1/2</sup> &bull; 18<sup>1/2</sup> = &radic;(6 &times; 18) = &radic;108</span>.
           </li>
-          <li><strong>Step 2:</strong> Look at the third number:
-            <br><span class="math-mono">2<sup>5/2</sup> = &radic;(2<sup>5</sup>) = &radic;32</span>
+          <li><strong>Step 2 (Translate the third piece):</strong>
+            <br><span class="math-mono">2<sup>5/2</sup></span> means: take <span class="math-mono">2<sup>5</sup></span> inside a square root.<br>
+            Since <span class="math-mono">2<sup>5</sup> = 2 &times; 2 &times; 2 &times; 2 &times; 2 = 32</span>, this is simply <span class="math-mono">&radic;32</span>.
           </li>
-          <li><strong>Step 3:</strong> Simplify both roots by pulling out perfect squares:
-            <br>&bull; <span class="math-mono">&radic;108 = &radic;(36 &times; 3) = 6&radic;3</span>
-            <br>&bull; <span class="math-mono">&radic;32 = &radic;(16 &times; 2) = 4&radic;2</span>
+          <li><strong>Step 3 (Pull out clean squares from the roots):</strong>
+            <br>&bull; <span class="math-mono">&radic;108 = &radic;(36 &times; 3)</span>. What is &radic;36? It's 6! So <span class="math-mono">&radic;108 = 6&radic;3</span>.
+            <br>&bull; <span class="math-mono">&radic;32 = &radic;(16 &times; 2)</span>. What is &radic;16? It's 4! So <span class="math-mono">&radic;32 = 4&radic;2</span>.
           </li>
-          <li><strong>Step 4:</strong> Multiply the outside numbers and the inside numbers:
+          <li><strong>Step 4 (Multiply outside &times; outside, inside &times; inside):</strong>
             <br><span class="math-mono">(6 &times; 4) &bull; &radic;(3 &times; 2) = 24&radic;6</span>!
           </li>
         </ol>
         <div><span class="answer-badge">Answer: 24√6</span></div>
       </div>
 
-      <!-- 2b -->
+      <!-- PROBLEM 2b -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 2b: The Twin House (Conjugates)</strong>
-        <p style="margin-top:4px; font-size:0.9rem;"><strong>Problem:</strong> <span class="math-mono">(&radic;15 - &radic;6)<sup>1/2</sup> &bull; (&radic;15 + &radic;6)<sup>1/2</sup></span></p>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">(&radic;15 - &radic;6)<sup>1/2</sup> &bull; (&radic;15 + &radic;6)<sup>1/2</sup></span></p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-text-primary);">The Simple Intuition:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">
+            Both big brackets have the exact same power of <span class="math-mono">1/2</span>! That means we can multiply the insides together first, under one master roof.
+          </p>
+        </div>
 
         <ol class="step-list">
-          <li><strong>The Trick:</strong> Both brackets share the exact same power of <span class="math-mono">1/2</span>! Marry them inside one big master bracket:
+          <li><strong>Step 1 (Combine into one master bracket):</strong>
             <br><span class="math-mono">[(&radic;15 - &radic;6)(&radic;15 + &radic;6)]<sup>1/2</sup></span>
           </li>
-          <li><strong>Difference of Squares:</strong> <span class="math-mono">(A - B)(A + B) = A² - B²</span>.
+          <li><strong>Step 2 (The Difference of Squares magic trick):</strong>
+            <br>Whenever you have <span class="math-mono">(A - B)(A + B)</span>, the middle terms cancel out completely, leaving just <span class="math-mono">A² - B²</span>!
             <br><span class="math-mono">(&radic;15)² - (&radic;6)² = 15 - 6 = 9</span>!
           </li>
-          <li><strong>Apply the master power:</strong> <span class="math-mono">9<sup>1/2</sup> = &radic;9 = 3</span>!</li>
+          <li><strong>Step 3 (Apply the master power of 1/2):</strong>
+            <br><span class="math-mono">9<sup>1/2</sup> = &radic;9 = 3</span>!
+            <br><em>(Look how clean this turns out: a scary mess of roots turns into the single number 3!)</em>
+          </li>
         </ol>
         <div><span class="answer-badge">Answer: 3</span></div>
       </div>
 
-      <!-- 5a -->
+      <!-- PROBLEM 5a -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 5a: Combine Into a Single Power</strong>
-        <p style="margin-top:4px; font-size:0.9rem;"><strong>Problem:</strong> <span class="math-mono">a<sup>1/6</sup> &bull; a<sup>5</sup></span></p>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">a<sup>1/6</sup> &bull; a<sup>5</sup></span></p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-text-primary);">The Simple Intuition (Rule 3):</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">
+            Both parts have the exact same base letter <span class="math-mono">a</span> and are being multiplied. So you simply <strong>ADD</strong> the powers: <span class="math-mono">1/6 + 5</span>.
+          </p>
+        </div>
 
         <ol class="step-list">
-          <li><strong>Rule:</strong> When you multiply the same base, you <strong>ADD</strong> the powers: <span class="math-mono">1/6 + 5</span>.</li>
-          <li>Turn 5 into sixths: <span class="math-mono">5 = 30/6</span>.</li>
-          <li>Add them up: <span class="math-mono">1/6 + 30/6 = 31/6</span>.</li>
+          <li><strong>Think of pizzas:</strong> If a pizza has 6 slices, 5 whole pizzas equals <span class="math-mono">5 &times; 6 = 30</span> slices:
+            <br><span class="math-mono">5 = 30/6</span>.
+          </li>
+          <li><strong>Add the fractions:</strong>
+            <br><span class="math-mono">1/6 + 30/6 = 31/6</span>.
+          </li>
         </ol>
         <div><span class="answer-badge">Answer: a<sup>31/6</sup> (or a<sup>5 1/6</sup>)</span></div>
       </div>
 
-      <!-- 5c -->
+      <!-- PROBLEM 5c -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 5c: Multiply and Divide Exponents</strong>
-        <p style="margin-top:4px; font-size:0.9rem;"><strong>Problem:</strong> <span class="math-mono">b<sup>1/6</sup> &bull; b<sup>5/9</sup> : b<sup>-3/4</sup></span></p>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">b<sup>1/6</sup> &bull; b<sup>5/9</sup> : b<sup>-3/4</sup></span></p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-text-primary);">The Simple Intuition (Rule 3):</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">
+            Multiply (&bull;) means <strong>ADD</strong> (+).<br>
+            Divide (:) means <strong>SUBTRACT</strong> (-).
+          </p>
+        </div>
 
         <ol class="step-list">
-          <li><strong>Rule:</strong> Multiply means <strong>ADD</strong> (+), Divide (:) means <strong>SUBTRACT</strong> (-):
-            <br><span class="math-mono">Total Power = 1/6 + 5/9 - (-3/4) = 1/6 + 5/9 + 3/4</span>
+          <li><strong>Write out the power math:</strong>
+            <br><span class="math-mono">Total Power = 1/6 + 5/9 - (-3/4)</span>
           </li>
-          <li><strong>Find Common Denominator:</strong> For 6, 9, and 4, the common denominator is <strong>36</strong>.
+          <li><strong>Minus a minus becomes a plus:</strong>
+            <br><span class="math-mono">Total Power = 1/6 + 5/9 + 3/4</span>
+          </li>
+          <li><strong>Find the common denominator:</strong>
+            <br>What number can 6, 9, and 4 all divide into evenly? <strong>36</strong>!
             <br>&bull; <span class="math-mono">1/6 = 6/36</span>
             <br>&bull; <span class="math-mono">5/9 = 20/36</span>
             <br>&bull; <span class="math-mono">3/4 = 27/36</span>
           </li>
-          <li><strong>Sum the numerators:</strong> <span class="math-mono">(6 + 20 + 27) / 36 = 53/36</span>.</li>
+          <li><strong>Add all the numerators:</strong>
+            <br><span class="math-mono">(6 + 20 + 27) / 36 = 53/36</span>.
+          </li>
         </ol>
         <div><span class="answer-badge">Answer: b<sup>53/36</sup> (or b<sup>1 17/36</sup>)</span></div>
       </div>
 
-      <!-- 6a -->
+      <!-- PROBLEM 6a -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6a: The Negative Exponent Drop</strong>
-        <p style="margin-top:4px; font-size:0.9rem;"><strong>Problem:</strong> <span class="math-mono">5 &bull; 125<sup>-1/3</sup></span></p>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">5 &bull; 125<sup>-1/3</sup></span></p>
 
         <ol class="step-list">
-          <li>The minus in the power sends it downstairs: <span class="math-mono">125<sup>-1/3</sup> = 1 / 125<sup>1/3</sup></span>.</li>
-          <li>The <span class="math-mono">1/3</span> power means cube root: <span class="math-mono">&radic;[3]{125} = 5</span>.
-            <br>So <span class="math-mono">125<sup>-1/3</sup> = 1/5</span>.
+          <li><strong>Use Rule 2 (The Elevator):</strong> The minus in <span class="math-mono">125<sup>-1/3</sup></span> flips it downstairs into the denominator:
+            <br><span class="math-mono">125<sup>-1/3</sup> = 1 / 125<sup>1/3</sup></span>.
           </li>
-          <li>Multiply: <span class="math-mono">5 &times; (1/5) = 1</span>!</li>
+          <li><strong>Use Rule 1 (The Root Tree):</strong> A power of <span class="math-mono">1/3</span> means cube root (&radic;[3]{}):
+            <br>What number &times; itself &times; itself = 125? <strong>5</strong>! (since <span class="math-mono">5 &times; 5 &times; 5 = 125</span>).
+            <br>So <span class="math-mono">125<sup>1/3</sup> = 5</span>, which makes <span class="math-mono">125<sup>-1/3</sup> = 1/5</span>.
+          </li>
+          <li><strong>Finish the multiplication:</strong>
+            <br><span class="math-mono">5 &times; (1/5) = 1</span>!
+          </li>
         </ol>
         <div><span class="answer-badge">Answer: 1</span></div>
       </div>
 
-      <!-- 6c -->
+      <!-- PROBLEM 6c -->
       <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6c: Power of a Power &amp; Decimals</strong>
-        <p style="margin-top:4px; font-size:0.9rem;"><strong>Problem:</strong> <span class="math-mono">(4<sup>-1/5</sup>)<sup>-30</sup> : 0.2<sup>6</sup></span></p>
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6c: Stacked Powers &amp; Decimal Fractions</strong>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">(4<sup>-1/5</sup>)<sup>-30</sup> : 0.2<sup>6</sup></span></p>
 
         <ol class="step-list">
-          <li><strong>First piece:</strong> Multiply the two exponents:
-            <br><span class="math-mono">(-1/5) &times; (-30) = +6</span>. So the first part is simply <span class="math-mono">4<sup>6</sup></span>!
+          <li><strong>Step 1 (Stacked powers multiply!):</strong>
+            <br><span class="math-mono">(-1/5) &times; (-30) = +30/5 = 6</span>.
+            <br>So the entire first piece collapses into simply: <span class="math-mono">4<sup>6</sup></span>!
           </li>
-          <li><strong>Second piece:</strong> Turn <span class="math-mono">0.2</span> into a fraction:
+          <li><strong>Step 2 (Turn the decimal 0.2 into a fraction):</strong>
             <br><span class="math-mono">0.2 = 2/10 = 1/5</span>.
             <br>So <span class="math-mono">0.2<sup>6</sup> = (1/5)<sup>6</sup> = 1 / 5<sup>6</sup></span>.
           </li>
-          <li><strong>Divide:</strong> Dividing by a fraction means multiplying by the flipped fraction:
+          <li><strong>Step 3 (Dividing by a fraction means multiplying by its reciprocal):</strong>
             <br><span class="math-mono">4<sup>6</sup> : (1 / 5<sup>6</sup>) = 4<sup>6</sup> &bull; 5<sup>6</sup></span>!
           </li>
-          <li>Combine them: <span class="math-mono">(4 &times; 5)<sup>6</sup> = 20<sup>6</sup> = 64,000,000</span>!</li>
+          <li><strong>Step 4 (Combine under the same power 6):</strong>
+            <br><span class="math-mono">(4 &times; 5)<sup>6</sup> = 20<sup>6</sup> = 64,000,000</span>!
+          </li>
         </ol>
         <div><span class="answer-badge">Answer: 64,000,000</span></div>
       </div>
 
-      <!-- 6e -->
+      <!-- PROBLEM 6e -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6e: Tiny Decimal Division</strong>
-        <p style="margin-top:4px; font-size:0.9rem;"><strong>Problem:</strong> <span class="math-mono">81<sup>3/4</sup> : 0.00001<sup>4/5</sup></span></p>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">81<sup>3/4</sup> : 0.00001<sup>4/5</sup></span></p>
 
         <ol class="step-list">
           <li><strong>Solve 81<sup>3/4</sup>:</strong>
-            <br>4th root of 81 is 3 (since 3 &times; 3 &times; 3 &times; 3 = 81).
-            <br>Raise to power 3: <span class="math-mono">3³ = 27</span>.
+            <br>&bull; Bottom 4 means 4th root: what times itself 4 times is 81? That's <strong>3</strong> (since <span class="math-mono">3 &times; 3 &times; 3 &times; 3 = 81</span>).
+            <br>&bull; Top 3 means power: <span class="math-mono">3³ = 3 &times; 3 &times; 3 = 27</span>.
           </li>
           <li><strong>Solve 0.00001<sup>4/5</sup>:</strong>
-            <br>Count the decimal zeros: 0.00001 is <span class="math-mono">10<sup>-5</sup></span>.
-            <br><span class="math-mono">(10<sup>-5</sup>)<sup>4/5</sup> = 10<sup>(-5 &times; 4/5)</sup> = 10<sup>-4</sup> = 0.0001</span> (or 1/10,000).
+            <br>&bull; Count the decimal places: 0.00001 has 5 places, so it is <span class="math-mono">10<sup>-5</sup></span> (or 1/100,000).
+            <br>&bull; Raise it to <span class="math-mono">4/5</span>: <span class="math-mono">(10<sup>-5</sup>)<sup>4/5</sup> = 10<sup>(-5 &times; 4/5)</sup> = 10<sup>-4</sup> = 1 / 10,000</span>.
           </li>
-          <li><strong>Divide:</strong>
-            <br><span class="math-mono">27 : (1/10,000) = 27 &times; 10,000 = 270,000</span>!
+          <li><strong>Divide them:</strong>
+            <br><span class="math-mono">27 : (1 / 10,000) = 27 &times; 10,000 = 270,000</span>!
           </li>
         </ol>
         <div><span class="answer-badge">Answer: 270,000</span></div>
       </div>
 
-      <!-- 6g -->
+      <!-- PROBLEM 6g -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6g: The Triple Cube Root Workout</strong>
-        <p style="margin-top:4px; font-size:0.9rem;"><strong>Problem:</strong> <span class="math-mono">0.008<sup>-1/3</sup> - 0.064<sup>-2/3</sup> + 0.125<sup>-4/3</sup></span></p>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">0.008<sup>-1/3</sup> - 0.064<sup>-2/3</sup> + 0.125<sup>-4/3</sup></span></p>
 
         <div class="compare-card">
-          <p style="font-size:0.88rem; margin:0;">
-            <em>Cheat Code:</em> All three decimals are perfect cubes:
+          <strong style="color:var(--md-text-primary);">The Secret Code:</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">
+            Look closely at the three decimals. Every single one is a perfect cube!
             <br>&bull; <span class="math-mono">0.008 = 0.2³ = (1/5)³</span>
             <br>&bull; <span class="math-mono">0.064 = 0.4³ = (2/5)³</span>
             <br>&bull; <span class="math-mono">0.125 = 0.5³ = (1/2)³</span>
@@ -1092,11 +1176,17 @@
         </div>
 
         <ol class="step-list">
-          <li><strong>Piece 1:</strong> <span class="math-mono">[(1/5)³]<sup>-1/3</sup> = (1/5)<sup>-1</sup> = 5</span>.</li>
-          <li><strong>Piece 2:</strong> <span class="math-mono">[(2/5)³]<sup>-2/3</sup> = (2/5)<sup>-2</sup> = (5/2)² = 25/4 = 6.25</span>.</li>
-          <li><strong>Piece 3:</strong> <span class="math-mono">[(1/2)³]<sup>-4/3</sup> = (1/2)<sup>-4</sup> = 2<sup>4</sup> = 16</span>.</li>
-          <li><strong>Combine them:</strong>
-            <br><span class="math-mono">5 - 6.25 + 16 = 21 - 6.25 = 14.75</span> (or <span class="math-mono">59/4</span>)!
+          <li><strong>Piece 1:</strong>
+            <br><span class="math-mono">[(1/5)³]<sup>-1/3</sup> = (1/5)<sup>-1</sup></span>. Flip the fraction (Rule 2) &rarr; <strong>5</strong>.
+          </li>
+          <li><strong>Piece 2:</strong>
+            <br><span class="math-mono">[(2/5)³]<sup>-2/3</sup> = (2/5)<sup>-2</sup></span>. Flip and square: <span class="math-mono">(5/2)² = 25/4 = 6.25</span>.
+          </li>
+          <li><strong>Piece 3:</strong>
+            <br><span class="math-mono">[(1/2)³]<sup>-4/3</sup> = (1/2)<sup>-4</sup></span>. Flip and power to 4: <span class="math-mono">2<sup>4</sup> = 16</span>.
+          </li>
+          <li><strong>Combine all three pieces:</strong>
+            <br><span class="math-mono">5 - 6.25 + 16 = 21 - 6.25 = 14.75</span> (or as a fraction: <span class="math-mono">59/4</span>)!
           </li>
         </ol>
         <div><span class="answer-badge">Answer: 14.75 (or 59/4)</span></div>
@@ -1459,7 +1549,7 @@
       } else {
         buttonElem.style.borderColor = 'var(--md-status-error-text)';
         feedback.className = 'feedback incorrect';
-        feedback.innerHTML = '&#10008; Not quite. Try reviewing the rule in Tab 6!';
+        feedback.innerHTML = '&#10008; Not quite. Try reviewing the rule in Tab 6 or 7!';
       }
     }
 
