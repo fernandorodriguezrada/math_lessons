@@ -391,6 +391,45 @@
       margin-bottom: 1.25rem;
     }
 
+    /* Homework Highlight Style */
+    .exercise-box.homework-highlight {
+      background: #FDF8F6;
+      border: 1.5px solid #C48B9F;
+      border-left: 6px solid var(--md-accent-primary);
+      box-shadow: 0 4px 16px rgba(156, 83, 105, 0.09);
+    }
+
+    .badge-homework {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--md-accent-primary);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      margin-left: 8px;
+      vertical-align: middle;
+      box-shadow: 0 2px 4px rgba(156, 83, 105, 0.25);
+    }
+
+    .badge-extra {
+      display: inline-flex;
+      align-items: center;
+      background: var(--md-surface-subtle);
+      color: var(--md-text-secondary);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      margin-left: 8px;
+      vertical-align: middle;
+      border: 1px solid var(--md-outline);
+    }
+
     .step-list {
       margin: 0.75rem 0 0.75rem 1.25rem;
       color: var(--md-text-secondary);
@@ -945,7 +984,7 @@
   <div id="tab-homework" class="tab-content hidden">
     <div class="card">
       <h2>Solved Homework (New!) &mdash; The Intuitive Guide</h2>
-      <p>Every problem assigned for homework (<strong>2a, 2b &bull; 5a, 5c &bull; 6a, 6c, 6e, 6g</strong>), explained using the 3 Golden Rules so you actually understand <strong>why</strong> it works.</p>
+      <p>Every problem assigned for homework (<strong>2a, 2c &bull; 5a, 5c &bull; 6a, 6c, 6e, 6g</strong>), explained using the 3 Golden Rules so you actually understand <strong>why</strong> it works.</p>
 
       <!-- 3 GOLDEN RULES PRIMER BANNER -->
       <div class="concept-banner" style="background:var(--md-surface); border:1px solid var(--md-outline); border-left:5px solid var(--md-accent-primary); margin-bottom: 1.5rem;">
@@ -980,9 +1019,9 @@
         </div>
       </div>
 
-      <!-- PROBLEM 2a -->
-      <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 2a: Calculating Shared Roots</strong>
+      <!-- PROBLEM 2a (HOMEWORK) -->
+      <div class="exercise-box homework-highlight">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 2a: Calculating Shared Roots <span class="badge-homework">✨ Homework</span></strong>
         <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">6<sup>1/2</sup> &bull; 18<sup>1/2</sup> &bull; 2<sup>1/2</sup></span></p>
 
         <div class="compare-card">
@@ -1009,9 +1048,42 @@
         <div><span class="answer-badge">Answer: 6√6</span></div>
       </div>
 
-      <!-- PROBLEM 2b -->
-      <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 2b: The Twin House (Conjugates)</strong>
+      <!-- PROBLEM 2c (HOMEWORK) -->
+      <div class="exercise-box homework-highlight">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 2c: Multiplying Cube Roots with Variables <span class="badge-homework">✨ Homework</span></strong>
+        <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">(3x)<sup>1/3</sup> &bull; (9x<sup>5</sup>)<sup>1/3</sup></span></p>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-text-primary);">The Simple Intuition (Rule 1 &amp; Rule 3):</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">
+            Both parts share the exact same power <span class="math-mono">1/3</span>! That means both are living inside a cube root house (<span class="math-mono">&radic;[3]</span>). We can marry the insides together under one master power, multiply the numbers and letters, and pull out clean roots!
+          </p>
+        </div>
+
+        <ol class="step-list">
+          <li><strong>Step 1 (Combine into one master bracket):</strong>
+            <br>Since both chunks have power <span class="math-mono">1/3</span>, multiply the insides:
+            <br><span class="math-mono">[(3x) &bull; (9x<sup>5</sup>)]<sup>1/3</sup></span>.
+          </li>
+          <li><strong>Step 2 (Multiply numbers &amp; add powers of x):</strong>
+            <br>&bull; Numbers: <span class="math-mono">3 &times; 9 = 27</span>.
+            <br>&bull; Letters (Rule 3: add powers <span class="math-mono">1 + 5</span>): <span class="math-mono">x &bull; x<sup>5</sup> = x<sup>1+5</sup> = x<sup>6</sup></span>.
+            <br>Inside the bracket we get: <span class="math-mono">(27x<sup>6</sup>)<sup>1/3</sup></span> (or <span class="math-mono">&radic;[3]{27x<sup>6</sup>}</span>).
+          </li>
+          <li><strong>Step 3 (Apply the 1/3 power to each piece):</strong>
+            <br>&bull; Number part: <span class="math-mono">27<sup>1/3</sup> = &radic;[3]{27} = 3</span> (since <span class="math-mono">3 &times; 3 &times; 3 = 27</span>).
+            <br>&bull; Letter part (Rule 3: multiply powers): <span class="math-mono">(x<sup>6</sup>)<sup>1/3</sup> = x<sup>6/3</sup> = x²</span>.
+          </li>
+          <li><strong>Step 4 (Final combination):</strong>
+            <br><span class="math-mono">3 &bull; x² = 3x²</span>!
+          </li>
+        </ol>
+        <div><span class="answer-badge">Answer: 3x²</span></div>
+      </div>
+
+      <!-- PROBLEM 2b (EXTRA PRACTICE) -->
+      <div class="exercise-box" style="opacity: 0.9;">
+        <strong style="color:var(--md-text-secondary); font-size:1.05rem;">Užduotis 2b: The Twin House (Conjugates) <span class="badge-extra">Extra Practice</span></strong>
         <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">(&radic;15 - &radic;6)<sup>1/2</sup> &bull; (&radic;15 + &radic;6)<sup>1/2</sup></span></p>
 
         <div class="compare-card">
@@ -1038,8 +1110,8 @@
       </div>
 
       <!-- PROBLEM 5a -->
-      <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 5a: Combine Into a Single Power</strong>
+      <div class="exercise-box homework-highlight">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 5a: Combine Into a Single Power <span class="badge-homework">✨ Homework</span></strong>
         <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">a<sup>1/6</sup> &bull; a<sup>1/5</sup></span></p>
 
         <div class="compare-card">
@@ -1063,8 +1135,8 @@
       </div>
 
       <!-- PROBLEM 5c -->
-      <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 5c: Multiply and Divide Exponents</strong>
+      <div class="exercise-box homework-highlight">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 5c: Multiply and Divide Exponents <span class="badge-homework">✨ Homework</span></strong>
         <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">b<sup>1/6</sup> &bull; b<sup>-5/9</sup> : b<sup>-3/4</sup></span></p>
 
         <div class="compare-card">
@@ -1097,8 +1169,8 @@
       </div>
 
       <!-- PROBLEM 6a -->
-      <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6a: The Negative Exponent Drop</strong>
+      <div class="exercise-box homework-highlight">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6a: The Negative Exponent Drop <span class="badge-homework">✨ Homework</span></strong>
         <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">5 &bull; 125<sup>-1/3</sup></span></p>
 
         <ol class="step-list">
@@ -1117,8 +1189,8 @@
       </div>
 
       <!-- PROBLEM 6c -->
-      <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6c: Stacked Powers &amp; Decimal Fractions</strong>
+      <div class="exercise-box homework-highlight">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6c: Stacked Powers &amp; Decimal Fractions <span class="badge-homework">✨ Homework</span></strong>
         <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">(4<sup>-1/5</sup>)<sup>-30</sup> : 0.2<sup>6</sup></span></p>
 
         <ol class="step-list">
@@ -1141,8 +1213,8 @@
       </div>
 
       <!-- PROBLEM 6e -->
-      <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6e: Tiny Decimal Division</strong>
+      <div class="exercise-box homework-highlight">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6e: Tiny Decimal Division <span class="badge-homework">✨ Homework</span></strong>
         <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">81<sup>3/4</sup> : 0.00001<sup>4/5</sup></span></p>
 
         <ol class="step-list">
@@ -1162,8 +1234,8 @@
       </div>
 
       <!-- PROBLEM 6g -->
-      <div class="exercise-box">
-        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6g: The Triple Cube Root Workout</strong>
+      <div class="exercise-box homework-highlight">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 6g: The Triple Cube Root Workout <span class="badge-homework">✨ Homework</span></strong>
         <p style="margin-top:4px; font-size:0.92rem;"><strong>Expression:</strong> <span class="math-mono">0.008<sup>-1/3</sup> - 0.064<sup>-2/3</sup> + 0.125<sup>-4/3</sup></span></p>
 
         <div class="compare-card">
