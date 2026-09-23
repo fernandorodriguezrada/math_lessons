@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lil guide for my pirulin &lt;3</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       /* M3 Anti-Glare Paper Canvas */
@@ -16,7 +16,7 @@
       --md-surface: #F6F3F0;
       --md-surface-low: #EFECE8;
       --md-surface-subtle: #E6E1DC;
-      
+
       /* Typography & Neutrals */
       --md-text-primary: #2C2728;
       --md-text-secondary: #655E60;
@@ -58,7 +58,7 @@
       color: var(--md-text-primary);
       line-height: 1.6;
       padding: 2.2rem 1.25rem;
-      max-width: 960px;
+      max-width: 980px;
       margin: 0 auto;
     }
 
@@ -553,10 +553,12 @@
         <button class="tab-btn active" onclick="switchTab(event, 'tab-modulus')">1. Modulus Demystified</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-basics')">2. Set Operations</button>
         <button class="tab-btn" onclick="switchTab(event, 'tab-venn')">3. Visual Venn Sandbox</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-new-tasks')">4. Exercises 23–25 (Simplified)</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-book')">5. Exercises 20–22 (Simplified)</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-glossary')">6. LT-EN Glossary</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-practice')">7. Quick Quiz</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-new-tasks')">4. Exercises 23–25 (Sets)</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-book')">5. Exercises 20–22 (Sets)</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-powers')">6. Exponents &amp; Roots (New!)</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-cubes')">7. Cube Formulas &amp; Fractions</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-glossary')">8. LT-EN Glossary</button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-practice')">9. Quick Quiz</button>
       </nav>
     </div>
     <button class="nav-arrow-btn" id="navArrowRight" onclick="scrollNav(240)" aria-label="Scroll right">
@@ -568,7 +570,7 @@
   <div id="tab-modulus" class="tab-content">
     <div class="card">
       <h2>What is Modulus (|x|) and Why Does it Exist?</h2>
-      
+
       <div class="concept-banner">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">1. The Mechanical Job: The "Minus-Eraser Machine"</strong>
         <p style="margin-top:6px; margin-bottom:0;">Whatever you feed into <span class="math-mono">| &hellip; |</span> comes out non-negative. It leaves positive numbers and zero alone, and simply strips away the minus sign from negative ones:</p>
@@ -577,7 +579,7 @@
 
       <h3>Why do we need this? (Real-World Use Cases)</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 0.8rem;">
-        
+
         <div style="background:var(--md-surface-low); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
           <strong style="color:var(--md-accent-primary);">The Smartwatch / Step Counter</strong>
           <p style="font-size:0.88rem; margin-top:6px;">Take 4 steps forward: <span class="math-mono">+4</span>.<br>Take 4 steps backward: <span class="math-mono">-4</span>.</p>
@@ -611,13 +613,13 @@
 
         <svg class="ruler-svg" viewBox="0 0 500 105" id="rulerSvg">
           <line x1="25" y1="50" x2="475" y2="50" stroke="var(--md-outline)" stroke-width="3" stroke-linecap="round" />
-          
+
           <circle cx="250" cy="50" r="5" fill="var(--md-text-secondary)" />
           <text id="originLabel" x="250" y="74" text-anchor="middle" font-size="12" font-weight="600" fill="var(--md-text-secondary)" style="transition: opacity 0.2s;">0 (Origin)</text>
 
           <line id="distBar" x1="115" y1="26" x2="250" y2="26" stroke="var(--md-accent-primary)" stroke-width="3" stroke-linecap="round" style="transition: all 0.2s;" />
           <text id="distLabel" x="182" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="var(--md-accent-primary)">Distance |x| = 3 steps</text>
-          
+
           <circle id="pointX" cx="115" cy="50" r="7" fill="var(--md-accent-primary)" />
           <text id="pointLabel" x="115" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="var(--md-accent-primary)">x = -3</text>
         </svg>
@@ -643,7 +645,7 @@
     <div class="card">
       <h2>The Basket Concept: What is a Set? (Kas yra aibė?)</h2>
       <p>Think of a set (<strong>Aibė</strong>) as a labeled basket holding distinct numbers or objects. If a number is inside, we write <span class="math-mono">x &isin; A</span> (belongs to). If not, <span class="math-mono">x &notin; A</span>.</p>
-      
+
       <h3>The Three Fundamental Set Operations</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem;">
         <div style="background:var(--md-surface-low); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
@@ -670,7 +672,7 @@
     <div class="card">
       <h2>Interactive Venn Sandbox</h2>
       <p>Click any operation below to see the exact region and elements light up:</p>
-      
+
       <div class="pill-group">
         <button class="pill-chip active" onclick="setVennMode(event, 'all')">Show Both Sets</button>
         <button class="pill-chip" onclick="setVennMode(event, 'union')">A &cup; B (Sąjunga)</button>
@@ -703,34 +705,31 @@
     </div>
   </div>
 
-  <!-- TAB 4: SIMPLIFIED EXERCISES 23-25 (SIDE-BY-SIDE STEPPER) -->
+  <!-- TAB 4: EXERCISES 23-25 (SETS) -->
   <div id="tab-new-tasks" class="tab-content hidden">
     <div class="card">
       <h2>Exercises 23, 24 &amp; 25 Explained in Plain English</h2>
-      <p>No confusing formulas. Solved using step-by-step visual coloring, hopscotch counting, and riddles.</p>
+      <p>Solved using step-by-step visual coloring, hopscotch counting, and riddles.</p>
 
-      <!-- EXERCISE 23: SIDE-BY-SIDE INTERACTIVE STEPPER -->
+      <!-- EXERCISE 23: SIDE-BY-SIDE STEPPER -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 23: The Visual Recipe Proof</strong>
         <p style="margin-top:4px; font-size:0.88rem;"><em>Goal:</em> Prove that <strong>Left Formula</strong> and <strong>Right Formula</strong> color the exact same spots on your paper.</p>
 
-        <!-- Stepper Buttons -->
         <div class="pill-group" style="margin: 1rem 0 0.5rem;">
           <button class="pill-chip active" onclick="setStep(event, 1)">Step 1: The First Action</button>
           <button class="pill-chip" onclick="setStep(event, 2)">Step 2: The Second Action</button>
           <button class="pill-chip" onclick="setStep(event, 3)">Step 3: Compare Final Results!</button>
         </div>
 
-        <!-- Side-by-side visual comparison -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 1rem;">
-          
-          <!-- Left Recipe Box -->
+
           <div class="compare-card" style="text-align: center;">
             <strong style="color:var(--md-accent-primary); font-size:0.95rem;">Left Side: (A ∪ B) ∩ C</strong>
             <p id="left-recipe-desc" style="font-size:0.84rem; min-height:46px; margin-top:6px;">
               <strong>Step 1:</strong> Color all of <strong>(A ∪ B)</strong> with pink ink.
             </p>
-            
+
             <svg class="venn-svg" viewBox="0 0 320 220" style="max-height:175px;">
               <defs>
                 <clipPath id="clip-c-left">
@@ -742,7 +741,6 @@
               <circle id="left-b" cx="195" cy="85" r="55" fill="#9C5369" fill-opacity="0.55" stroke="#7F5A7C" stroke-width="2" style="transition: all 0.3s;" />
               <circle id="left-c" cx="160" cy="135" r="55" fill="#80CBC4" fill-opacity="0.05" stroke="#00897B" stroke-width="2" style="transition: all 0.3s;" />
 
-              <!-- Permanent Overlap Cutters for Step 3 -->
               <circle id="left-petal-ac" cx="125" cy="85" r="55" clip-path="url(#clip-c-left)" fill="#9C5369" fill-opacity="0" style="transition: all 0.3s;" />
               <circle id="left-petal-bc" cx="195" cy="85" r="55" clip-path="url(#clip-c-left)" fill="#9C5369" fill-opacity="0" style="transition: all 0.3s;" />
 
@@ -752,7 +750,6 @@
             </svg>
           </div>
 
-          <!-- Right Recipe Box -->
           <div class="compare-card" style="text-align: center;">
             <strong style="color:var(--md-accent-primary); font-size:0.95rem;">Right Side: (A ∩ C) ∪ (B ∩ C)</strong>
             <p id="right-recipe-desc" style="font-size:0.84rem; min-height:46px; margin-top:6px;">
@@ -770,9 +767,7 @@
               <circle cx="195" cy="85" r="55" fill="none" stroke="#7F5A7C" stroke-width="2" />
               <circle cx="160" cy="135" r="55" fill="none" stroke="#00897B" stroke-width="2" />
 
-              <!-- Petal AC -->
               <circle id="right-ac" cx="125" cy="85" r="55" clip-path="url(#clip-c-right)" fill="#9C5369" fill-opacity="0.75" style="transition: all 0.3s;" />
-              <!-- Petal BC -->
               <circle id="right-bc" cx="195" cy="85" r="55" clip-path="url(#clip-c-right)" fill="#9C5369" fill-opacity="0.06" style="transition: all 0.3s;" />
 
               <text x="95" y="65" class="venn-label" style="font-size:12px;">A</text>
@@ -783,7 +778,6 @@
 
         </div>
 
-        <!-- Summary Banner -->
         <div id="stepper-summary" class="venn-result-box" style="margin-top: 1rem; text-align: left; max-width: 100%;">
           <strong>Step 1 Takeaway:</strong> Notice they start differently. The left side grabs two whole big circles, while the right side only grabs one tiny overlap petal.
         </div>
@@ -795,7 +789,7 @@
         <p style="margin-top:4px; font-size:0.88rem;"><em>Goal:</em> Find which numbers appear in both baskets without confusing equations.</p>
 
         <p style="font-size:0.9rem; margin-top:8px;">Just write down the numbers and spot the matches:</p>
-        
+
         <div class="compare-card" style="font-family:'JetBrains Mono', monospace; font-size:0.86rem; line-height:1.8;">
           <div><strong style="color:var(--md-accent-primary); font-family:'Plus Jakarta Sans';">Basket A (jumps by +3):</strong> 2, 5, 8, 11, 14, <span class="highlight-number">17</span>, 20, 23, 26, 29, <span class="highlight-number">32</span>, 35, 38, 41, 44, <span class="highlight-number">47</span>...</div>
           <div><strong style="color:var(--md-accent-primary); font-family:'Plus Jakarta Sans';">Basket B (jumps by +5):</strong> 7, 12, <span class="highlight-number">17</span>, 22, 27, <span class="highlight-number">32</span>, 37, 42, <span class="highlight-number">47</span>, 52, 57...</div>
@@ -841,17 +835,15 @@
     </div>
   </div>
 
-  <!-- TAB 5: EXERCISES 20-22 (SIMPLIFIED) -->
+  <!-- TAB 5: EXERCISES 20-22 (SETS) -->
   <div id="tab-book" class="tab-content hidden">
     <div class="card">
       <h2>Exercises 20, 21 &amp; 22 Explained in Plain English</h2>
       <p>Simplified step-by-step guides using physical analogies instead of heavy algebra.</p>
 
-      <!-- EXERCISE 20: TWO MINI-RIDDLES -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 20: The Two Mini-Riddles</strong>
         <p style="margin-top:4px; font-size:0.88rem;"><em>Text:</em> "Aibė A yra sprendiniai lygties 19 - 3x = -8, o aibė B yra sprendiniai lygties x² - 81 = 0."</p>
-        <p style="margin-top:2px; font-size:0.88rem;">Before doing any set operations, we just need to solve the two secret numbers inside each basket:</p>
 
         <div class="compare-card">
           <strong style="color:var(--md-accent-primary);">Basket A: What is x in `19 - 3x = -8`?</strong>
@@ -872,105 +864,203 @@
         </div>
 
         <ol class="step-list">
-          <li><strong>A &cup; B (Union &mdash; dump both together):</strong>
-            <br>Put 9, -9, and 9 into one box. Drop the duplicate 9:
-            <br>&rarr; <span class="math-mono">A &cup; B = {-9, 9}</span>
-          </li>
-          <li><strong>A &cap; B (Intersection &mdash; what do they share?):</strong>
-            <br>Both baskets share only the number 9:
-            <br>&rarr; <span class="math-mono">A &cap; B = {9}</span>
-          </li>
-          <li><strong>A \ B (Difference &mdash; start with A, remove anything in B):</strong>
-            <br>Basket A only has 9. But Basket B also has 9, so we throw it out!
-            <br>Basket A is now completely empty:
-            <br>&rarr; <span class="math-mono">A \ B = &empty;</span> (Tuščioji aibė / Empty set!)
-          </li>
-          <li><strong>B \ A (Difference &mdash; start with B, remove anything in A):</strong>
-            <br>Basket B has -9 and 9. Remove the 9 (because it's in A). Only -9 survives:
-            <br>&rarr; <span class="math-mono">B \ A = {-9}</span>
-          </li>
+          <li><strong>A &cup; B:</strong> Combine both &rarr; <span class="math-mono">{-9, 9}</span></li>
+          <li><strong>A &cap; B:</strong> Shared number &rarr; <span class="math-mono">{9}</span></li>
+          <li><strong>A \ B:</strong> Remove 9 from A &rarr; <span class="math-mono">&empty;</span> (Empty set!)</li>
+          <li><strong>B \ A:</strong> Remove 9 from B &rarr; <span class="math-mono">{-9}</span></li>
         </ol>
       </div>
 
-      <!-- EXERCISE 21: THE TRAPPED NUMBER & THE ROADBLOCK -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 21: The Trapped Number &amp; The Roadblock</strong>
-        <p style="margin-top:4px; font-size:0.88rem;"><em>Text:</em> "Aibė C yra nelygybės 15x² - 17x + 4 &le; 0 sprendiniai, o aibė D yra nelygybės 11 - x &ge; 6 sprendiniai."</p>
-
-        <div class="compare-card">
-          <strong style="color:var(--md-accent-primary);">1. Basket D (The Roadblock): `11 - x &ge; 6`</strong>
-          <p style="font-size:0.9rem; margin-top:4px;">
-            11 minus what gives at least 6? If x is 5: <span class="math-mono">11 - 5 = 6</span> (&check;). If x is smaller, like 4: <span class="math-mono">11 - 4 = 7 &ge; 6</span> (&check;).<br>
-            So x can be <strong>5 or anything smaller</strong>. It goes all the way left to minus infinity!<br>
-            &rarr; <span class="math-mono">D = (-&infin;, 5]</span>
-          </p>
-
-          <strong style="color:var(--md-accent-primary); display:block; margin-top:10px;">2. Basket C (The Trapped Zone): `15x² - 17x + 4 &le; 0`</strong>
-          <p style="font-size:0.9rem; margin-top:4px;">
-            When solving a quadratic with &le; 0, the solutions are trapped between its two roots.<br>
-            The two roots are tiny fractions: <span class="math-mono">x = 1/3 (approx 0.33)</span> and <span class="math-mono">x = 4/5 (0.8)</span>.<br>
-            So Basket C is the tiny interval between them: <span class="math-mono">C = [1/3, 4/5]</span>.
-          </p>
-        </div>
-
-        <div class="compare-card">
-          <strong style="color:var(--md-text-primary);">Now look at them on the number line:</strong>
-          <p style="font-size:0.9rem; margin-top:4px;">
-            Basket D goes all the way up to <strong>5</strong>.<br>
-            Basket C lives between <strong>0.33 and 0.8</strong>. That entire zone is <em>already inside</em> Basket D!<br>
-            Think of Basket C as a small shoe box, and Basket D as a huge room containing the box:
-          </p>
-          <p style="margin-top:6px; font-size:0.9rem;">
-            &bull; <strong>Overlap <span class="math-mono">C &cap; D</span>:</strong> Since C is completely inside D, their overlap is just <strong>C</strong> (<span class="math-mono">[1/3, 4/5]</span>).<br>
-            &bull; <strong>Combine <span class="math-mono">C &cup; D</span>:</strong> Putting the small box inside the big room just gives the big room: <strong>D</strong> (<span class="math-mono">(-&infin;, 5]</span>).<br>
-            &bull; <strong>Difference <span class="math-mono">C \ D</span>:</strong> Take C and remove anything in D. But everything in C is in D! So you are left with nothing: <strong>&empty;</strong> (empty set)!
-          </p>
-        </div>
+        <p style="margin-top:4px; font-size:0.88rem;"><em>Basket D:</em> <span class="math-mono">11 - x &ge; 6 &rArr; x &le; 5</span> &rarr; Goes all the way left: <span class="math-mono">(-&infin;, 5]</span>.</p>
+        <p style="margin-top:4px; font-size:0.88rem;"><em>Basket C:</em> Quadratic trapped between tiny fractions &rarr; <span class="math-mono">[1/3, 4/5]</span> (about 0.33 to 0.8).</p>
+        <p style="margin-top:6px; font-size:0.9rem;">Since Basket C is completely inside the big room D:</p>
+        <ul style="margin-left:1.4rem; font-size:0.9rem;">
+          <li><span class="math-mono">C &cap; D = C</span> (The small box)</li>
+          <li><span class="math-mono">C &cup; D = D</span> (The big room)</li>
+          <li><span class="math-mono">C \ D = &empty;</span> (Nothing left in C)</li>
+        </ul>
       </div>
 
-      <!-- EXERCISE 22: THE TWO SAFETY RULES -->
       <div class="exercise-box">
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">Užduotis 22: Finding the Domain (Apibrėžimo sritis)</strong>
-        <p style="margin-top:4px; font-size:0.88rem;">Whenever a problem says <em>"Raskite apibrėžimo sritį"</em> (Find the domain), you are an inspector checking for two illegal math crimes:</p>
-
-        <div class="compare-card">
-          <strong style="color:var(--md-accent-primary);">Rule 1: The Glass Floor (&radic; square roots)</strong>
-          <p style="font-size:0.9rem; margin-top:2px;">You can NEVER have a negative number under a square root. What is inside MUST be &ge; 0.</p>
-
-          <strong style="color:var(--md-accent-primary); display:block; margin-top:8px;">Rule 2: The Black Hole (Denominators)</strong>
-          <p style="font-size:0.9rem; margin-top:2px;">You can NEVER divide by zero. The bottom of a fraction can NEVER equal 0.</p>
-        </div>
-
-        <p style="font-size:0.9rem; margin-top:10px;">In the problem, look at the square root on top: <span class="math-mono">&radic;(x - 16)</span></p>
-        <ol class="step-list">
-          <li>For <span class="math-mono">&radic;(x - 16)</span> to not break Rule 1: <span class="math-mono">x - 16 &ge; 0 &rArr; x &ge; 16</span>.</li>
-          <li>Now look at the other piece on top: <span class="math-mono">(12 - x)</span>. If it's under a square root, <span class="math-mono">12 - x &ge; 0 &rArr; x &le; 12</span>.</li>
-          <li>Notice: Can a number be <strong>bigger than 16</strong> AND <strong>smaller than 12</strong> at the same time? NO! That's impossible!</li>
-          <li>If the conditions contradict each other, no real numbers can survive. The domain is the <strong>Empty Set (&empty;)</strong>!</li>
-        </ol>
+        <p style="margin-top:4px; font-size:0.88rem;">Two Golden Rules: 1. No negatives inside &radic; square roots (&ge; 0). 2. No zeros in denominators (&ne; 0).</p>
+        <p style="margin-top:4px; font-size:0.9rem;">When the roots require <span class="math-mono">x &ge; 16</span> and <span class="math-mono">x &le; 12</span> at the same time, that's impossible! So the domain is the <strong>Empty Set (&empty;)</strong>.</p>
       </div>
     </div>
   </div>
 
-  <!-- TAB 6: GLOSSARY -->
+  <!-- TAB 6: NEW! EXPONENTS & ROOTS (PAMĖGINAME 1-6) -->
+  <div id="tab-powers" class="tab-content hidden">
+    <div class="card">
+      <h2>New Topic: Exponents &amp; Roots (Laipsniai ir Šaknys)</h2>
+
+      <div class="concept-banner">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The Golden Rule of Fractional Powers: "The Root Tree"</strong>
+        <p style="margin-top:6px; margin-bottom:0;">Whenever you see a fraction in the exponent, like <span class="math-mono">x<sup>m/n</sup></span>:</p>
+        <p style="margin-top:4px; font-size:0.95rem;">
+          &bull; <strong>The bottom number (n)</strong> is the <strong>ROOT</strong> (like roots of a tree underground &rarr; <span class="math-mono">&radic;[n]</span>).<br>
+          &bull; <strong>The top number (m)</strong> is the <strong>POWER</strong> (up in the branches).<br>
+          Example: <span class="math-mono">125<sup>2/3</sup> = (&radic;[3]{125})² = 5² = 25</span>!
+        </p>
+      </div>
+
+      <!-- Quick Rules Cheat Sheet -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem;">
+        <div style="background:var(--md-surface-low); padding:1.1rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">1. The Negative Exponent Flip</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">A minus in the exponent just flips it downstairs into a fraction:</p>
+          <code>x<sup>-2</sup> = 1 / x²</code><br>
+          <code>(1/25)<sup>-0.5</sup> = 25<sup>0.5</sup> = &radic;25 = 5</code>
+        </div>
+        <div style="background:var(--md-surface-low); padding:1.1rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">2. Multiplying &amp; Dividing</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">Same base? Just add or subtract exponents:</p>
+          <code>a<sup>p</sup> &bull; a<sup>q</sup> = a<sup>p + q</sup></code><br>
+          <code>x<sup>p</sup> : x<sup>q</sup> = x<sup>p - q</sup></code>
+        </div>
+        <div style="background:var(--md-surface-low); padding:1.1rem; border-radius:var(--radius-md); border:1px solid var(--md-outline-subtle);">
+          <strong style="color:var(--md-accent-primary);">3. Conjugates: (A - B)(A + B)</strong>
+          <p style="font-size:0.88rem; margin-top:4px;">Whenever you see twin square roots with opposite signs, use difference of squares:</p>
+          <code>(&radic;15 - &radic;6)(&radic;15 + &radic;6) = 15 - 6 = 9</code>
+        </div>
+      </div>
+
+      <!-- Problem Walkthroughs from new page -->
+      <h3 style="margin-top:1.8rem;">Solved Exercises from the New Lesson (Pamėginame)</h3>
+
+      <!-- Task 1 -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.02rem;">1 Užduotis: Convert to Radicals &amp; Simplify</strong>
+        <ol class="step-list">
+          <li><strong>a) 125<sup>2/3</sup>:</strong> The bottom 3 means cube root: <span class="math-mono">&radic;[3]{125} = 5</span>. Then power 2: <span class="math-mono">5² = 25</span>!</li>
+          <li><strong>a) 64<sup>5/6</sup>:</strong> The bottom 6 means 6th root of 64 (which is 2, since 2<sup>6</sup> = 64). Then power 5: <span class="math-mono">2<sup>5</sup> = 32</span>!</li>
+          <li><strong>a) 1000<sup>1 1/3</sup>:</strong> Change 1 1/3 into an improper fraction &rarr; <span class="math-mono">4/3</span>. Cube root of 1000 is 10. Then power 4: <span class="math-mono">10<sup>4</sup> = 10,000</span>!</li>
+          <li><strong>b) (36b<sup>4</sup>)<sup>-0.5</sup>:</strong> <span class="math-mono">-0.5 = -1/2</span>. Flip downstairs: <span class="math-mono">1 / &radic;(36b<sup>4</sup>) = 1 / (6b²)</span>.</li>
+        </ol>
+      </div>
+
+      <!-- Task 2 -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.02rem;">2 Užduotis: Calculating with Twins (Conjugates)</strong>
+        <ol class="step-list">
+          <li><strong>b) (&radic;15 - &radic;6)<sup>1/2</sup> &bull; (&radic;15 + &radic;6)<sup>1/2</sup>:</strong>
+            <br>Since both have power 1/2, marry them inside one big root:
+            <br><span class="math-mono">[(&radic;15 - &radic;6)(&radic;15 + &radic;6)]<sup>1/2</sup></span>
+            <br>Inside is difference of squares: <span class="math-mono">(&radic;15)² - (&radic;6)² = 15 - 6 = 9</span>!
+            <br>Now take the 1/2 power: <span class="math-mono">&radic;9 = 3</span>. Clean and simple!
+          </li>
+          <li><strong>d) (3&radic;7 + 1)<sup>1/3</sup> &bull; (3&radic;7 - 1)<sup>1/3</sup>:</strong>
+            <br>Marry them inside cube root: <span class="math-mono">[(3&radic;7)² - 1²]<sup>1/3</sup></span>
+            <br><span class="math-mono">(3&radic;7)² = 9 &times; 7 = 63</span>. And <span class="math-mono">63 - 1 = 62</span>.
+            <br>Result: <span class="math-mono">&radic;[3]{62}</span> (or 62<sup>1/3</sup>).
+          </li>
+        </ol>
+      </div>
+
+      <!-- Task 3 -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.02rem;">3 Užduotis: When Does the Expression Make Sense? (Turi prasmę)</strong>
+        <p style="font-size:0.88rem; margin-top:4px;">Rule: For fractional exponents, the base <strong>CANNOT be negative (&ge; 0)</strong>. And if the exponent has a minus, the base <strong>cannot be zero (&gt; 0)</strong>.</p>
+        <ol class="step-list">
+          <li><strong>a) (a - 26)<sup>1/2</sup>:</strong> Base must be non-negative: <span class="math-mono">a - 26 &ge; 0 &rArr; a &ge; 26</span>.</li>
+          <li><strong>b) (8a²)<sup>0.8</sup>:</strong> <span class="math-mono">a²</span> is always &ge; 0! So it works for <strong>all real numbers a &isin; &reals;</strong>.</li>
+          <li><strong>c) (27 - 3a)<sup>-5/6</sup>:</strong> Because of the minus in exponent, it lives in a denominator. So base must be strictly positive: <span class="math-mono">27 - 3a &gt; 0 &rArr; 3a &lt; 27 &rArr; a &lt; 9</span>.</li>
+        </ol>
+      </div>
+
+      <!-- Task 6 -->
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1.02rem;">6 Užduotis: Mental Tricks for Quick Numbers</strong>
+        <ol class="step-list">
+          <li><strong>a) 5 &bull; 125<sup>-1/3</sup>:</strong> <span class="math-mono">125<sup>-1/3</sup> = 1 / &radic;[3]{125} = 1/5</span>. So <span class="math-mono">5 &bull; (1/5) = 1</span>!</li>
+          <li><strong>f) (1/25)<sup>-0.5</sup> - 4 &bull; 27<sup>2/3</sup>:</strong>
+            <br>&bull; <span class="math-mono">(1/25)<sup>-0.5</sup> = 25<sup>0.5</sup> = &radic;25 = 5</span>.
+            <br>&bull; <span class="math-mono">27<sup>2/3</sup> = (&radic;[3]{27})² = 3² = 9</span>.
+            <br>&bull; <span class="math-mono">5 - 4(9) = 5 - 36 = -31</span>!
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB 7: CUBE FORMULAS & RATIONAL FRACTIONS -->
+  <div id="tab-cubes" class="tab-content hidden">
+    <div class="card">
+      <h2>Cube Formulas &amp; Simplifying Rational Fractions</h2>
+      <p>From textbook page 32: factoring polynomials and canceling twin terms.</p>
+
+      <div class="concept-banner">
+        <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The Two Cube Factoring Formulas (Kūbų formulės)</strong>
+        <p style="margin-top:6px; margin-bottom:0;">
+          &bull; <strong>Sum of cubes:</strong> <span class="math-mono">a³ + b³ = (a + b)(a² - ab + b²)</span><br>
+          &bull; <strong>Difference of cubes:</strong> <span class="math-mono">a³ - b³ = (a - b)(a² + ab + b²)</span>
+        </p>
+      </div>
+
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1rem;">Example 3a: Canceling Common Factors in Fractions</strong>
+        <p style="margin-top:4px; font-size:0.88rem;">Simplify: <span class="math-mono">(b + 2) / (b³ + 8)</span></p>
+        <ol class="step-list">
+          <li>Notice that <span class="math-mono">8 = 2³</span>, so the bottom is a sum of cubes: <span class="math-mono">b³ + 2³</span>.</li>
+          <li>Expand the bottom using the formula: <span class="math-mono">(b + 2)(b² - 2b + 4)</span>.</li>
+          <li>Now rewrite the fraction:
+            <br><span class="math-mono">(b + 2) / [(b + 2)(b² - 2b + 4)]</span>
+          </li>
+          <li>Cancel the matching twin <span class="math-mono">(b + 2)</span> on top and bottom!</li>
+          <li><strong>Final Answer:</strong> <span class="math-mono">1 / (b² - 2b + 4)</span>.</li>
+        </ol>
+      </div>
+
+      <div class="exercise-box">
+        <strong style="color:var(--md-accent-primary); font-size:1rem;">Example 3d: The Multi-Step Fraction Workout</strong>
+        <p style="margin-top:4px; font-size:0.88rem;">Simplify: <span class="math-mono">[7(x - 2) / (x³ - 8) - (x + 2) / (x² + 2x + 4)] &bull; (2x² + 4x + 8) / (x - 3)</span></p>
+        <ol class="step-list">
+          <li>Factor <span class="math-mono">x³ - 8 = (x - 2)(x² + 2x + 4)</span>.</li>
+          <li>The first term cancels <span class="math-mono">(x - 2)</span>: it becomes <span class="math-mono">7 / (x² + 2x + 4)</span>!</li>
+          <li>Now both terms inside the brackets share the exact same denominator!
+            <br><span class="math-mono">[7 - (x + 2)] / (x² + 2x + 4) = (5 - x) / (x² + 2x + 4)</span>.
+          </li>
+          <li>Factor a 2 out of the multiplier: <span class="math-mono">2(x² + 2x + 4) / (x - 3)</span>.</li>
+          <li>Cancel the big quadratic twin <span class="math-mono">(x² + 2x + 4)</span> on top and bottom!</li>
+          <li><strong>Final Answer:</strong> <span class="math-mono">2(5 - x) / (x - 3) = (10 - 2x) / (x - 3)</span>.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB 8: GLOSSARY -->
   <div id="tab-glossary" class="tab-content hidden">
     <div class="card">
       <h2>Lithuanian &bull; English Mathematical Glossary</h2>
       <p>Search any term across both languages instantly.</p>
-      <input type="text" id="glossary-search" class="search-input" placeholder="Search (e.g., aibė, modulis, sankirta, interval)..." oninput="filterGlossary()">
-      
+      <input type="text" id="glossary-search" class="search-input" placeholder="Search (e.g., aibė, laipsnis, rodiklis, šaknis, reikšmė)..." oninput="filterGlossary()">
+
       <div class="glossary-grid" id="glossary-container"></div>
     </div>
   </div>
 
-  <!-- TAB 7: QUIZ -->
+  <!-- TAB 9: QUIZ -->
   <div id="tab-practice" class="tab-content hidden">
     <div class="card">
       <h2>Concept Check</h2>
       <p>Select your answer to test your intuition.</p>
 
+      <div class="quiz-question" id="q-pow">
+        <p><strong>1. What is the value of 125<sup>2/3</sup>?</strong></p>
+        <div class="quiz-opts">
+          <button class="quiz-opt-btn" onclick="checkAnswer('q-pow', this, false)">A) 500 / 3</button>
+          <button class="quiz-opt-btn" onclick="checkAnswer('q-pow', this, true)">B) 25 (take cube root = 5, then square = 25)</button>
+          <button class="quiz-opt-btn" onclick="checkAnswer('q-pow', this, false)">C) 12.5</button>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
       <div class="quiz-question" id="q-mod">
-        <p><strong>1. If |x| = 7, what are all the possible values for x?</strong></p>
+        <p><strong>2. If |x| = 7, what are all the possible values for x?</strong></p>
         <div class="quiz-opts">
           <button class="quiz-opt-btn" onclick="checkAnswer('q-mod', this, false)">A) Only +7, because modulus can never be negative</button>
           <button class="quiz-opt-btn" onclick="checkAnswer('q-mod', this, true)">B) Both +7 and -7, because both sit 7 steps away from 0</button>
@@ -980,21 +1070,11 @@
       </div>
 
       <div class="quiz-question" id="q1">
-        <p><strong>2. Given set A = {2, 5, 7} and set B = {5, 7, 9}, what is the intersection A &cap; B (Sankirta)?</strong></p>
+        <p><strong>3. Given set A = {2, 5, 7} and set B = {5, 7, 9}, what is the intersection A &cap; B (Sankirta)?</strong></p>
         <div class="quiz-opts">
           <button class="quiz-opt-btn" onclick="checkAnswer('q1', this, false)">A) {2, 5, 7, 9}</button>
           <button class="quiz-opt-btn" onclick="checkAnswer('q1', this, true)">B) {5, 7}</button>
           <button class="quiz-opt-btn" onclick="checkAnswer('q1', this, false)">C) {2}</button>
-        </div>
-        <div class="feedback"></div>
-      </div>
-
-      <div class="quiz-question" id="q2">
-        <p><strong>3. If set A = {10, 20} and set B = {20, 30}, what is the set difference A \ B (Skirtumas)?</strong></p>
-        <div class="quiz-opts">
-          <button class="quiz-opt-btn" onclick="checkAnswer('q2', this, true)">A) {10}</button>
-          <button class="quiz-opt-btn" onclick="checkAnswer('q2', this, false)">B) {30}</button>
-          <button class="quiz-opt-btn" onclick="checkAnswer('q2', this, false)">C) {10, 30}</button>
         </div>
         <div class="feedback"></div>
       </div>
@@ -1050,8 +1130,8 @@
     // Dynamic Tape Measure Slider Logic
     function updateModulusRuler(val) {
       const num = parseInt(val, 10);
-      const originX = 250; 
-      const stepWidth = 45; 
+      const originX = 250;
+      const stepWidth = 45;
       const pointPosX = originX + (num * stepWidth);
       const absVal = Math.abs(num);
 
@@ -1068,7 +1148,7 @@
         originLabel.style.opacity = '0';
         pointLabel.setAttribute('x', originX);
         pointLabel.textContent = 'x = 0 (At Origin)';
-        
+
         distBar.style.opacity = '0';
         distLabel.setAttribute('x', originX);
         distLabel.textContent = 'Distance |x| = 0 (No steps taken)';
@@ -1153,7 +1233,6 @@
       const rightBC = document.getElementById('right-bc');
 
       if (stepNumber === 1) {
-        // Left: Highlight (A ∪ B) completely
         leftA.style.fill = '#9C5369';
         leftB.style.fill = '#9C5369';
         leftA.style.fillOpacity = '0.55';
@@ -1163,7 +1242,6 @@
         leftPetalBC.setAttribute('fill-opacity', '0');
         leftDesc.innerHTML = "<strong>Step 1:</strong> Color all of <strong>(A ∪ B)</strong> with pink ink.";
 
-        // Right: Highlight just (A ∩ C)
         rightAC.style.fillOpacity = '0.75';
         rightBC.style.fillOpacity = '0.06';
         rightDesc.innerHTML = "<strong>Step 1:</strong> Color just the first slice: <strong>(A ∩ C)</strong>.";
@@ -1171,7 +1249,6 @@
         summary.innerHTML = "<strong>Step 1 Takeaway:</strong> Notice they start differently. The left side grabs two whole big circles, while the right side only grabs one tiny overlap petal.";
 
       } else if (stepNumber === 2) {
-        // Left: Introduce ∩ C (dim outside of C)
         leftA.style.fillOpacity = '0.2';
         leftB.style.fillOpacity = '0.2';
         leftC.style.fill = '#80CBC4';
@@ -1180,7 +1257,6 @@
         leftPetalBC.setAttribute('fill-opacity', '0');
         leftDesc.innerHTML = "<strong>Step 2 (∩ C):</strong> Apply circle C like a stencil. Any ink outside of C must be erased!";
 
-        // Right: Highlight (B ∩ C) too
         rightAC.style.fillOpacity = '0.75';
         rightBC.style.fillOpacity = '0.75';
         rightDesc.innerHTML = "<strong>Step 2 (∪):</strong> Now color the other slice <strong>(B ∩ C)</strong> and join them together.";
@@ -1188,7 +1264,6 @@
         summary.innerHTML = "<strong>Step 2 Takeaway:</strong> On the left, circle C acts like a cookie-cutter trimming away the outside ink. On the right, we simply colored the second missing petal!";
 
       } else if (stepNumber === 3) {
-        // Left: Clean final result with isolated overlap petals
         leftA.style.fillOpacity = '0.05';
         leftB.style.fillOpacity = '0.05';
         leftC.style.fillOpacity = '0.05';
@@ -1196,7 +1271,6 @@
         leftPetalBC.setAttribute('fill-opacity', '0.75');
         leftDesc.innerHTML = "<strong>Final Result:</strong> Only the two petals inside Circle C survive!";
 
-        // Right: Clean final result
         rightAC.style.fillOpacity = '0.75';
         rightBC.style.fillOpacity = '0.75';
         rightDesc.innerHTML = "<strong>Final Result:</strong> Both overlap petals joined together!";
@@ -1207,19 +1281,19 @@
 
     // Glossary Data
     const glossary = [
+      { lt: "Laipsnis", en: "Power / Degree", symbol: "xⁿ", desc: "A number multiplied by itself n times." },
+      { lt: "Laipsnio rodiklis", en: "Exponent", symbol: "n", desc: "The small superscript number indicating the power." },
+      { lt: "Laipsnio pagrindas", en: "Base", symbol: "x", desc: "The main number being raised to a power." },
+      { lt: "Šaknis", en: "Root / Radical", symbol: "√[n]{x}", desc: "The inverse of a power (e.g. cube root)." },
+      { lt: "Racionalusis rodiklis", en: "Rational exponent", symbol: "x^{m/n}", desc: "An exponent written as a fraction where the denominator is a root." },
+      { lt: "Turi prasmę", en: "Is defined / Has meaning", symbol: "x ≥ 0", desc: "Mathematical condition where an expression produces real numbers (e.g., no negative bases in fractional powers)." },
+      { lt: "Išskaidyti daugikliais", en: "Factor into polynomials", symbol: "(a - b)(a + b)", desc: "Breaking an expression down into smaller multiplied terms." },
+      { lt: "Kūbų skirtumas", en: "Difference of cubes", symbol: "a³ - b³", desc: "Formula: (a - b)(a² + ab + b²)." },
+      { lt: "Kūbų suma", en: "Sum of cubes", symbol: "a³ + b³", desc: "Formula: (a + b)(a² - ab + b²)." },
       { lt: "Aibė", en: "Set", symbol: "A, B", desc: "A collection of distinct objects or numbers." },
-      { lt: "Elementas", en: "Element", symbol: "x ∈ A", desc: "An individual item contained inside a set." },
-      { lt: "Poaibis", en: "Subset", symbol: "A ⊆ B", desc: "A set whose elements are all members of another set." },
       { lt: "Sąjunga", en: "Union", symbol: "A ∪ B", desc: "The set of all elements belonging to either set." },
       { lt: "Sankirta", en: "Intersection", symbol: "A ∩ B", desc: "The set of elements shared by both sets." },
-      { lt: "Skirtumas", en: "Difference", symbol: "A \\ B", desc: "Elements in the first set excluding any in the second." },
-      { lt: "Tuščioji aibė", en: "Empty set", symbol: "∅", desc: "A set with no elements (empty box)." },
-      { lt: "Modulis", en: "Absolute value / Modulus", symbol: "|x|", desc: "The non-negative distance from zero on the real number line." },
-      { lt: "MBK", en: "Least Common Multiple (LCM)", symbol: "MBK(a, b)", desc: "The smallest number that two numbers both divide into evenly (like 15 for 3 and 5)." },
-      { lt: "Apibrėžimo sritis", en: "Domain of definition", symbol: "D(f) / X", desc: "Allowable input values for which an expression is valid." },
-      { lt: "Reikšmių sritis", en: "Range of values", symbol: "E(f) / Y", desc: "Set of possible resulting output values." },
-      { lt: "Sprendinys", en: "Solution", symbol: "x", desc: "A value satisfying an equation or inequality." },
-      { lt: "Nelygybė", en: "Inequality", symbol: "<, >, ≤, ≥", desc: "A mathematical statement comparing relative bounds." }
+      { lt: "Modulis", en: "Absolute value", symbol: "|x|", desc: "Distance from zero on the number line." }
     ];
 
     function renderGlossary(items) {
@@ -1242,9 +1316,9 @@
 
     function filterGlossary() {
       const q = document.getElementById('glossary-search').value.toLowerCase();
-      const filtered = glossary.filter(i => 
-        i.lt.toLowerCase().includes(q) || 
-        i.en.toLowerCase().includes(q) || 
+      const filtered = glossary.filter(i =>
+        i.lt.toLowerCase().includes(q) ||
+        i.en.toLowerCase().includes(q) ||
         i.desc.toLowerCase().includes(q)
       );
       renderGlossary(filtered);
@@ -1254,7 +1328,7 @@
     function checkAnswer(qId, buttonElem, isCorrect) {
       const qBox = document.getElementById(qId);
       const feedback = qBox.querySelector('.feedback');
-      
+
       qBox.querySelectorAll('.quiz-opt-btn').forEach(b => {
         b.style.borderColor = 'var(--md-outline)';
       });
@@ -1266,7 +1340,7 @@
       } else {
         buttonElem.style.borderColor = 'var(--md-status-error-text)';
         feedback.className = 'feedback incorrect';
-        feedback.innerHTML = '&#10008; Not quite. Remember: distance can never be negative!';
+        feedback.innerHTML = '&#10008; Not quite. Try reviewing the rule in Tab 6!';
       }
     }
 
