@@ -761,10 +761,13 @@
     }
 
     .rule-card-modern .intuition-text {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       color: var(--md-text-secondary);
-      line-height: 1.5;
+      line-height: 1.55;
       margin-top: auto;
+      text-wrap: pretty;
+      word-break: normal;
+      overflow-wrap: break-word;
     }
 
   </style>
@@ -1600,7 +1603,7 @@
               (a + b)(a&sup2; &minus; ab + b&sup2;)
             </div>
             <div class="intuition-text">
-              <em>Intuition:</em> First bracket keeps the <strong style="color:var(--md-status-success-text);">&plus;</strong> sign. The second bracket gets the <strong>"incomplete square"</strong> with a single minus in the middle!
+              <strong>Intuition:</strong> The first bracket matches the formula's plus sign <span class="math-mono" style="color:var(--md-status-success-text);">(a + b)</span>. The second bracket is the "incomplete square" with a single minus in the middle <span class="math-mono">(a&sup2; &minus; ab + b&sup2;)</span>.
             </div>
           </div>
 
@@ -1610,7 +1613,7 @@
               (a &minus; b)(a&sup2; &plus; ab + b&sup2;)
             </div>
             <div class="intuition-text">
-              <em>Intuition:</em> First bracket keeps the <strong style="color:var(--md-accent-primary);">&minus;</strong> sign. The second bracket is <strong>all positive</strong>!
+              <strong>Intuition:</strong> The first bracket matches the formula's minus sign <span class="math-mono" style="color:var(--md-accent-primary);">(a &minus; b)</span>. The second bracket is completely positive <span class="math-mono">(a&sup2; + ab + b&sup2;)</span>.
             </div>
           </div>
 
@@ -1621,7 +1624,7 @@
               (a &minus; b)&sup3; = a&sup3; &minus; 3a&sup2;b + 3ab&sup2; &minus; b&sup3;
             </div>
             <div class="intuition-text">
-              <em>Intuition:</em> Coefficients are always <strong>1, 3, 3, 1</strong>! For minus, signs simply alternate: <strong>&plus; , &minus; , &plus; , &minus;</strong>.
+              <strong>Intuition:</strong> Coefficients always follow the pattern <strong>1, 3, 3, 1</strong>. When expanding a minus binomial, the signs simply alternate: <strong>&plus; , &minus; , &plus; , &minus;</strong> across the four terms.
             </div>
           </div>
         </div>
