@@ -770,6 +770,55 @@
       overflow-wrap: break-word;
     }
 
+
+    /* ELIF (Explain Like I'm 5) Story Banners */
+    .elif-box {
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline);
+      border-left: 5px solid #E06C75;
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.4rem;
+      margin: 1.2rem 0;
+      box-shadow: 0 2px 8px rgba(44, 39, 40, 0.04);
+    }
+
+    .elif-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(224, 108, 117, 0.12);
+      color: #9C5369;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 8px;
+    }
+
+    .elif-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--md-text-primary);
+      margin-bottom: 6px;
+    }
+
+    .elif-text {
+      font-size: 0.92rem;
+      color: var(--md-text-secondary);
+      line-height: 1.6;
+    }
+
+    .elif-analogy-pill {
+      display: inline-block;
+      background: var(--md-surface-low);
+      border: 1px solid var(--md-outline-subtle);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      color: var(--md-text-primary);
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -1594,68 +1643,103 @@
     <div id="l2-tab-cubes" class="tab-content">
       <div class="card">
         <h2>1. The Cube Formulas (Greitosios Daugybos Formulės)</h2>
-        <p>In this unit of the textbook, we expand beyond basic squares <span class="math-mono">(a+b)&sup2;</span> to <strong>cubes</strong> <span class="math-mono">(a+b)&sup3;</span> and <span class="math-mono">a&sup3; &plusmn; b&sup3;</span>. Don't just memorize them &mdash; see the story behind the signs!</p>
+        
+        <!-- ELIF Story Box: The 3D Gift Box -->
+        <div class="elif-box">
+          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The 3D Box Story</div>
+          <div class="elif-title">Why on Earth do cubes need formulas?</div>
+          <p class="elif-text">
+            Imagine you have a square flat tile: its area is <strong>length &times; width</strong> (that's <span class="math-mono">x&sup2;</span>, 2D flat).<br>
+            Now imagine building a real, 3D cubic gift box with <strong>length &times; width &times; height</strong> (that's <span class="math-mono">x&sup3;</span>, 3D volume)!<br>
+            If you change the size of the box to <span class="math-mono">(x + 2)</span>, you aren't just stretching one side; you're expanding all 3 directions at once. If you multiply <span class="math-mono">(x + 2)(x + 2)(x + 2)</span> step-by-step with regular brackets, it takes 10 tedious minutes and you'll probably make a minus-sign error. 
+            The <strong>Cube Formulas</strong> are simply pre-packaged cheat codes that skip the 10 minutes of messy multiplication in one clean hop!
+          </p>
+        </div>
 
         <div class="rule-grid-3">
           <div class="rule-card-modern">
-            <strong>1. Sum of Cubes: a&sup3; + b&sup3;</strong>
+            <strong>1. Sum of Two Cubes: a&sup3; + b&sup3;</strong>
             <div class="formula-box">
-              (a + b)(a&sup2; &minus; ab + b&sup2;)
+              a&sup3; + b&sup3; = (a + b)(a&sup2; &minus; ab + b&sup2;)
             </div>
             <div class="intuition-text">
-              <strong>Intuition:</strong> The first bracket matches the formula's plus sign <span class="math-mono" style="color:var(--md-status-success-text);">(a + b)</span>. The second bracket is the "incomplete square" with a single minus in the middle <span class="math-mono">(a&sup2; &minus; ab + b&sup2;)</span>.
+              <strong>The Soap Bubble Story:</strong> If you have two solid cubes and want to pack them into brackets:
+              <br>&bull; <em>Small pouch:</em> You simply strip the cubes off: <span class="math-mono">(a + b)</span> (keeps the exact same <strong style="color:var(--md-status-success-text);">&plus;</strong> sign).
+              <br>&bull; <em>Big pouch:</em> Needs one minus sign inside <span class="math-mono">(a&sup2; &minus; ab + b&sup2;)</span> so that when you multiply them back out, all the unwanted middle terms explode and cancel each other out to zero!
             </div>
           </div>
 
           <div class="rule-card-modern">
-            <strong>2. Difference of Cubes: a&sup3; &minus; b&sup3;</strong>
+            <strong>2. Difference of Two Cubes: a&sup3; &minus; b&sup3;</strong>
             <div class="formula-box">
-              (a &minus; b)(a&sup2; &plus; ab + b&sup2;)
+              a&sup3; &minus; b&sup3; = (a &minus; b)(a&sup2; &plus; ab + b&sup2;)
             </div>
             <div class="intuition-text">
-              <strong>Intuition:</strong> The first bracket matches the formula's minus sign <span class="math-mono" style="color:var(--md-accent-primary);">(a &minus; b)</span>. The second bracket is completely positive <span class="math-mono">(a&sup2; + ab + b&sup2;)</span>.
+              <strong>The Story:</strong>
+              <br>&bull; <em>Small pouch:</em> Strips the cubes and keeps the exact minus sign: <span class="math-mono">(a &minus; b)</span>.
+              <br>&bull; <em>Big pouch:</em> Because the small pouch already has the minus, the big pouch is completely peaceful and <strong>all positive</strong>: <span class="math-mono">(a&sup2; + ab + b&sup2;)</span>!
             </div>
           </div>
 
           <div class="rule-card-modern">
-            <strong>3. Cube of a Binomial: (a &plusmn; b)&sup3;</strong>
+            <strong>3. Blowing Up a Whole Cube: (a &plusmn; b)&sup3;</strong>
             <div class="formula-box" style="line-height:1.6;">
               (a + b)&sup3; = a&sup3; + 3a&sup2;b + 3ab&sup2; + b&sup3;<br>
               (a &minus; b)&sup3; = a&sup3; &minus; 3a&sup2;b + 3ab&sup2; &minus; b&sup3;
             </div>
             <div class="intuition-text">
-              <strong>Intuition:</strong> Coefficients always follow the pattern <strong>1, 3, 3, 1</strong>. When expanding a minus binomial, the signs simply alternate: <strong>&plus; , &minus; , &plus; , &minus;</strong> across the four terms.
+              <strong>The 1-3-3-1 Rhythm:</strong>
+              When expanding a cube, think of a choir singing the numbers <strong>1, 3, 3, 1</strong>.<br>
+              Power of <span class="math-mono">a</span> counts down: <span class="math-mono">a&sup3; &rarr; a&sup2; &rarr; a &rarr; gone</span>.<br>
+              Power of <span class="math-mono">b</span> counts up: <span class="math-mono">none &rarr; b &rarr; b&sup2; &rarr; b&sup3;</span>.<br>
+              For minus: signs alternate like a heartbeat: <strong>&plus; , &minus; , &plus; , &minus;</strong>.
             </div>
           </div>
         </div>
 
+        <!-- Textbook Walkthrough with Friendly Commentary -->
         <div class="compare-card">
-          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 3</strong>
+          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 3 &bull; Why It's Done Step-by-Step</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
-            <strong>Problem:</strong> Simplify <span class="math-mono">(x + 2)&sup3; - (x - 3)&sup3;</span>
+            <strong>Problem:</strong> Simplify <span class="math-mono">(x + 2)&sup3; &minus; (x &minus; 3)&sup3;</span>
+          </p>
+          <p style="font-size:0.86rem; color:var(--md-text-secondary); margin-bottom:8px;">
+            <em>What the teacher wants:</em> Expand both 3D cubes using the cheat-code formula above, and then subtract the second pile from the first pile.
           </p>
           <ol class="step-list">
-            <li><strong>Expand the first cube:</strong><br>
-              <span class="math-mono">(x + 2)&sup3; = x&sup3; + 3(x&sup2;)(2) + 3(x)(2&sup2;) + 2&sup3; = x&sup3; + 6x&sup2; + 12x + 8</span>.
+            <li><strong>Step 1 (Expand the first box using 1-3-3-1):</strong><br>
+              <span class="math-mono">(x + 2)&sup3; = x&sup3; + 3(x&sup2;)(2) + 3(x)(2&sup2;) + 2&sup3;</span><br>
+              Multiply the plain numbers: <span class="math-mono">x&sup3; + 6x&sup2; + 12x + 8</span>. (First box done!)
             </li>
-            <li><strong>Expand the second cube:</strong><br>
-              <span class="math-mono">(x - 3)&sup3; = x&sup3; - 3(x&sup2;)(3) + 3(x)(3&sup2;) - 3&sup3; = x&sup3; - 9x&sup2; + 27x - 27</span>.
+            <li><strong>Step 2 (Expand the second box with alternating signs + , &minus; , + , &minus;):</strong><br>
+              <span class="math-mono">(x &minus; 3)&sup3; = x&sup3; &minus; 3(x&sup2;)(3) + 3(x)(3&sup2;) &minus; 3&sup3;</span><br>
+              Multiply the plain numbers: <span class="math-mono">x&sup3; &minus; 9x&sup2; + 27x &minus; 27</span>. (Second box done!)
             </li>
-            <li><strong>Subtract (Watch out for sign flips!):</strong><br>
-              <span class="math-mono">(x&sup3; + 6x&sup2; + 12x + 8) - (x&sup3; - 9x&sup2; + 27x - 27)</span><br>
-              <span class="math-mono">= (x&sup3; - x&sup3;) + (6x&sup2; - (-9x&sup2;)) + (12x - 27x) + (8 - (-27))</span><br>
-              <span class="math-mono">= 0 + 15x&sup2; - 15x + 35</span>.
+            <li><strong>Step 3 (Subtract Box 2 from Box 1 &mdash; The Minus Trap!):</strong><br>
+              Always put the second box in a protective cage/parentheses because the minus sign flips every single inmate inside:<br>
+              <span class="math-mono">(x&sup3; + 6x&sup2; + 12x + 8) &minus; (x&sup3; &minus; 9x&sup2; + 27x &minus; 27)</span><br>
+              &bull; <span class="math-mono">x&sup3; &minus; x&sup3; = 0</span> (The cubes vanish!)<br>
+              &bull; <span class="math-mono">6x&sup2; &minus; (&minus;9x&sup2;) = 6x&sup2; + 9x&sup2; = 15x&sup2;</span> (Minus and minus turn into plus!)<br>
+              &bull; <span class="math-mono">12x &minus; 27x = &minus;15x</span><br>
+              &bull; <span class="math-mono">8 &minus; (&minus;27) = 8 + 27 = 35</span>.
             </li>
           </ol>
-          <div><span class="answer-badge">Result: 15x&sup2; - 15x + 35</span></div>
+          <div><span class="answer-badge">Clean Result: 15x&sup2; &minus; 15x + 35</span></div>
         </div>
 
         <div class="compare-card">
-          <strong style="color:var(--md-accent-primary);">Factoring Cubes Example: a<sup>6</sup> + 27</strong>
-          <p style="font-size:0.9rem; margin-top:4px;">
-            Recognize both as cubes: <span class="math-mono">a<sup>6</sup> = (a&sup2;)&sup3;</span> and <span class="math-mono">27 = 3&sup3;</span>.<br>
-            Using <span class="math-mono">A&sup3; + B&sup3; = (A + B)(A&sup2; - AB + B&sup2;)</span> with <span class="math-mono">A = a&sup2;</span>, <span class="math-mono">B = 3</span>:<br>
-            <span class="math-mono">(a&sup2;)&sup3; + 3&sup3; = (a&sup2; + 3)((a&sup2;)&sup2; - 3a&sup2; + 3&sup2;) = (a&sup2; + 3)(a<sup>4</sup> - 3a&sup2; + 9)</span>!
+          <strong style="color:var(--md-accent-primary);">Textbook Example: Factoring <span class="math-mono">a<sup>6</sup> + 27</span></strong>
+          <p style="font-size:0.88rem; color:var(--md-text-secondary); margin-top:4px;">
+            <strong>The Detective Question:</strong> The teacher asks to factor <span class="math-mono">a<sup>6</sup> + 27</span>. How do we even know this is a cube problem?<br>
+            &bull; Look at 27: <span class="math-mono">3 &times; 3 &times; 3 = 27 = 3&sup3;</span> (It's a cube!)<br>
+            &bull; Look at <span class="math-mono">a<sup>6</sup></span>: Power of a power says <span class="math-mono">(a&sup2;)&sup3; = a<sup>6</sup></span> (It's a cube too!)<br>
+            So this is really just <span class="math-mono">(something)&sup3; + (3)&sup3;</span>!
+          </p>
+          <div class="formula-box">
+            (a&sup2;)&sup3; + 3&sup3; = (a&sup2; + 3)((a&sup2;)&sup2; &minus; 3a&sup2; + 3&sup2;) = (a&sup2; + 3)(a<sup>4</sup> &minus; 3a&sup2; + 9)
+          </div>
+          <p style="font-size:0.85rem; color:var(--md-text-secondary); margin:4px 0 0;">
+            See how painless that was? We just dropped <span class="math-mono">a&sup2;</span> into spot A and <span class="math-mono">3</span> into spot B in Rule 1!
           </p>
         </div>
       </div>
@@ -1665,18 +1749,28 @@
     <div id="l2-tab-factoring" class="tab-content hidden">
       <div class="card">
         <h2>2. Advanced Polynomial Factoring &amp; Algebraic Fractions</h2>
-        <p>In Lithuanian: <em>Daugianarių skaidymas daugikliais</em>. Factoring is simply running multiplication backward to cancel identical factors in fractions!</p>
+        
+        <!-- ELIF Story Box: The LEGO Analogy -->
+        <div class="elif-box">
+          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The LEGO Analogy</div>
+          <div class="elif-title">What does "Factoring" actually mean in plain English?</div>
+          <p class="elif-text">
+            Think of a math expression like a big LEGO castle. When numbers are glued together with pluses (<span class="math-mono">+</span>) and minuses (<span class="math-mono">&minus;</span>), they are like superglued bricks. You <strong>cannot</strong> just take one brick off a fraction because the whole castle falls apart!<br>
+            <strong>Factoring</strong> is simply un-clicking the LEGO castle into clean, separate modular boxes wrapped in parentheses <span class="math-mono">(block A) &times; (block B)</span>.<br>
+            Once everything is in multiplied blocks, if the top and bottom of a fraction have the exact same block, you can slice them right out with a sword!
+          </p>
+        </div>
 
         <div class="concept-banner">
-          <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The 3-Step Strategy to Factor Anything:</strong>
+          <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The Universal 3-Step Recipe:</strong>
           <ol class="step-list" style="margin-top:6px; margin-bottom:0;">
-            <li><strong>Step 1: Greatest Common Factor (GCF) out first!</strong> If every term has <span class="math-mono">x</span> or a common number like 3, pull it out before doing anything else.</li>
-            <li><strong>Step 2: Inspect the remaining shape.</strong>
-              <br>&bull; 2 terms? Check for difference of squares (<span class="math-mono">a&sup2; - b&sup2;</span>) or cubes (<span class="math-mono">a&sup3; &plusmn; b&sup3;</span>).
-              <br>&bull; 3 terms? Quadratic trinomial (<span class="math-mono">ax&sup2; + bx + c = a(x - x<sub>1</sub>)(x - x<sub>2</sub>)</span>).
-              <br>&bull; 4 terms? Group in pairs (<span class="math-mono">ac + bc + ad + bd = c(a+b) + d(a+b) = (a+b)(c+d)</span>).
+            <li><strong>Step 1 (The Hoover Vacuum):</strong> Does <em>every</em> term share a common number or letter? (e.g. in <span class="math-mono">2m + 10</span>, both divide by 2). Suck it outside the bracket first: <span class="math-mono">2(m + 5)</span>.</li>
+            <li><strong>Step 2 (Count the pieces left inside):</strong>
+              <br>&bull; <strong>2 pieces?</strong> Check for difference of squares (<span class="math-mono">m&sup2; &minus; 25 = (m&minus;5)(m+5)</span>) or cubes (<span class="math-mono">m&sup3; &minus; 125</span>).
+              <br>&bull; <strong>3 pieces?</strong> Quadratic trinomial (<span class="math-mono">x&sup2; &minus; 7x + 10 = (x &minus; 2)(x &minus; 5)</span>).
+              <br>&bull; <strong>4 pieces?</strong> Group them in pairs of two.
             </li>
-            <li><strong>Step 3: Cancel identical brackets top and bottom!</strong> (Never cancel individual terms, only full multiplied brackets).</li>
+            <li><strong>Step 3 (The Slash &amp; Burn):</strong> Look at the top and bottom of the fraction. If you see twin brackets like <span class="math-mono">(m + 5)</span> on top and <span class="math-mono">(m + 5)</span> on bottom, strike them out!</li>
           </ol>
         </div>
 
@@ -1815,25 +1909,39 @@
     <div id="l2-tab-roots" class="tab-content hidden">
       <div class="card">
         <h2>4. n-th Roots &amp; The Domain (Apibrėžimo Sritis)</h2>
-        <p>In Lithuanian: <em>n-tojo laipsnio šaknis</em>. A critical topic in your book is knowing <strong>when a root is legal</strong> and what numbers are allowed inside!</p>
+
+        <!-- ELIF Story Box: The Border Control Guard -->
+        <div class="elif-box">
+          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The Border Control Story</div>
+          <div class="elif-title">What is "Domain" (Apibrėžimo sritis) and why are math books obsessed with it?</div>
+          <p class="elif-text">
+            Think of a mathematical formula like a blender machine.<br>
+            If you throw in apples, oranges, and ice, the machine works great.<br>
+            If you throw in a solid steel wrench, the blender explodes!<br>
+            The <strong>Domain (Apibrėžimo sritis)</strong> is simply the list of "safe ingredients" you are legally allowed to feed into the machine so it doesn't explode in real life.<br>
+            In high school math, there are only two things that break the universe:
+            <br>1. <strong>Dividing by zero</strong> (you cannot split a pizza between zero people).
+            <br>2. <strong>Putting a negative number inside an EVEN root</strong> (like <span class="math-mono">&radic;(&minus;4)</span> or <span class="math-mono"><sup>4</sup>&radic;(&minus;16)</span>).
+          </p>
+        </div>
 
         <div class="concept-banner">
           <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The Golden Odd vs. Even Rule:</strong>
           <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:8px;">
-            <div style="background:var(--md-surface-low); padding:10px 14px; border-radius:var(--radius-sm); border-left:4px solid #1C5232;">
-              <strong style="color:#1C5232;">Odd Roots (n = 3, 5, 7, ...)</strong>
-              <p style="font-size:0.86rem; margin-top:4px;">
-                &bull; <strong>ALWAYS ALLOWED!</strong> Positives, zero, and negatives are all welcome.<br>
-                &bull; <span class="math-mono">∛(-8) = -2</span> (because <span class="math-mono">(-2)&sup3; = -8</span>).<br>
-                &bull; <strong>Domain:</strong> All real numbers (<span class="math-mono">x &isin; &reals;</span>).
+            <div style="background:var(--md-surface-low); padding:12px 14px; border-radius:var(--radius-sm); border-left:4px solid #1C5232;">
+              <strong style="color:#1C5232; font-size:0.95rem;">Odd Roots: The Friendly Club (n = 3, 5, 7...)</strong>
+              <p style="font-size:0.86rem; margin-top:6px; line-height:1.5;">
+                <strong>NO RESTRICTIONS AT ALL!</strong> Positives, zeros, and negatives can all enter freely.<br>
+                <em>Why?</em> Because <span class="math-mono">(&minus;2) &times; (&minus;2) &times; (&minus;2) = &minus;8</span>! Three minuses preserve the minus sign naturally. So <span class="math-mono">∛(&minus;8) = &minus;2</span> is 100% legal.<br>
+                <strong>Domain:</strong> All numbers (<span class="math-mono">x &isin; (&minus;&infin;; +&infin;)</span>).
               </p>
             </div>
-            <div style="background:var(--md-surface-low); padding:10px 14px; border-radius:var(--radius-sm); border-left:4px solid #7A2424;">
-              <strong style="color:#7A2424;">Even Roots (n = 2, 4, 6, ...)</strong>
-              <p style="font-size:0.86rem; margin-top:4px;">
-                &bull; <strong>STRICT GATE!</strong> Inside must be <span class="math-mono">&ge; 0</span>.<br>
-                &bull; <span class="math-mono"><sup>4</sup>&radic;(-16)</span> has NO real meaning!<br>
-                &bull; <strong>Crucial identity:</strong> <span class="math-mono"><sup>n</sup>&radic;(a<sup>n</sup>) = |a|</span> when <span class="math-mono">n</span> is even!
+            <div style="background:var(--md-surface-low); padding:12px 14px; border-radius:var(--radius-sm); border-left:4px solid #7A2424;">
+              <strong style="color:#7A2424; font-size:0.95rem;">Even Roots: The Strict Gate (n = 2, 4, 6...)</strong>
+              <p style="font-size:0.86rem; margin-top:6px; line-height:1.5;">
+                <strong>STRICT NO-MINUS ZONE!</strong> The inside expression MUST be <span class="math-mono">&ge; 0</span>.<br>
+                <em>Why?</em> Because any real number times itself an even number of times is ALWAYS positive (<span class="math-mono">(&minus;3)&sup2; = +9</span>). No real number multiplied by itself gives &minus;9.<br>
+                <strong>Rule:</strong> Set the inside <span class="math-mono">&ge; 0</span> and solve for <span class="math-mono">x</span>!
               </p>
             </div>
           </div>
@@ -1876,7 +1984,17 @@
     <div id="l2-tab-radicals" class="tab-content hidden">
       <div class="card">
         <h2>5. Moving Factors In and Out of Roots (Įkėlimas ir Iškėlimas)</h2>
-        <p>In Lithuanian: <em>Daugiklio iškėlimas prieš šaknies ženklą ir įkėlimas po šaknies ženklu</em>. This is like packing and unpacking a suitcase!</p>
+
+        <!-- ELIF Story Box: The Airport Passport Control -->
+        <div class="elif-box">
+          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The Suitcase &amp; Passport Story</div>
+          <div class="elif-title">Why do we "push in" or "pull out" of roots?</div>
+          <p class="elif-text">
+            Think of the root symbol <span class="math-mono"><sup>n</sup>&radic;</span> like an airport security checkpoint for VIP club members.<br>
+            &bull; <strong>To escape OUT of a cube root house (∛):</strong> You must pay a fee of 3 copies! If a number has <span class="math-mono">2 &times; 2 &times; 2 = 8 = 2&sup3;</span> hiding inside, those three 2s combine their power and walk out as <strong>one single free 2</strong>! Anything that didn't have 3 copies is trapped inside forever.<br>
+            &bull; <strong>To walk INSIDE an n-th root house:</strong> You have to multiply yourself by the house index! To enter a 4th-root house (<span class="math-mono"><sup>4</sup>&radic;</span>), a free number 2 must buy 4 tickets: <span class="math-mono">2<sup>4</sup> = 16</span> before entering the door.
+          </p>
+        </div>
 
         <div class="rule-grid-3">
           <div class="rule-card-modern">
@@ -1935,7 +2053,18 @@
     <div id="l2-tab-rationalize" class="tab-content hidden">
       <div class="card">
         <h2>6. Rationalizing Denominators (Iracionalumo Naikinimas Vardiklyje)</h2>
-        <p>In Lithuanian: <em>Panaikinkite iracionalumą trupmenos vardiklyje</em>. Mathematicians dislike having roots stuck in the bottom of a fraction. Here is how to banish them cleanly!</p>
+
+        <!-- ELIF Story Box: The Muddy Shoes Story -->
+        <div class="elif-box">
+          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The Muddy Shoes Story</div>
+          <div class="elif-title">Why does math hate roots in the bottom of fractions?</div>
+          <p class="elif-text">
+            Roots like <span class="math-mono">&radic;2 = 1.41421356...</span> are never-ending messy decimals. Having a messy infinite decimal in the denominator (the basement) is like walking through a clean living room with muddy boots.<br>
+            Mathematicians established an etiquette rule: <strong>Clean the basement!</strong> You are not allowed to leave a radical symbol downstairs in a fraction.<br>
+            To banish the root, we use the <strong>Golden Mirror Trick (Conjugate)</strong>:
+            Remember how <span class="math-mono">(A &minus; B)(A &plus; B) = A&sup2; &minus; B&sup2;</span>? The squares completely obliterate the square roots! So if you see <span class="math-mono">(&radic;7 &minus; &radic;5)</span> downstairs, you multiply top and bottom by its twin <span class="math-mono">(&radic;7 &plus; &radic;5)</span>, and the roots vanish into clean whole numbers (<span class="math-mono">7 &minus; 5 = 2</span>)!
+          </p>
+        </div>
 
         <div class="rule-grid-3">
           <div class="rule-card-modern">
