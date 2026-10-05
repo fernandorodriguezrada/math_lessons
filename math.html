@@ -722,13 +722,13 @@
 
     .rule-grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-      margin: 1.1rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 1.2rem 0;
       align-items: stretch;
     }
 
-    @media (min-width: 860px) {
+    @media (min-width: 900px) {
       .rule-grid-3 {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -743,14 +743,17 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 6px;
+      gap: 8px;
+      min-width: 0; /* Prevents flex children overflow */
     }
 
     .rule-card-modern > strong {
       color: var(--md-accent-primary);
       display: block;
-      font-size: 1rem;
+      font-size: 0.98rem;
       margin-bottom: 2px;
+      white-space: normal;
+      overflow-wrap: break-word;
     }
 
     .rule-card-modern strong {
@@ -763,9 +766,9 @@
       border: 1px solid var(--md-outline-subtle);
       border-radius: var(--radius-sm);
       padding: 8px 10px;
-      margin: 4px 0 6px 0;
+      margin: 2px 0 4px 0;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       color: var(--md-text-primary);
       overflow-x: auto;
       white-space: nowrap;
@@ -774,19 +777,19 @@
     .rule-card-modern .intuition-text {
       font-size: 0.86rem;
       color: var(--md-text-secondary);
-      line-height: 1.55;
-      margin-top: auto;
+      line-height: 1.5;
+      margin-top: 4px; /* Regular margin instead of margin-top: auto */
       text-wrap: pretty;
       word-break: normal;
       overflow-wrap: break-word;
     }
 
 
-    /* ELIF (Explain Like I'm 5) Story Banners */
+    /* Intuitive Concept Banners */
     .elif-box {
       background: var(--md-surface);
       border: 1px solid var(--md-outline);
-      border-left: 5px solid #E06C75;
+      border-left: 4px solid var(--md-accent-primary);
       border-radius: var(--radius-md);
       padding: 1.25rem 1.4rem;
       margin: 1.2rem 0;
@@ -797,12 +800,12 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(224, 108, 117, 0.12);
-      color: #9C5369;
-      font-size: 0.78rem;
+      background: rgba(156, 83, 105, 0.12);
+      color: var(--md-accent-primary);
+      font-size: 0.76rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       padding: 3px 10px;
       border-radius: var(--radius-full);
       margin-bottom: 8px;
@@ -1655,15 +1658,13 @@
       <div class="card">
         <h2>1. The Cube Formulas (Greitosios Daugybos Formulės)</h2>
         
-        <!-- ELIF Story Box: The 3D Gift Box -->
+        <!-- Intuitive Overview Banner -->
         <div class="elif-box">
-          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The 3D Box Story</div>
-          <div class="elif-title">Why on Earth do cubes need formulas?</div>
+          <div class="elif-badge">Intuitive Concept &bull; Why Cubes Need Formulas</div>
+          <div class="elif-title">What problem are these formulas solving?</div>
           <p class="elif-text">
-            Imagine you have a square flat tile: its area is <strong>length &times; width</strong> (that's <span class="math-mono">x&sup2;</span>, 2D flat).<br>
-            Now imagine building a real, 3D cubic gift box with <strong>length &times; width &times; height</strong> (that's <span class="math-mono">x&sup3;</span>, 3D volume)!<br>
-            If you change the size of the box to <span class="math-mono">(x + 2)</span>, you aren't just stretching one side; you're expanding all 3 directions at once. If you multiply <span class="math-mono">(x + 2)(x + 2)(x + 2)</span> step-by-step with regular brackets, it takes 10 tedious minutes and you'll probably make a minus-sign error. 
-            The <strong>Cube Formulas</strong> are simply pre-packaged cheat codes that skip the 10 minutes of messy multiplication in one clean hop!
+            Multiplying a binomial three times like <span class="math-mono">(x + 2)(x + 2)(x + 2)</span> by hand is long, tedious, and error-prone.<br>
+            These three formulas are simply <strong>algebraic shortcuts</strong>: they let you expand or factor cubed expressions directly in a single step, without having to multiply out every individual term.
           </p>
         </div>
 
@@ -1674,9 +1675,9 @@
               a&sup3; + b&sup3; = (a + b)(a&sup2; &minus; ab + b&sup2;)
             </div>
             <div class="intuition-text">
-              <strong>The Soap Bubble Story:</strong> If you have two solid cubes and want to pack them into brackets:
-              <br>&bull; <em>Small pouch:</em> Simply strip off the cubes &mdash; it keeps the exact same plus sign <span class="math-mono">(a + b)</span>.
-              <br>&bull; <em>Big pouch:</em> Has a minus in the middle <span class="math-mono">(a&sup2; &minus; ab + b&sup2;)</span> so that all the unwanted cross-terms cancel out to zero when multiplied!
+              <strong>How to remember:</strong>
+              <br>&bull; <em>First bracket:</em> Keeps the original plus sign: <span class="math-mono">(a + b)</span>.
+              <br>&bull; <em>Second bracket:</em> Looks like an incomplete square, but has a <strong>single minus</strong> in the center: <span class="math-mono">(a&sup2; &minus; ab + b&sup2;)</span> so cross-terms cancel.
             </div>
           </div>
 
@@ -1686,24 +1687,23 @@
               a&sup3; &minus; b&sup3; = (a &minus; b)(a&sup2; &plus; ab + b&sup2;)
             </div>
             <div class="intuition-text">
-              <strong>The Story:</strong>
-              <br>&bull; <em>Small pouch:</em> Strips off the cubes and keeps the exact minus sign <span class="math-mono">(a &minus; b)</span>.
-              <br>&bull; <em>Big pouch:</em> Because the small pouch already took the minus, the big pouch is completely peaceful and all-positive <span class="math-mono">(a&sup2; + ab + b&sup2;)</span>.
+              <strong>How to remember:</strong>
+              <br>&bull; <em>First bracket:</em> Keeps the original minus sign: <span class="math-mono">(a &minus; b)</span>.
+              <br>&bull; <em>Second bracket:</em> Because the minus is already used in the first bracket, the entire second bracket is <strong>all positive</strong>: <span class="math-mono">(a&sup2; + ab + b&sup2;)</span>.
             </div>
           </div>
 
           <div class="rule-card-modern">
-            <strong>3. Blowing Up a Whole Cube: (a &plusmn; b)&sup3;</strong>
+            <strong>3. Cube of a Binomial: (a &plusmn; b)&sup3;</strong>
             <div class="formula-box" style="line-height:1.6;">
               (a + b)&sup3; = a&sup3; + 3a&sup2;b + 3ab&sup2; + b&sup3;<br>
               (a &minus; b)&sup3; = a&sup3; &minus; 3a&sup2;b + 3ab&sup2; &minus; b&sup3;
             </div>
             <div class="intuition-text">
-              <strong>The 1-3-3-1 Rhythm:</strong>
-              When expanding a cube, think of a choir singing the numbers <strong>1, 3, 3, 1</strong>.<br>
-              Power of <span class="math-mono">a</span> counts down: <span class="math-mono">a&sup3; &rarr; a&sup2; &rarr; a &rarr; gone</span>.<br>
-              Power of <span class="math-mono">b</span> counts up: <span class="math-mono">none &rarr; b &rarr; b&sup2; &rarr; b&sup3;</span>.<br>
-              For minus: signs alternate like a heartbeat: <strong>&plus; , &minus; , &plus; , &minus;</strong>.
+              <strong>Pattern &amp; signs:</strong>
+              <br>&bull; Coefficients always follow the symmetric order: <strong>1, 3, 3, 1</strong>.
+              <br>&bull; The power of <span class="math-mono">a</span> decreases (<span class="math-mono">a&sup3; &rarr; a&sup2; &rarr; a</span>) while <span class="math-mono">b</span> increases (<span class="math-mono">b &rarr; b&sup2; &rarr; b&sup3;</span>).
+              <br>&bull; For subtraction <span class="math-mono">(a &minus; b)&sup3;</span>, signs simply alternate: <strong>&plus; , &minus; , &plus; , &minus;</strong>.
             </div>
           </div>
         </div>
@@ -1761,14 +1761,14 @@
       <div class="card">
         <h2>2. Advanced Polynomial Factoring &amp; Algebraic Fractions</h2>
         
-        <!-- ELIF Story Box: The LEGO Analogy -->
+        <!-- Intuitive Overview Banner -->
         <div class="elif-box">
-          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The LEGO Analogy</div>
-          <div class="elif-title">What does "Factoring" actually mean in plain English?</div>
+          <div class="elif-badge">Core Concept &bull; Factoring Explained Simply</div>
+          <div class="elif-title">What is the purpose of factoring?</div>
           <p class="elif-text">
-            Think of a math expression like a big LEGO castle. When numbers are glued together with pluses (<span class="math-mono">+</span>) and minuses (<span class="math-mono">&minus;</span>), they are like superglued bricks. You <strong>cannot</strong> just take one brick off a fraction because the whole castle falls apart!<br>
-            <strong>Factoring</strong> is simply un-clicking the LEGO castle into clean, separate modular boxes wrapped in parentheses <span class="math-mono">(block A) &times; (block B)</span>.<br>
-            Once everything is in multiplied blocks, if the top and bottom of a fraction have the exact same block, you can slice them right out with a sword!
+            In fractions, you <strong>cannot cancel terms that are added or subtracted</strong> (e.g. you cannot cancel the 5s in <span class="math-mono">(x + 5) / 5</span>).<br>
+            <strong>Factoring</strong> transforms addition and subtraction into multiplication: <span class="math-mono">(factor A) &times; (factor B)</span>.<br>
+            Once terms are multiplied, identical matching factors in the numerator and denominator can be cancelled out immediately.
           </p>
         </div>
 
@@ -1921,18 +1921,15 @@
       <div class="card">
         <h2>4. n-th Roots &amp; The Domain (Apibrėžimo Sritis)</h2>
 
-        <!-- ELIF Story Box: The Border Control Guard -->
+        <!-- Intuitive Overview Banner -->
         <div class="elif-box">
-          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The Border Control Story</div>
-          <div class="elif-title">What is "Domain" (Apibrėžimo sritis) and why are math books obsessed with it?</div>
+          <div class="elif-badge">Core Concept &bull; The Domain (Apibrėžimo Sritis)</div>
+          <div class="elif-title">What does "Domain" mean and why do we find it?</div>
           <p class="elif-text">
-            Think of a mathematical formula like a blender machine.<br>
-            If you throw in apples, oranges, and ice, the machine works great.<br>
-            If you throw in a solid steel wrench, the blender explodes!<br>
-            The <strong>Domain (Apibrėžimo sritis)</strong> is simply the list of "safe ingredients" you are legally allowed to feed into the machine so it doesn't explode in real life.<br>
-            In high school math, there are only two things that break the universe:
-            <br>1. <strong>Dividing by zero</strong> (you cannot split a pizza between zero people).
-            <br>2. <strong>Putting a negative number inside an EVEN root</strong> (like <span class="math-mono">&radic;(&minus;4)</span> or <span class="math-mono"><sup>4</sup>&radic;(&minus;16)</span>).
+            The <strong>Domain (Apibrėžimo sritis)</strong> is simply the set of all <span class="math-mono">x</span> values that produce valid, real mathematical results without breaking mathematical rules.<br>
+            In secondary school algebra, there are two primary domain restrictions:
+            <br>1. <strong>Division by zero is undefined</strong> &mdash; a denominator can never equal 0.
+            <br>2. <strong>Even roots of negative numbers have no real value</strong> &mdash; the radicand under an even root (<span class="math-mono">&radic;</span>, <span class="math-mono"><sup>4</sup>&radic;</span>, etc.) must always be non-negative: <span class="math-mono">&ge; 0</span>.
           </p>
         </div>
 
@@ -1996,14 +1993,14 @@
       <div class="card">
         <h2>5. Moving Factors In and Out of Roots (Įkėlimas ir Iškėlimas)</h2>
 
-        <!-- ELIF Story Box: The Airport Passport Control -->
+        <!-- Intuitive Overview Banner -->
         <div class="elif-box">
-          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The Suitcase &amp; Passport Story</div>
-          <div class="elif-title">Why do we "push in" or "pull out" of roots?</div>
+          <div class="elif-badge">Core Concept &bull; Moving Factors (Įkėlimas ir Iškėlimas)</div>
+          <div class="elif-title">How do factors move across a radical?</div>
           <p class="elif-text">
-            Think of the root symbol <span class="math-mono"><sup>n</sup>&radic;</span> like an airport security checkpoint for VIP club members.<br>
-            &bull; <strong>To escape OUT of a cube root house (∛):</strong> You must pay a fee of 3 copies! If a number has <span class="math-mono">2 &times; 2 &times; 2 = 8 = 2&sup3;</span> hiding inside, those three 2s combine their power and walk out as <strong>one single free 2</strong>! Anything that didn't have 3 copies is trapped inside forever.<br>
-            &bull; <strong>To walk INSIDE an n-th root house:</strong> You have to multiply yourself by the house index! To enter a 4th-root house (<span class="math-mono"><sup>4</sup>&radic;</span>), a free number 2 must buy 4 tickets: <span class="math-mono">2<sup>4</sup> = 16</span> before entering the door.
+            Moving factors into or out of an <span class="math-mono">n</span>-th root is simply applying the rule <span class="math-mono"><sup>n</sup>&radic;(a<sup>n</sup> &bull; b) = a &bull; <sup>n</sup>&radic;b</span>:
+            <br>&bull; <strong>Extracting outside (Iškėlimas):</strong> If a factor inside is raised to the power <span class="math-mono">n</span>, it exits the root as a single base factor: e.g. <span class="math-mono">&radic;(18) = &radic;(9 &times; 2) = 3&radic;2</span>.
+            <br>&bull; <strong>Inserting inside (Įkėlimas):</strong> To move an external factor into an <span class="math-mono">n</span>-th root, raise it to the <span class="math-mono">n</span>-th power first: e.g. <span class="math-mono">2 &bull; <sup>4</sup>&radic;3 = <sup>4</sup>&radic;(2<sup>4</sup> &times; 3) = <sup>4</sup>&radic;48</span>.
           </p>
         </div>
 
@@ -2065,15 +2062,14 @@
       <div class="card">
         <h2>6. Rationalizing Denominators (Iracionalumo Naikinimas Vardiklyje)</h2>
 
-        <!-- ELIF Story Box: The Muddy Shoes Story -->
+        <!-- Intuitive Overview Banner -->
         <div class="elif-box">
-          <div class="elif-badge">🧸 Explain Like I'm 5 &bull; The Muddy Shoes Story</div>
-          <div class="elif-title">Why does math hate roots in the bottom of fractions?</div>
+          <div class="elif-badge">Core Concept &bull; Rationalizing Denominators</div>
+          <div class="elif-title">Why and how do we remove roots from denominators?</div>
           <p class="elif-text">
-            Roots like <span class="math-mono">&radic;2 = 1.41421356...</span> are never-ending messy decimals. Having a messy infinite decimal in the denominator (the basement) is like walking through a clean living room with muddy boots.<br>
-            Mathematicians established an etiquette rule: <strong>Clean the basement!</strong> You are not allowed to leave a radical symbol downstairs in a fraction.<br>
-            To banish the root, we use the <strong>Golden Mirror Trick (Conjugate)</strong>:
-            Remember how <span class="math-mono">(A &minus; B)(A &plus; B) = A&sup2; &minus; B&sup2;</span>? The squares completely obliterate the square roots! So if you see <span class="math-mono">(&radic;7 &minus; &radic;5)</span> downstairs, you multiply top and bottom by its twin <span class="math-mono">(&radic;7 &plus; &radic;5)</span>, and the roots vanish into clean whole numbers (<span class="math-mono">7 &minus; 5 = 2</span>)!
+            Standard mathematical convention requires expressions to be in simplified form, meaning no irrational square or higher roots are left in denominators.<br>
+            &bull; <strong>For single roots:</strong> Multiply top and bottom by the root needed to complete an integer power: <span class="math-mono">c / &radic;a = (c&radic;a) / a</span>.
+            <br>&bull; <strong>For binomial roots (Conjugates):</strong> Use the difference of squares identity <span class="math-mono">(A &minus; B)(A &plus; B) = A&sup2; &minus; B&sup2;</span>. Multiplying <span class="math-mono">(&radic;a &minus; &radic;b)</span> by its conjugate twin <span class="math-mono">(&radic;a &plus; &radic;b)</span> squares both radicals and eliminates the roots completely: <span class="math-mono">a &minus; b</span>.
           </p>
         </div>
 
