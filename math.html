@@ -57,8 +57,8 @@
       background-color: var(--md-canvas);
       color: var(--md-text-primary);
       line-height: 1.6;
-      padding: 2.2rem 1.25rem;
-      max-width: 980px;
+      padding: 2rem 1.5rem;
+      max-width: 1240px;
       margin: 0 auto;
     }
 
@@ -722,13 +722,13 @@
 
     .rule-grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
       margin: 1.2rem 0;
       align-items: stretch;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 992px) {
       .rule-grid-3 {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -765,13 +765,14 @@
       background: var(--md-surface);
       border: 1px solid var(--md-outline-subtle);
       border-radius: var(--radius-sm);
-      padding: 8px 10px;
-      margin: 2px 0 4px 0;
+      padding: 10px 14px;
+      margin: 2px 0 6px 0;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--md-text-primary);
-      overflow-x: auto;
-      white-space: nowrap;
+      overflow-x: visible;
+      white-space: normal;
+      word-break: normal;
     }
 
     .rule-card-modern .intuition-text {
