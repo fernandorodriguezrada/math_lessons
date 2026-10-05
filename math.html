@@ -722,10 +722,16 @@
 
     .rule-grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 14px;
       margin: 1.1rem 0;
       align-items: stretch;
+    }
+
+    @media (min-width: 860px) {
+      .rule-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .rule-card-modern {
@@ -740,11 +746,16 @@
       gap: 6px;
     }
 
-    .rule-card-modern strong {
+    .rule-card-modern > strong {
       color: var(--md-accent-primary);
       display: block;
       font-size: 1rem;
       margin-bottom: 2px;
+    }
+
+    .rule-card-modern strong {
+      color: var(--md-text-primary);
+      display: inline;
     }
 
     .rule-card-modern .formula-box {
@@ -1664,8 +1675,8 @@
             </div>
             <div class="intuition-text">
               <strong>The Soap Bubble Story:</strong> If you have two solid cubes and want to pack them into brackets:
-              <br>&bull; <em>Small pouch:</em> You simply strip the cubes off: <span class="math-mono">(a + b)</span> (keeps the exact same <strong style="color:var(--md-status-success-text);">&plus;</strong> sign).
-              <br>&bull; <em>Big pouch:</em> Needs one minus sign inside <span class="math-mono">(a&sup2; &minus; ab + b&sup2;)</span> so that when you multiply them back out, all the unwanted middle terms explode and cancel each other out to zero!
+              <br>&bull; <em>Small pouch:</em> Simply strip off the cubes &mdash; it keeps the exact same plus sign <span class="math-mono">(a + b)</span>.
+              <br>&bull; <em>Big pouch:</em> Has a minus in the middle <span class="math-mono">(a&sup2; &minus; ab + b&sup2;)</span> so that all the unwanted cross-terms cancel out to zero when multiplied!
             </div>
           </div>
 
@@ -1676,8 +1687,8 @@
             </div>
             <div class="intuition-text">
               <strong>The Story:</strong>
-              <br>&bull; <em>Small pouch:</em> Strips the cubes and keeps the exact minus sign: <span class="math-mono">(a &minus; b)</span>.
-              <br>&bull; <em>Big pouch:</em> Because the small pouch already has the minus, the big pouch is completely peaceful and <strong>all positive</strong>: <span class="math-mono">(a&sup2; + ab + b&sup2;)</span>!
+              <br>&bull; <em>Small pouch:</em> Strips off the cubes and keeps the exact minus sign <span class="math-mono">(a &minus; b)</span>.
+              <br>&bull; <em>Big pouch:</em> Because the small pouch already took the minus, the big pouch is completely peaceful and all-positive <span class="math-mono">(a&sup2; + ab + b&sup2;)</span>.
             </div>
           </div>
 
