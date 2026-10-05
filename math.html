@@ -1104,9 +1104,9 @@
         <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The Golden Rule of Fractional Powers: "The Root Tree"</strong>
         <p style="margin-top:6px; margin-bottom:0;">Whenever you see a fraction in the exponent, like <span class="math-mono">x<sup>m/n</sup></span>:</p>
         <p style="margin-top:4px; font-size:0.95rem;">
-          &bull; <strong>The bottom number (n)</strong> is the <strong>ROOT</strong> (underground &rarr; <span class="math-mono">&radic;[n]</span>).<br>
+          &bull; <strong>The bottom number (n)</strong> is the <strong>ROOT</strong> (underground &rarr; <span class="math-mono"><sup>n</sup>&radic;</span>).<br>
           &bull; <strong>The top number (m)</strong> is the <strong>POWER</strong> (up in the branches).<br>
-          Example: <span class="math-mono">125<sup>2/3</sup> = (&radic;[3]{125})² = 5² = 25</span>!
+          Example: <span class="math-mono">125<sup>2/3</sup> = (∛125)² = 5² = 25</span>!
         </p>
       </div>
 
@@ -1148,7 +1148,7 @@
             <p style="font-size:0.86rem; margin:4px 0 0;">
               &bull; <strong>Top number</strong> = power in branches.<br>
               &bull; <strong>Bottom number</strong> = root underground (<span class="math-mono">&radic;</span>).<br>
-              <span class="math-mono">9<sup>1/2</sup> = &radic;9 = 3</span> &bull; <span class="math-mono">125<sup>1/3</sup> = &radic;[3]{125} = 5</span>.
+              <span class="math-mono">9<sup>1/2</sup> = &radic;9 = 3</span> &bull; <span class="math-mono">125<sup>1/3</sup> = ∛125 = 5</span>.
             </p>
           </div>
 
@@ -1208,7 +1208,7 @@
         <div class="compare-card">
           <strong style="color:var(--md-text-primary);">The Simple Intuition (Rule 1 &amp; Rule 3):</strong>
           <p style="font-size:0.88rem; margin-top:4px;">
-            Both parts share the exact same power <span class="math-mono">1/3</span>! That means both are living inside a cube root house (<span class="math-mono">&radic;[3]</span>). We can marry the insides together under one master power, multiply the numbers and letters, and pull out clean roots!
+            Both parts share the exact same power <span class="math-mono">1/3</span>! That means both are living inside a cube root house (<span class="math-mono">∛</span>). We can marry the insides together under one master power, multiply the numbers and letters, and pull out clean roots!
           </p>
         </div>
 
@@ -1220,10 +1220,10 @@
           <li><strong>Step 2 (Multiply numbers &amp; add powers of x):</strong>
             <br>&bull; Numbers: <span class="math-mono">3 &times; 9 = 27</span>.
             <br>&bull; Letters (Rule 3: add powers <span class="math-mono">1 + 5</span>): <span class="math-mono">x &bull; x<sup>5</sup> = x<sup>1+5</sup> = x<sup>6</sup></span>.
-            <br>Inside the bracket we get: <span class="math-mono">(27x<sup>6</sup>)<sup>1/3</sup></span> (or <span class="math-mono">&radic;[3]{27x<sup>6</sup>}</span>).
+            <br>Inside the bracket we get: <span class="math-mono">(27x<sup>6</sup>)<sup>1/3</sup></span> (or <span class="math-mono">∛(27x<sup>6</sup>)</span>).
           </li>
           <li><strong>Step 3 (Apply the 1/3 power to each piece):</strong>
-            <br>&bull; Number part: <span class="math-mono">27<sup>1/3</sup> = &radic;[3]{27} = 3</span> (since <span class="math-mono">3 &times; 3 &times; 3 = 27</span>).
+            <br>&bull; Number part: <span class="math-mono">27<sup>1/3</sup> = ∛27 = 3</span> (since <span class="math-mono">3 &times; 3 &times; 3 = 27</span>).
             <br>&bull; Letter part (Rule 3: multiply powers): <span class="math-mono">(x<sup>6</sup>)<sup>1/3</sup> = x<sup>6/3</sup> = x²</span>.
           </li>
           <li><strong>Step 4 (Final combination):</strong>
@@ -1331,7 +1331,7 @@
           <li><strong>Use Rule 2 (The Elevator):</strong> The minus in <span class="math-mono">125<sup>-1/3</sup></span> flips it downstairs into the denominator:
             <br><span class="math-mono">125<sup>-1/3</sup> = 1 / 125<sup>1/3</sup></span>.
           </li>
-          <li><strong>Use Rule 1 (The Root Tree):</strong> A power of <span class="math-mono">1/3</span> means cube root (&radic;[3]{}):
+          <li><strong>Use Rule 1 (The Root Tree):</strong> A power of <span class="math-mono">1/3</span> means cube root (∛):
             <br>What number &times; itself &times; itself = 125? <strong>5</strong>! (since <span class="math-mono">5 &times; 5 &times; 5 = 125</span>).
             <br>So <span class="math-mono">125<sup>1/3</sup> = 5</span>, which makes <span class="math-mono">125<sup>-1/3</sup> = 1/5</span>.
           </li>
@@ -1679,12 +1679,13 @@
           <p style="font-size:0.92rem; margin-top:6px; margin-bottom:0;">
             For any base <span class="math-mono">a &gt; 0</span> and rational number <span class="math-mono">m/n</span>:
           </p>
-          <div style="font-size:1.15rem; font-weight:700; color:var(--md-accent-primary); text-align:center; margin:10px 0; font-family:'JetBrains Mono';">
-            a<sup>m/n</sup> = &radic;[n]{a<sup>m</sup>} = (&radic;[n]{a})<sup>m</sup>
+          <div style="font-size:1.2rem; font-weight:700; color:var(--md-accent-primary); text-align:center; margin:12px 0; font-family:'JetBrains Mono';">
+            a<sup>m/n</sup> = <sup>n</sup>&radic;(a<sup>m</sup>) = (<sup>n</sup>&radic;a)<sup>m</sup>
           </div>
-          <p style="font-size:0.86rem; color:var(--md-text-secondary); margin:0;">
-            &bull; <strong>Numerator (m):</strong> Normal power.<br>
-            &bull; <strong>Denominator (n):</strong> Index of the root (always goes underground in the radical notch).
+          <p style="font-size:0.88rem; color:var(--md-text-secondary); margin:0; line-height:1.6;">
+            &bull; <strong>Top Number (m) = The Power:</strong> Lives up high in the tree branches (raises the value).<br>
+            &bull; <strong>Bottom Number (n) = The Root:</strong> Lives down in the dirt / root system (tells you which root to take: 2 for &radic;, 3 for ∛, etc.).<br>
+            <em>Example:</em> <span class="math-mono">8<sup>2/3</sup> = (∛8)&sup2; = 2&sup2; = 4</span>! (Always take the root first to shrink the number, then square it).
           </p>
         </div>
 
@@ -1729,18 +1730,36 @@
           </p>
           <ol class="step-list">
             <li><span class="math-mono">49<sup>1/2</sup> = &radic;49 = 7</span>.</li>
-            <li><span class="math-mono">27<sup>1/3</sup> = &radic;[3]{27} = 3</span> (since <span class="math-mono">3 &times; 3 &times; 3 = 27</span>).</li>
+            <li><span class="math-mono">27<sup>1/3</sup> = ∛27 = 3</span> (since <span class="math-mono">3 &times; 3 &times; 3 = 27</span>).</li>
             <li><span class="math-mono">7 + 3 = 10</span>!</li>
           </ol>
           <div><span class="answer-badge">Answer: 10</span></div>
         </div>
 
         <div class="compare-card">
-          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 6b (Shared Power Trick)</strong>
+          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 6b (The Shared Exponent Trick)</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
-            <strong>Problem:</strong> <span class="math-mono">50<sup>1/2</sup> &bull; 2<sup>1/2</sup></span><br>
-            Both have power <span class="math-mono">1/2</span>! Marry them: <span class="math-mono">(50 &times; 2)<sup>1/2</sup> = 100<sup>1/2</sup> = &radic;100 = 10</span>!
+            <strong>Problem:</strong> Calculate <span class="math-mono">50<sup>1/2</sup> &bull; 2<sup>1/2</sup></span>
           </p>
+          
+          <div style="background:var(--md-surface-subtle); padding:10px 14px; border-radius:var(--radius-sm); margin:8px 0; font-size:0.87rem; border-left:3px solid var(--md-accent-primary);">
+            <strong>Why can't we just calculate them separately?</strong><br>
+            &bull; <span class="math-mono">50<sup>1/2</sup> = &radic;50 &approx; 7.071...</span> (an ugly never-ending decimal!)<br>
+            &bull; <span class="math-mono">2<sup>1/2</sup> = &radic;2 &approx; 1.414...</span> (another ugly decimal!)<br>
+            Trying to multiply those decimals by hand is painful. But notice the superpower: <em>both bases have the EXACT same power: <span class="math-mono">1/2</span></em>!
+          </div>
+
+          <ol class="step-list">
+            <li><strong>Identify the Law:</strong> <span class="math-mono">a<sup>p</sup> &bull; b<sup>p</sup> = (a &bull; b)<sup>p</sup></span>.<br>
+              When the powers match, you can group the bases together inside parentheses under one single shared roof!</li>
+            <li><strong>Multiply the bases inside:</strong><br>
+              <span class="math-mono">50<sup>1/2</sup> &bull; 2<sup>1/2</sup> = (50 &times; 2)<sup>1/2</sup> = 100<sup>1/2</sup></span>.</li>
+            <li><strong>Convert the fraction back into a root:</strong><br>
+              Power <span class="math-mono">1/2</span> simply means square root (<span class="math-mono">&radic;</span>).<br>
+              <span class="math-mono">100<sup>1/2</sup> = &radic;100 = 10</span>!
+            </li>
+          </ol>
+          <div><span class="answer-badge">Clean Final Answer: 10</span></div>
         </div>
       </div>
     </div>
@@ -1758,7 +1777,7 @@
               <strong style="color:#1C5232;">Odd Roots (n = 3, 5, 7, ...)</strong>
               <p style="font-size:0.86rem; margin-top:4px;">
                 &bull; <strong>ALWAYS ALLOWED!</strong> Positives, zero, and negatives are all welcome.<br>
-                &bull; <span class="math-mono">&radic;[3]{-8} = -2</span> (because <span class="math-mono">(-2)&sup3; = -8</span>).<br>
+                &bull; <span class="math-mono">∛(-8) = -2</span> (because <span class="math-mono">(-2)&sup3; = -8</span>).<br>
                 &bull; <strong>Domain:</strong> All real numbers (<span class="math-mono">x &isin; &reals;</span>).
               </p>
             </div>
@@ -1766,8 +1785,8 @@
               <strong style="color:#7A2424;">Even Roots (n = 2, 4, 6, ...)</strong>
               <p style="font-size:0.86rem; margin-top:4px;">
                 &bull; <strong>STRICT GATE!</strong> Inside must be <span class="math-mono">&ge; 0</span>.<br>
-                &bull; <span class="math-mono">&radic;[4]{-16}</span> has NO real meaning!<br>
-                &bull; <strong>Crucial identity:</strong> <span class="math-mono">&radic;[n]{a<sup>n</sup>} = |a|</span> when <span class="math-mono">n</span> is even!
+                &bull; <span class="math-mono"><sup>4</sup>&radic;(-16)</span> has NO real meaning!<br>
+                &bull; <strong>Crucial identity:</strong> <span class="math-mono"><sup>n</sup>&radic;(a<sup>n</sup>) = |a|</span> when <span class="math-mono">n</span> is even!
               </p>
             </div>
           </div>
@@ -1776,7 +1795,7 @@
         <div class="compare-card">
           <strong style="color:var(--md-accent-primary);">Finding the Domain (Apibrėžimo Sritis): Pavyzdys 9</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
-            <strong>Question:</strong> For what <span class="math-mono">x</span> does <span class="math-mono">&radic;[4]{2x - 9}</span> have meaning?
+            <strong>Question:</strong> For what <span class="math-mono">x</span> does <span class="math-mono"><sup>4</sup>&radic;(2x - 9)</span> have meaning?
           </p>
           <ol class="step-list">
             <li>Notice the root index is <strong>4 (even)</strong>! Even roots forbid negative numbers.</li>
@@ -1790,16 +1809,16 @@
         <div class="compare-card">
           <strong style="color:var(--md-accent-primary);">Odd Root Domain Comparison:</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
-            <strong>Question:</strong> For what <span class="math-mono">x</span> does <span class="math-mono">&radic;[5]{3x - 12}</span> have meaning?<br>
+            <strong>Question:</strong> For what <span class="math-mono">x</span> does <span class="math-mono"><sup>5</sup>&radic;(3x - 12)</span> have meaning?<br>
             Index is <strong>5 (odd)</strong> &rarr; An odd root can take any real number, positive or negative!<br>
             <strong>Domain:</strong> <span class="math-mono">x &isin; (-&infin;; +&infin;)</span> (visi realieji skaičiai).
           </p>
         </div>
 
         <div class="compare-card">
-          <strong style="color:var(--md-accent-primary);">The Modulus Trap: &radic;[n]{a<sup>n</sup>} for Even Roots</strong>
+          <strong style="color:var(--md-accent-primary);">The Modulus Trap: <sup>n</sup>&radic;(a<sup>n</sup>) for Even Roots</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
-            &bull; <span class="math-mono">&radic;[4]{(-7)<sup>4</sup>} = |-7| = 7</span> (NOT -7!).<br>
+            &bull; <span class="math-mono"><sup>4</sup>&radic;((-7)<sup>4</sup>) = |-7| = 7</span> (NOT -7!).<br>
             &bull; If <span class="math-mono">n</span> is even, the answer can <strong>never</strong> be negative. Always wrap the output in absolute value <span class="math-mono">|a|</span>!
           </p>
         </div>
@@ -1817,14 +1836,14 @@
             <strong>1. Pulling Out (Iškėlimas)</strong>
             <p style="font-size:0.86rem; margin-top:4px;">
               Find a perfect <span class="math-mono">n</span>-th power hiding inside, take its root, and bring it outside as a single factor:
-              <br><span class="math-mono">&radic;[n]{a<sup>n</sup> &bull; b} = a &bull; &radic;[n]{b}</span>
+              <br><span class="math-mono"><sup>n</sup>&radic;(a<sup>n</sup> &bull; b) = a &bull; <sup>n</sup>&radic;b</span>
             </p>
           </div>
           <div class="rule-card-modern">
             <strong>2. Pushing Inside (Įkėlimas)</strong>
             <p style="font-size:0.86rem; margin-top:4px;">
               To move an outside factor inside an <span class="math-mono">n</span>-th root, raise it to the <span class="math-mono">n</span>-th power:
-              <br><span class="math-mono">a &bull; &radic;[n]{b} = &radic;[n]{a<sup>n</sup> &bull; b}</span>
+              <br><span class="math-mono">a &bull; <sup>n</sup>&radic;b = <sup>n</sup>&radic;(a<sup>n</sup> &bull; b)</span>
             </p>
           </div>
           <div class="rule-card-modern">
@@ -1840,33 +1859,33 @@
         <div class="compare-card">
           <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 12 (Pulling Out)</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
-            <strong>Problem:</strong> Simplify <span class="math-mono">&radic;[3]{32}</span>
+            <strong>Problem:</strong> Simplify <span class="math-mono">∛32</span>
           </p>
           <ol class="step-list">
             <li>What perfect cubes divide 32? <span class="math-mono">2&sup3; = 8</span> divides 32!</li>
             <li>Split 32: <span class="math-mono">32 = 8 &times; 4</span>.</li>
-            <li>Distribute root: <span class="math-mono">&radic;[3]{32} = &radic;[3]{8} &bull; &radic;[3]{4} = 2&radic;[3]{4}</span>.</li>
+            <li>Distribute root: <span class="math-mono">∛32 = ∛8 &bull; ∛4 = 2∛4</span>.</li>
           </ol>
           <div><span class="answer-badge">Answer: 2∛4</span></div>
         </div>
 
         <div class="compare-card">
-          <strong style="color:var(--md-accent-primary);">Pushing Inside Example: 2 &bull; &radic;[4]{3}</strong>
+          <strong style="color:var(--md-accent-primary);">Pushing Inside Example: 2 &bull; <sup>4</sup>&radic;3</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
             To enter a 4th-root house, the factor 2 must be raised to power 4:<br>
             <span class="math-mono">2<sup>4</sup> = 16</span>.<br>
-            So <span class="math-mono">2 &bull; &radic;[4]{3} = &radic;[4]{16 &times; 3} = &radic;[4]{48}</span>!
+            So <span class="math-mono">2 &bull; <sup>4</sup>&radic;3 = <sup>4</sup>&radic;(16 &times; 3) = <sup>4</sup>&radic;48</span>!
           </p>
         </div>
 
         <div class="compare-card">
           <strong style="color:var(--md-accent-primary);">Harmonizing Root Indices to Compare: Pavyzdys 16</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
-            <strong>Which is bigger:</strong> <span class="math-mono">&radic;8</span> or <span class="math-mono">&radic;[3]{64}</span>? (or <span class="math-mono">&radic;[3]{2}</span> vs <span class="math-mono">&radic;[4]{3}</span>)<br>
+            <strong>Which is bigger:</strong> <span class="math-mono">&radic;8</span> or <span class="math-mono">∛64</span>? (or <span class="math-mono">∛2</span> vs <span class="math-mono"><sup>4</sup>&radic;3</span>)<br>
             To compare roots with different indices (like 3 and 4), find a common root index: <strong>12</strong>!<br>
-            &bull; <span class="math-mono">&radic;[3]{2} = &radic;[12]{2<sup>4</sup>} = &radic;[12]{16}</span>.<br>
-            &bull; <span class="math-mono">&radic;[4]{3} = &radic;[12]{3&sup3;} = &radic;[12]{27}</span>.<br>
-            Since <span class="math-mono">16 &lt; 27</span>, we immediately know <span class="math-mono">&radic;[3]{2} &lt; &radic;[4]{3}</span>!
+            &bull; <span class="math-mono">∛2 = <sup>12</sup>&radic;(2<sup>4</sup>) = <sup>12</sup>&radic;16</span>.<br>
+            &bull; <span class="math-mono"><sup>4</sup>&radic;3 = <sup>12</sup>&radic;(3&sup3;) = <sup>12</sup>&radic;27</span>.<br>
+            Since <span class="math-mono">16 &lt; 27</span>, we immediately know <span class="math-mono">∛2 &lt; <sup>4</sup>&radic;3</span>!
           </p>
         </div>
       </div>
@@ -1884,7 +1903,7 @@
             <p style="font-size:0.86rem; margin-top:4px;">
               Multiply top and bottom by the root needed to complete a whole power:
               <br><span class="math-mono">c / &radic;a = (c&radic;a) / a</span>
-              <br><span class="math-mono">c / &radic;[3]{a} = (c&radic;[3]{a&sup2;}) / a</span>
+              <br><span class="math-mono">c / ∛a = (c∛(a&sup2;)) / a</span>
             </p>
           </div>
           <div class="rule-card-modern">
@@ -1897,7 +1916,7 @@
           <div class="rule-card-modern">
             <strong>Case 3: Cube Root Conjugate</strong>
             <p style="font-size:0.86rem; margin-top:4px;">
-              If denominator is <span class="math-mono">&radic;[3]{a} - &radic;[3]{b}</span>, multiply by the incomplete square <span class="math-mono">&radic;[3]{a&sup2;} + &radic;[3]{ab} + &radic;[3]{b&sup2;}</span> to trigger <span class="math-mono">A&sup3; - B&sup3; = a - b</span>!
+              If denominator is <span class="math-mono">∛a - ∛b</span>, multiply by the incomplete square <span class="math-mono">∛(a&sup2;) + ∛(ab) + ∛(b&sup2;)</span> to trigger <span class="math-mono">A&sup3; - B&sup3; = a - b</span>!
             </p>
           </div>
         </div>
@@ -1923,11 +1942,11 @@
         </div>
 
         <div class="compare-card">
-          <strong style="color:var(--md-accent-primary);">Single Radical Example: 6 / &radic;[3]{9}</strong>
+          <strong style="color:var(--md-accent-primary);">Single Radical Example: 6 / ∛9</strong>
           <p style="font-size:0.9rem; margin-top:4px;">
             Notice <span class="math-mono">9 = 3&sup2;</span>. To make a full cube <span class="math-mono">3&sup3; = 27</span>, we need one more 3!<br>
-            Multiply top and bottom by <span class="math-mono">&radic;[3]{3}</span>:<br>
-            <span class="math-mono">6&radic;[3]{3} / &radic;[3]{27} = 6&radic;[3]{3} / 3 = 2&radic;[3]{3}</span>!
+            Multiply top and bottom by <span class="math-mono">∛3</span>:<br>
+            <span class="math-mono">6∛3 / ∛27 = 6∛3 / 3 = 2∛3</span>!
           </p>
         </div>
       </div>
@@ -1950,10 +1969,10 @@
             <input type="number" id="root-n-input" class="calc-input" value="3" min="1" max="20" style="width:80px;">
             <label style="font-size:0.88rem;">Value inside (a):</label>
             <input type="number" id="root-a-input" class="calc-input" value="-27" style="width:100px;">
-            <button class="calc-btn" onclick="calculateNthRoot()">Compute &radic;[n]{a}</button>
+            <button class="calc-btn" onclick="calculateNthRoot()">Compute <sup>n</sup>&radic;a</button>
           </div>
           <div id="root-result-display" class="calc-result-display">
-            Result: &radic;[3]{-27} = -3 (Odd root allows negative radicands!)
+            Result: ∛(-27) = -3 (Odd root allows negative radicands!)
           </div>
         </div>
 
@@ -1973,7 +1992,7 @@
             <button class="calc-btn" onclick="calculateFracPower()">Translate &amp; Solve</button>
           </div>
           <div id="frac-result-display" class="calc-result-display">
-            16<sup>3/4</sup> = (&radic;[4]{16})&sup3; = 2&sup3; = 8
+            16<sup>3/4</sup> = (<sup>4</sup>&radic;16)&sup3; = 2&sup3; = 8
           </div>
         </div>
       </div>
@@ -1998,7 +2017,7 @@
 
         <!-- Question L2-2 -->
         <div class="exercise-box" id="l2-q2">
-          <strong>2. What is the domain (apibrėžimo sritis) of <span class="math-mono">&radic;[4]{3x - 15}</span>?</strong>
+          <strong>2. What is the domain (apibrėžimo sritis) of <span class="math-mono"><sup>4</sup>&radic;(3x - 15)</span>?</strong>
           <div class="quiz-opts">
             <button class="quiz-opt-btn" onclick="checkAnswer('l2-q2', this, true)">x &ge; 5 (inside must be &ge; 0 because index is even)</button>
             <button class="quiz-opt-btn" onclick="checkAnswer('l2-q2', this, false)">All real numbers (x &isin; &reals;)</button>
@@ -2009,7 +2028,7 @@
 
         <!-- Question L2-3 -->
         <div class="exercise-box" id="l2-q3">
-          <strong>3. What does <span class="math-mono">&radic;[4]{(-5)<sup>4</sup>}</span> equal?</strong>
+          <strong>3. What does <span class="math-mono"><sup>4</sup>&radic;((-5)<sup>4</sup>)</span> equal?</strong>
           <div class="quiz-opts">
             <button class="quiz-opt-btn" onclick="checkAnswer('l2-q3', this, true)">5 (Even root of a power is absolute value: |-5| = 5)</button>
             <button class="quiz-opt-btn" onclick="checkAnswer('l2-q3', this, false)">-5</button>
@@ -2020,11 +2039,11 @@
 
         <!-- Question L2-4 -->
         <div class="exercise-box" id="l2-q4">
-          <strong>4. How do you push 3 inside <span class="math-mono">&radic;[3]{2}</span>?</strong>
+          <strong>4. How do you push 3 inside <span class="math-mono">∛2</span>?</strong>
           <div class="quiz-opts">
-            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, true)">&radic;[3]{3&sup3; &times; 2} = &radic;[3]{54}</button>
-            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, false)">&radic;[3]{3 &times; 2} = &radic;[3]{6}</button>
-            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, false)">&radic;[3]{3&sup2; &times; 2} = &radic;[3]{18}</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, true)">∛(3&sup3; &times; 2) = ∛54</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, false)">∛(3 &times; 2) = ∛6</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, false)">∛(3&sup2; &times; 2) = ∛18</button>
           </div>
           <div class="feedback"></div>
         </div>
@@ -2414,7 +2433,7 @@
 
       const rounded = Math.round(res * 100000) / 100000;
       const nature = (n % 2 === 0) ? 'Even root (|a| rule applies)' : 'Odd root (accepts negatives)';
-      disp.innerHTML = `<strong>Result:</strong> &radic;[${n}]{${a}} &approx; <strong>${rounded}</strong> <br><span style="color:var(--md-text-secondary); font-size:0.84rem;">Classification: ${nature}</span>`;
+      disp.innerHTML = `<strong>Result:</strong> <sup>${n}</sup>&radic;(${a}) &approx; <strong>${rounded}</strong> <br><span style="color:var(--md-text-secondary); font-size:0.84rem;">Classification: ${nature}</span>`;
     }
 
     function calculateFracPower() {
@@ -2435,7 +2454,7 @@
 
       const val = Math.pow(a, m / n);
       const rounded = Math.round(val * 100000) / 100000;
-      disp.innerHTML = `<strong>Breakdown:</strong> ${a}<sup>${m}/${n}</sup> = (&radic;[${n}]{${a}})<sup>${m}</sup> &approx; <strong>${rounded}</strong>`;
+      disp.innerHTML = `<strong>Breakdown:</strong> ${a}<sup>${m}/${n}</sup> = (<sup>${n}</sup>&radic;(${a}))<sup>${m}</sup> &approx; <strong>${rounded}</strong>`;
     }
 
     window.addEventListener('resize', () => { updateNavIndicators(); updateNavIndicators2(); });
