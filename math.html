@@ -587,13 +587,165 @@
     }
 
     .hidden { display: none !important; }
+
+    /* Level Switcher Header Pill */
+    .level-switcher-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .level-pill-container {
+      display: inline-flex;
+      background: var(--md-surface);
+      padding: 5px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--md-outline);
+      box-shadow: 0 2px 8px rgba(44, 39, 40, 0.06);
+      gap: 6px;
+    }
+
+    .level-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      border: none;
+      background: transparent;
+      color: var(--md-text-secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-standard);
+      user-select: none;
+    }
+
+    .level-pill-btn:hover {
+      color: var(--md-text-primary);
+      background: var(--md-surface-low);
+    }
+
+    .level-pill-btn.active {
+      background: var(--md-accent-primary);
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(156, 83, 105, 0.35);
+    }
+
+    .level-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.22);
+      color: inherit;
+    }
+
+    .level-pill-btn:not(.active) .level-tag {
+      background: var(--md-surface-subtle);
+      color: var(--md-text-secondary);
+    }
+
+    /* Sandbox & Visual Playground Cards */
+    .calc-playground {
+      background: var(--md-surface);
+      border: 1px solid var(--md-outline);
+      border-radius: var(--radius-md);
+      padding: 1.3rem;
+      margin: 1.2rem 0;
+      box-shadow: 0 2px 10px rgba(44,39,40,0.03);
+    }
+
+    .calc-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .calc-input {
+      background: var(--md-surface-low);
+      border: 1px solid var(--md-outline);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--md-text-primary);
+      width: 140px;
+    }
+
+    .calc-btn {
+      background: var(--md-accent-primary);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-standard);
+    }
+
+    .calc-btn:hover {
+      background: var(--md-accent-hover);
+    }
+
+    .calc-result-display {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--md-surface-subtle);
+      border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.92rem;
+      border-left: 4px solid var(--md-accent-primary);
+    }
+
+    .rule-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin: 1rem 0;
+    }
+
+    .rule-card-modern {
+      background: var(--md-surface-low);
+      border: 1px solid var(--md-outline-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      position: relative;
+    }
+
+    .rule-card-modern strong {
+      color: var(--md-accent-primary);
+      display: block;
+      font-size: 0.98rem;
+      margin-bottom: 6px;
+    }
+
   </style>
 </head>
 <body>
 
+  <!-- Level Switcher Pill (Level 1 vs Level 2) -->
+  <div class="level-switcher-wrapper">
+    <div class="level-pill-container" role="tablist">
+      <button class="level-pill-btn active" id="btn-level-1" onclick="switchLevel(1)" aria-label="Level 1">
+        <span>Level 1: Sets, Modulus &amp; Roots Basics</span>
+        <span class="level-tag">10 Units</span>
+      </button>
+      <button class="level-pill-btn" id="btn-level-2" onclick="switchLevel(2)" aria-label="Level 2">
+        <span>Level 2: Advanced Powers, n-th Roots &amp; Polynomials</span>
+        <span class="level-tag">✨ New Course</span>
+      </button>
+    </div>
+  </div>
+
   <!-- Custom Hero Title -->
   <h1 class="hero-title">lil guide for my pirulin &lt;3</h1>
 
+  <!-- ===== LEVEL 1 VIEW ===== -->
+  <div id="level-1-view">
   <!-- Carousel Navigation Bar with centered SVG chevrons -->
   <div class="nav-carousel-wrapper">
     <button class="nav-arrow-btn" id="navArrowLeft" onclick="scrollNav(-240)" aria-label="Scroll left">
@@ -1365,7 +1517,533 @@
     </div>
   </div>
 
-  <script>
+  </div><!-- END #level-1-view -->
+
+  <!-- ===== LEVEL 2 VIEW ===== -->
+  <div id="level-2-view" class="hidden">
+    <!-- Carousel Navigation Bar for Level 2 -->
+    <div class="nav-carousel-wrapper">
+      <button class="nav-arrow-btn" id="navArrowLeft2" onclick="scrollNav2(-240)" aria-label="Scroll left">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="nav-track-container">
+        <nav id="navBar2" onscroll="updateNavIndicators2()">
+          <button class="tab-btn active" onclick="switchTab2(event, 'l2-tab-cubes')">1. Cube Formulas (Sum &amp; Diff)</button>
+          <button class="tab-btn" onclick="switchTab2(event, 'l2-tab-factoring')">2. Polynomial Factoring</button>
+          <button class="tab-btn" onclick="switchTab2(event, 'l2-tab-powers')">3. Rational Exponents</button>
+          <button class="tab-btn" onclick="switchTab2(event, 'l2-tab-roots')">4. n-th Roots &amp; Domain</button>
+          <button class="tab-btn" onclick="switchTab2(event, 'l2-tab-radicals')">5. Moving In/Out &amp; Radicals</button>
+          <button class="tab-btn" onclick="switchTab2(event, 'l2-tab-rationalize')">6. Conjugates &amp; Denominators</button>
+          <button class="tab-btn" onclick="switchTab2(event, 'l2-tab-sandbox')">7. Interactive Root Sandbox</button>
+          <button class="tab-btn" onclick="switchTab2(event, 'l2-tab-quiz')">8. Level 2 Mastery Quiz</button>
+        </nav>
+      </div>
+      <button class="nav-arrow-btn" id="navArrowRight2" onclick="scrollNav2(240)" aria-label="Scroll right">
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <!-- LEVEL 2 TAB 1: CUBE FORMULAS -->
+    <div id="l2-tab-cubes" class="tab-content">
+      <div class="card">
+        <h2>1. The Cube Formulas (Greitosios Daugybos Formulės)</h2>
+        <p>In this unit of the textbook, we expand beyond basic squares (<span class="math-mono">(a+b)&sup2;</span>) to <strong>cubes</strong> (<span class="math-mono">(a+b)&sup3;</span> and <span class="math-mono">a&sup3; &plusmn; b&sup3;</span>). Don't just memorize them &mdash; see the story behind the signs!</p>
+
+        <div class="rule-grid-3">
+          <div class="rule-card-modern">
+            <strong>1. Sum of Cubes: a&sup3; + b&sup3;</strong>
+            <p style="font-size:0.88rem; margin-top:4px;">
+              <span class="math-mono">(a + b)(a&sup2; - ab + b&sup2;)</span>
+            </p>
+            <p style="font-size:0.83rem; color:var(--md-text-secondary); margin-top:4px;">
+              <em>Intuition:</em> First bracket keeps the <strong>+</strong> sign. The second bracket gets the <strong>"incomplete square"</strong> with a single minus in the middle!
+            </p>
+          </div>
+
+          <div class="rule-card-modern">
+            <strong>2. Difference of Cubes: a&sup3; - b&sup3;</strong>
+            <p style="font-size:0.88rem; margin-top:4px;">
+              <span class="math-mono">(a - b)(a&sup2; + ab + b&sup2;)</span>
+            </p>
+            <p style="font-size:0.83rem; color:var(--md-text-secondary); margin-top:4px;">
+              <em>Intuition:</em> First bracket keeps the <strong>&minus;</strong> sign. The second bracket is <strong>all positive</strong>!
+            </p>
+          </div>
+
+          <div class="rule-card-modern">
+            <strong>3. Cube of a Binomial: (a &plusmn; b)&sup3;</strong>
+            <p style="font-size:0.88rem; margin-top:4px;">
+              <span class="math-mono">(a+b)&sup3; = a&sup3; + 3a&sup2;b + 3ab&sup2; + b&sup3;</span><br>
+              <span class="math-mono">(a-b)&sup3; = a&sup3; - 3a&sup2;b + 3ab&sup2; - b&sup3;</span>
+            </p>
+            <p style="font-size:0.83rem; color:var(--md-text-secondary); margin-top:4px;">
+              <em>Intuition:</em> Coefficients are 1, 3, 3, 1! For minus, signs alternate: <strong>+ , &minus; , + , &minus;</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 3</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Problem:</strong> Simplify <span class="math-mono">(x + 2)&sup3; - (x - 3)&sup3;</span>
+          </p>
+          <ol class="step-list">
+            <li><strong>Expand the first cube:</strong><br>
+              <span class="math-mono">(x + 2)&sup3; = x&sup3; + 3(x&sup2;)(2) + 3(x)(2&sup2;) + 2&sup3; = x&sup3; + 6x&sup2; + 12x + 8</span>.
+            </li>
+            <li><strong>Expand the second cube:</strong><br>
+              <span class="math-mono">(x - 3)&sup3; = x&sup3; - 3(x&sup2;)(3) + 3(x)(3&sup2;) - 3&sup3; = x&sup3; - 9x&sup2; + 27x - 27</span>.
+            </li>
+            <li><strong>Subtract (Watch out for sign flips!):</strong><br>
+              <span class="math-mono">(x&sup3; + 6x&sup2; + 12x + 8) - (x&sup3; - 9x&sup2; + 27x - 27)</span><br>
+              <span class="math-mono">= (x&sup3; - x&sup3;) + (6x&sup2; - (-9x&sup2;)) + (12x - 27x) + (8 - (-27))</span><br>
+              <span class="math-mono">= 0 + 15x&sup2; - 15x + 35</span>.
+            </li>
+          </ol>
+          <div><span class="answer-badge">Result: 15x&sup2; - 15x + 35</span></div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Factoring Cubes Example: a&sup6; + 27</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            Recognize both as cubes: <span class="math-mono">a&sup6; = (a&sup2;)&sup3;</span> and <span class="math-mono">27 = 3&sup3;</span>.<br>
+            Using <span class="math-mono">A&sup3; + B&sup3; = (A + B)(A&sup2; - AB + B&sup2;)</span> with <span class="math-mono">A = a&sup2;</span>, <span class="math-mono">B = 3</span>:<br>
+            <span class="math-mono">(a&sup2;)&sup3; + 3&sup3; = (a&sup2; + 3)((a&sup2;)&sup2; - 3a&sup2; + 3&sup2;) = (a&sup2; + 3)(a<sup>4</sup> - 3a&sup2; + 9)</span>!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2 TAB 2: POLYNOMIAL FACTORING -->
+    <div id="l2-tab-factoring" class="tab-content hidden">
+      <div class="card">
+        <h2>2. Advanced Polynomial Factoring &amp; Algebraic Fractions</h2>
+        <p>In Lithuanian: <em>Daugianarių skaidymas daugikliais</em>. Factoring is simply running multiplication backward to cancel identical factors in fractions!</p>
+
+        <div class="concept-banner">
+          <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The 3-Step Strategy to Factor Anything:</strong>
+          <ol class="step-list" style="margin-top:6px; margin-bottom:0;">
+            <li><strong>Step 1: Greatest Common Factor (GCF) out first!</strong> If every term has <span class="math-mono">x</span> or a common number like 3, pull it out before doing anything else.</li>
+            <li><strong>Step 2: Inspect the remaining shape.</strong>
+              <br>&bull; 2 terms? Check for difference of squares (<span class="math-mono">a&sup2; - b&sup2;</span>) or cubes (<span class="math-mono">a&sup3; &plusmn; b&sup3;</span>).
+              <br>&bull; 3 terms? Quadratic trinomial (<span class="math-mono">ax&sup2; + bx + c = a(x - x_1)(x - x_2)</span>).
+              <br>&bull; 4 terms? Group in pairs (<span class="math-mono">ac + bc + ad + bd = c(a+b) + d(a+b) = (a+b)(c+d)</span>).
+            </li>
+            <li><strong>Step 3: Cancel identical brackets top and bottom!</strong> (Never cancel individual terms, only full multiplied brackets).</li>
+          </ol>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Simplifying Algebraic Fractions</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Expression:</strong> <span class="math-mono">[ (m&sup3; - 125) / (m&sup2; + 5m + 25) ] : [ (m&sup2; - 25) / (2m + 10) ]</span>
+          </p>
+          <ol class="step-list">
+            <li><strong>Notice cubes &amp; squares:</strong><br>
+              &bull; <span class="math-mono">m&sup3; - 125 = (m - 5)(m&sup2; + 5m + 25)</span>.<br>
+              &bull; <span class="math-mono">m&sup2; - 25 = (m - 5)(m + 5)</span>.<br>
+              &bull; <span class="math-mono">2m + 10 = 2(m + 5)</span>.
+            </li>
+            <li><strong>Flip the division into multiplication:</strong><br>
+              <span class="math-mono">[ (m - 5)(m&sup2; + 5m + 25) / (m&sup2; + 5m + 25) ] &times; [ 2(m + 5) / ((m - 5)(m + 5)) ]</span>
+            </li>
+            <li><strong>The Great Cancellation:</strong><br>
+              &bull; <span class="math-mono">(m&sup2; + 5m + 25)</span> cancels completely.<br>
+              &bull; <span class="math-mono">(m - 5)</span> cancels completely.<br>
+              &bull; <span class="math-mono">(m + 5)</span> cancels completely.<br>
+              The only survivor is the clean number <strong>2</strong>!
+            </li>
+          </ol>
+          <div><span class="answer-badge">Answer: 2</span></div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Factoring Quadratic Trinomials via Discriminant</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            For <span class="math-mono">x&sup2; - 7x + 10</span>:<br>
+            Roots are <span class="math-mono">x_1 = 2</span> and <span class="math-mono">x_2 = 5</span> (since <span class="math-mono">2 &times; 5 = 10</span> and <span class="math-mono">2 + 5 = 7</span>).<br>
+            Factored form: <span class="math-mono">(x - 2)(x - 5)</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2 TAB 3: RATIONAL EXPONENTS -->
+    <div id="l2-tab-powers" class="tab-content hidden">
+      <div class="card">
+        <h2>3. Powers with Rational Exponents (Laipsniai su Racionaliuoju Rodikliu)</h2>
+        <p>A power doesn't have to be a whole number like <span class="math-mono">x&sup3;</span>. It can be a fraction like <span class="math-mono">a<sup>m/n</sup></span> or a negative fraction like <span class="math-mono">b<sup>-p/q</sup></span>!</p>
+
+        <div class="concept-banner">
+          <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The Master Bridge: Roots &harr; Fractions</strong>
+          <p style="font-size:0.92rem; margin-top:6px; margin-bottom:0;">
+            For any base <span class="math-mono">a &gt; 0</span> and rational number <span class="math-mono">m/n</span>:
+          </p>
+          <div style="font-size:1.15rem; font-weight:700; color:var(--md-accent-primary); text-align:center; margin:10px 0; font-family:'JetBrains Mono';">
+            a<sup>m/n</sup> = &radic;[n]{a<sup>m</sup>} = (&radic;[n]{a})<sup>m</sup>
+          </div>
+          <p style="font-size:0.86rem; color:var(--md-text-secondary); margin:0;">
+            &bull; <strong>Numerator (m):</strong> Normal power.<br>
+            &bull; <strong>Denominator (n):</strong> Index of the root (always goes underground in the radical notch).
+          </p>
+        </div>
+
+        <h3>The 5 Core Laws of Exponents</h3>
+        <div class="rule-grid-3">
+          <div class="rule-card-modern">
+            <strong>1. Same Base Multiplication</strong>
+            <span class="math-mono">a<sup>p</sup> &bull; a<sup>q</sup> = a<sup>p + q</sup></span>
+            <p style="font-size:0.82rem; color:var(--md-text-secondary); margin-top:4px;">Add powers. Example: <span class="math-mono">2<sup>1/3</sup> &bull; 2<sup>2/3</sup> = 2<sup>1</sup> = 2</span>.</p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>2. Same Base Division</strong>
+            <span class="math-mono">a<sup>p</sup> : a<sup>q</sup> = a<sup>p - q</sup></span>
+            <p style="font-size:0.82rem; color:var(--md-text-secondary); margin-top:4px;">Subtract powers. Example: <span class="math-mono">5<sup>3/2</sup> : 5<sup>1/2</sup> = 5<sup>1</sup> = 5</span>.</p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>3. Stacked Power (Tower)</strong>
+            <span class="math-mono">(a<sup>p</sup>)<sup>q</sup> = a<sup>p &times; q</sup></span>
+            <p style="font-size:0.82rem; color:var(--md-text-secondary); margin-top:4px;">Multiply powers. Example: <span class="math-mono">(8<sup>1/3</sup>)&sup2; = 2&sup2; = 4</span>.</p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>4. Distribute to Product</strong>
+            <span class="math-mono">(ab)<sup>p</sup> = a<sup>p</sup> &bull; b<sup>p</sup></span>
+            <p style="font-size:0.82rem; color:var(--md-text-secondary); margin-top:4px;">Distribute the power to each factor inside.</p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>5. Distribute to Quotient</strong>
+            <span class="math-mono">(a/b)<sup>p</sup> = a<sup>p</sup> / b<sup>p</sup></span>
+            <p style="font-size:0.82rem; color:var(--md-text-secondary); margin-top:4px;">Distribute power to top and bottom.</p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>6. The Elevator (Negative Power)</strong>
+            <span class="math-mono">a<sup>-p</sup> = 1 / a<sup>p</sup></span>
+            <p style="font-size:0.82rem; color:var(--md-text-secondary); margin-top:4px;">Flips down to denominator. Example: <span class="math-mono">4<sup>-1/2</sup> = 1/&radic;4 = 1/2</span>.</p>
+          </div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 6</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Problem:</strong> Calculate <span class="math-mono">49<sup>1/2</sup> + 27<sup>1/3</sup></span>
+          </p>
+          <ol class="step-list">
+            <li><span class="math-mono">49<sup>1/2</sup> = &radic;49 = 7</span>.</li>
+            <li><span class="math-mono">27<sup>1/3</sup> = &radic;[3]{27} = 3</span> (since <span class="math-mono">3 &times; 3 &times; 3 = 27</span>).</li>
+            <li><span class="math-mono">7 + 3 = 10</span>!</li>
+          </ol>
+          <div><span class="answer-badge">Answer: 10</span></div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 6b (Shared Power Trick)</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Problem:</strong> <span class="math-mono">50<sup>1/2</sup> &bull; 2<sup>1/2</sup></span><br>
+            Both have power <span class="math-mono">1/2</span>! Marry them: <span class="math-mono">(50 &times; 2)<sup>1/2</sup> = 100<sup>1/2</sup> = &radic;100 = 10</span>!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2 TAB 4: N-TH ROOTS & DOMAIN -->
+    <div id="l2-tab-roots" class="tab-content hidden">
+      <div class="card">
+        <h2>4. n-th Roots &amp; The Domain (Apibrėžimo Sritis)</h2>
+        <p>In Lithuanian: <em>n-tojo laipsnio šaknis</em>. A critical topic in your book is knowing <strong>when a root is legal</strong> and what numbers are allowed inside!</p>
+
+        <div class="concept-banner">
+          <strong style="color:var(--md-accent-primary); font-size:1.05rem;">The Golden Odd vs. Even Rule:</strong>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:8px;">
+            <div style="background:var(--md-surface-low); padding:10px 14px; border-radius:var(--radius-sm); border-left:4px solid #1C5232;">
+              <strong style="color:#1C5232;">Odd Roots (n = 3, 5, 7, ...)</strong>
+              <p style="font-size:0.86rem; margin-top:4px;">
+                &bull; <strong>ALWAYS ALLOWED!</strong> Positives, zero, and negatives are all welcome.<br>
+                &bull; <span class="math-mono">&radic;[3]{-8} = -2</span> (because <span class="math-mono">(-2)&sup3; = -8</span>).<br>
+                &bull; <strong>Domain:</strong> All real numbers (<span class="math-mono">x &isin; &reals;</span>).
+              </p>
+            </div>
+            <div style="background:var(--md-surface-low); padding:10px 14px; border-radius:var(--radius-sm); border-left:4px solid #7A2424;">
+              <strong style="color:#7A2424;">Even Roots (n = 2, 4, 6, ...)</strong>
+              <p style="font-size:0.86rem; margin-top:4px;">
+                &bull; <strong>STRICT GATE!</strong> Inside must be <span class="math-mono">&ge; 0</span>.<br>
+                &bull; <span class="math-mono">&radic;[4]{-16}</span> has NO real meaning!<br>
+                &bull; <strong>Crucial identity:</strong> <span class="math-mono">&radic;[n]{a<sup>n</sup>} = |a|</span> when <span class="math-mono">n</span> is even!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Finding the Domain (Apibrėžimo Sritis): Pavyzdys 9</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Question:</strong> For what <span class="math-mono">x</span> does <span class="math-mono">&radic;[4]{2x - 9}</span> have meaning?
+          </p>
+          <ol class="step-list">
+            <li>Notice the root index is <strong>4 (even)</strong>! Even roots forbid negative numbers.</li>
+            <li>Set up the inequality: <span class="math-mono">2x - 9 &ge; 0</span>.</li>
+            <li>Add 9 to both sides: <span class="math-mono">2x &ge; 9</span>.</li>
+            <li>Divide by 2: <span class="math-mono">x &ge; 4.5</span> (or <span class="math-mono">[4.5; +&infin;)</span>).</li>
+          </ol>
+          <div><span class="answer-badge">Domain: x &ge; 4.5</span></div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Odd Root Domain Comparison:</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Question:</strong> For what <span class="math-mono">x</span> does <span class="math-mono">&radic;[5]{3x - 12}</span> have meaning?<br>
+            Index is <strong>5 (odd)</strong> &rarr; An odd root can take any real number, positive or negative!<br>
+            <strong>Domain:</strong> <span class="math-mono">x &isin; (-&infin;; +&infin;)</span> (visi realieji skaičiai).
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">The Modulus Trap: &radic;[n]{a<sup>n</sup>} for Even Roots</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            &bull; <span class="math-mono">&radic;[4]{(-7)<sup>4</sup>} = |-7| = 7</span> (NOT -7!).<br>
+            &bull; If <span class="math-mono">n</span> is even, the answer can <strong>never</strong> be negative. Always wrap the output in absolute value <span class="math-mono">|a|</span>!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2 TAB 5: MOVING IN AND OUT OF RADICALS -->
+    <div id="l2-tab-radicals" class="tab-content hidden">
+      <div class="card">
+        <h2>5. Moving Factors In and Out of Roots (Įkėlimas ir Iškėlimas)</h2>
+        <p>In Lithuanian: <em>Daugiklio iškėlimas prieš šaknies ženklą ir įkėlimas po šaknies ženklu</em>. This is like packing and unpacking a suitcase!</p>
+
+        <div class="rule-grid-3">
+          <div class="rule-card-modern">
+            <strong>1. Pulling Out (Iškėlimas)</strong>
+            <p style="font-size:0.86rem; margin-top:4px;">
+              Find a perfect <span class="math-mono">n</span>-th power hiding inside, take its root, and bring it outside as a single factor:
+              <br><span class="math-mono">&radic;[n]{a<sup>n</sup> &bull; b} = a &bull; &radic;[n]{b}</span>
+            </p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>2. Pushing Inside (Įkėlimas)</strong>
+            <p style="font-size:0.86rem; margin-top:4px;">
+              To move an outside factor inside an <span class="math-mono">n</span>-th root, raise it to the <span class="math-mono">n</span>-th power:
+              <br><span class="math-mono">a &bull; &radic;[n]{b} = &radic;[n]{a<sup>n</sup> &bull; b}</span>
+            </p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>3. Negative Sign Caution</strong>
+            <p style="font-size:0.86rem; margin-top:4px;">
+              When <span class="math-mono">a &lt; 0</span> and moving into an even root:
+              <strong>LEAVE the minus sign outside!</strong> Only push the positive magnitude in:
+              <br><span class="math-mono">-3&radic;2 = -&radic;(3&sup2; &times; 2) = -&radic;18</span>.
+            </p>
+          </div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 12 (Pulling Out)</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Problem:</strong> Simplify <span class="math-mono">&radic;[3]{32}</span>
+          </p>
+          <ol class="step-list">
+            <li>What perfect cubes divide 32? <span class="math-mono">2&sup3; = 8</span> divides 32!</li>
+            <li>Split 32: <span class="math-mono">32 = 8 &times; 4</span>.</li>
+            <li>Distribute root: <span class="math-mono">&radic;[3]{32} = &radic;[3]{8} &bull; &radic;[3]{4} = 2&radic;[3]{4}</span>.</li>
+          </ol>
+          <div><span class="answer-badge">Answer: 2∛4</span></div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Pushing Inside Example: 2 &bull; &radic;[4]{3}</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            To enter a 4th-root house, the factor 2 must be raised to power 4:<br>
+            <span class="math-mono">2<sup>4</sup> = 16</span>.<br>
+            So <span class="math-mono">2 &bull; &radic;[4]{3} = &radic;[4]{16 &times; 3} = &radic;[4]{48}</span>!
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Harmonizing Root Indices to Compare: Pavyzdys 16</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Which is bigger:</strong> <span class="math-mono">&radic;8</span> or <span class="math-mono">&radic;[3]{64}</span>? (or <span class="math-mono">&radic;[3]{2}</span> vs <span class="math-mono">&radic;[4]{3}</span>)<br>
+            To compare roots with different indices (like 3 and 4), find a common root index: <strong>12</strong>!<br>
+            &bull; <span class="math-mono">&radic;[3]{2} = &radic;[12]{2<sup>4</sup>} = &radic;[12]{16}</span>.<br>
+            &bull; <span class="math-mono">&radic;[4]{3} = &radic;[12]{3&sup3;} = &radic;[12]{27}</span>.<br>
+            Since <span class="math-mono">16 &lt; 27</span>, we immediately know <span class="math-mono">&radic;[3]{2} &lt; &radic;[4]{3}</span>!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2 TAB 6: RATIONALIZING DENOMINATORS -->
+    <div id="l2-tab-rationalize" class="tab-content hidden">
+      <div class="card">
+        <h2>6. Rationalizing Denominators (Iracionalumo Naikinimas Vardiklyje)</h2>
+        <p>In Lithuanian: <em>Panaikinkite iracionalumą trupmenos vardiklyje</em>. Mathematicians dislike having roots stuck in the bottom of a fraction. Here is how to banish them cleanly!</p>
+
+        <div class="rule-grid-3">
+          <div class="rule-card-modern">
+            <strong>Case 1: Single Root in Denominator</strong>
+            <p style="font-size:0.86rem; margin-top:4px;">
+              Multiply top and bottom by the root needed to complete a whole power:
+              <br><span class="math-mono">c / &radic;a = (c&radic;a) / a</span>
+              <br><span class="math-mono">c / &radic;[3]{a} = (c&radic;[3]{a&sup2;}) / a</span>
+            </p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>Case 2: Square Root Twin (Conjugate)</strong>
+            <p style="font-size:0.86rem; margin-top:4px;">
+              If denominator has <span class="math-mono">&radic;a - &radic;b</span>, multiply top and bottom by its conjugate twin <span class="math-mono">&radic;a + &radic;b</span>!
+              <br>Denominator turns into <span class="math-mono">(&radic;a)&sup2; - (&radic;b)&sup2; = a - b</span>!
+            </p>
+          </div>
+          <div class="rule-card-modern">
+            <strong>Case 3: Cube Root Conjugate</strong>
+            <p style="font-size:0.86rem; margin-top:4px;">
+              If denominator is <span class="math-mono">&radic;[3]{a} - &radic;[3]{b}</span>, multiply by the incomplete square <span class="math-mono">&radic;[3]{a&sup2;} + &radic;[3]{ab} + &radic;[3]{b&sup2;}</span> to trigger <span class="math-mono">A&sup3; - B&sup3; = a - b</span>!
+            </p>
+          </div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Textbook Walkthrough: Pavyzdys 18 (Conjugate Multiplication)</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            <strong>Problem:</strong> Rationalize <span class="math-mono">4 / (&radic;7 - &radic;5)</span>
+          </p>
+          <ol class="step-list">
+            <li>The denominator is <span class="math-mono">(&radic;7 - &radic;5)</span>. Its conjugate twin is <span class="math-mono">(&radic;7 + &radic;5)</span>.</li>
+            <li>Multiply numerator and denominator:
+              <br><span class="math-mono">[ 4(&radic;7 + &radic;5) ] / [ (&radic;7 - &radic;5)(&radic;7 + &radic;5) ]</span>
+            </li>
+            <li>Evaluate denominator with <span class="math-mono">(A-B)(A+B) = A&sup2; - B&sup2;</span>:
+              <br><span class="math-mono">(&radic;7)&sup2; - (&radic;5)&sup2; = 7 - 5 = 2</span>.
+            </li>
+            <li>Simplify fraction:
+              <br><span class="math-mono">4(&radic;7 + &radic;5) / 2 = 2(&radic;7 + &radic;5)</span>!
+            </li>
+          </ol>
+          <div><span class="answer-badge">Answer: 2(√7 + √5)</span></div>
+        </div>
+
+        <div class="compare-card">
+          <strong style="color:var(--md-accent-primary);">Single Radical Example: 6 / &radic;[3]{9}</strong>
+          <p style="font-size:0.9rem; margin-top:4px;">
+            Notice <span class="math-mono">9 = 3&sup2;</span>. To make a full cube <span class="math-mono">3&sup3; = 27</span>, we need one more 3!<br>
+            Multiply top and bottom by <span class="math-mono">&radic;[3]{3}</span>:<br>
+            <span class="math-mono">6&radic;[3]{3} / &radic;[3]{27} = 6&radic;[3]{3} / 3 = 2&radic;[3]{3}</span>!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2 TAB 7: INTERACTIVE ROOT SANDBOX -->
+    <div id="l2-tab-sandbox" class="tab-content hidden">
+      <div class="card">
+        <h2>7. Interactive Root &amp; Exponent Sandbox</h2>
+        <p>Test any base, root, and power dynamically to see how the mathematical rules work behind the scenes in real time!</p>
+
+        <!-- Tool 1: n-th Root Evaluator & Domain Inspector -->
+        <div class="calc-playground">
+          <strong style="color:var(--md-accent-primary); font-size:1.05rem;">🔬 Experiment 1: The n-th Root &amp; Domain Inspector</strong>
+          <p style="font-size:0.86rem; color:var(--md-text-secondary); margin-top:4px;">
+            Try even roots (like n=2, 4) with positive and negative numbers to see how the domain rule behaves!
+          </p>
+          <div class="calc-row">
+            <label style="font-size:0.88rem;">Root Index (n):</label>
+            <input type="number" id="root-n-input" class="calc-input" value="3" min="1" max="20" style="width:80px;">
+            <label style="font-size:0.88rem;">Value inside (a):</label>
+            <input type="number" id="root-a-input" class="calc-input" value="-27" style="width:100px;">
+            <button class="calc-btn" onclick="calculateNthRoot()">Compute &radic;[n]{a}</button>
+          </div>
+          <div id="root-result-display" class="calc-result-display">
+            Result: &radic;[3]{-27} = -3 (Odd root allows negative radicands!)
+          </div>
+        </div>
+
+        <!-- Tool 2: Fractional Exponent & Root Converter -->
+        <div class="calc-playground">
+          <strong style="color:var(--md-accent-primary); font-size:1.05rem;">⚡ Experiment 2: Power Fraction &harr; Radical Translator</strong>
+          <p style="font-size:0.86rem; color:var(--md-text-secondary); margin-top:4px;">
+            Type base and a fractional power (e.g. 16 to the 3/4) to see the step-by-step tree expansion:
+          </p>
+          <div class="calc-row">
+            <label style="font-size:0.88rem;">Base (a):</label>
+            <input type="number" id="frac-base-input" class="calc-input" value="16" style="width:90px;">
+            <label style="font-size:0.88rem;">Power (m):</label>
+            <input type="number" id="frac-m-input" class="calc-input" value="3" style="width:70px;">
+            <label style="font-size:0.88rem;">Root (n):</label>
+            <input type="number" id="frac-n-input" class="calc-input" value="4" min="1" style="width:70px;">
+            <button class="calc-btn" onclick="calculateFracPower()">Translate &amp; Solve</button>
+          </div>
+          <div id="frac-result-display" class="calc-result-display">
+            16<sup>3/4</sup> = (&radic;[4]{16})&sup3; = 2&sup3; = 8
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2 TAB 8: LEVEL 2 MASTERY QUIZ -->
+    <div id="l2-tab-quiz" class="tab-content hidden">
+      <div class="card">
+        <h2>8. Level 2 Mastery Quiz</h2>
+        <p>Challenge yourself on the concepts from the new textbook chapter! Instant feedback on each question.</p>
+
+        <!-- Question L2-1 -->
+        <div class="exercise-box" id="l2-q1">
+          <strong>1. What is the factored form of <span class="math-mono">x&sup3; - 8</span>?</strong>
+          <div class="quiz-opts">
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q1', this, true)">(x - 2)(x&sup2; + 2x + 4)</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q1', this, false)">(x - 2)(x&sup2; - 2x + 4)</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q1', this, false)">(x - 2)&sup3;</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- Question L2-2 -->
+        <div class="exercise-box" id="l2-q2">
+          <strong>2. What is the domain (apibrėžimo sritis) of <span class="math-mono">&radic;[4]{3x - 15}</span>?</strong>
+          <div class="quiz-opts">
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q2', this, true)">x &ge; 5 (inside must be &ge; 0 because index is even)</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q2', this, false)">All real numbers (x &isin; &reals;)</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q2', this, false)">x &gt; 5 only</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- Question L2-3 -->
+        <div class="exercise-box" id="l2-q3">
+          <strong>3. What does <span class="math-mono">&radic;[4]{(-5)<sup>4</sup>}</span> equal?</strong>
+          <div class="quiz-opts">
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q3', this, true)">5 (Even root of a power is absolute value: |-5| = 5)</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q3', this, false)">-5</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q3', this, false)">Does not exist</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- Question L2-4 -->
+        <div class="exercise-box" id="l2-q4">
+          <strong>4. How do you push 3 inside <span class="math-mono">&radic;[3]{2}</span>?</strong>
+          <div class="quiz-opts">
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, true)">&radic;[3]{3&sup3; &times; 2} = &radic;[3]{54}</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, false)">&radic;[3]{3 &times; 2} = &radic;[3]{6}</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q4', this, false)">&radic;[3]{3&sup2; &times; 2} = &radic;[3]{18}</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- Question L2-5 -->
+        <div class="exercise-box" id="l2-q5">
+          <strong>5. To rationalize <span class="math-mono">6 / (&radic;5 - &radic;2)</span>, what do you multiply top and bottom by?</strong>
+          <div class="quiz-opts">
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q5', this, true)">(&radic;5 + &radic;2) (The conjugate twin)</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q5', this, false)">(&radic;5 - &radic;2)</button>
+            <button class="quiz-opt-btn" onclick="checkAnswer('l2-q5', this, false)">&radic;5 &times; &radic;2</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- END #level-2-view -->
+
+    <script>
     function switchTab(evt, tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -1565,6 +2243,12 @@
 
     // Glossary Data
     const glossary = [
+      { lt: "n-tojo laipsnio šaknis", en: "n-th degree root", symbol: "ⁿ√a", desc: "A number whose n-th power equals a." },
+      { lt: "Šaknies rodiklis", en: "Root index", symbol: "n", desc: "The small number in the notch indicating the root degree." },
+      { lt: "Pošaknis", en: "Radicand", symbol: "a in ⁿ√a", desc: "The expression or number sitting inside under the root symbol." },
+      { lt: "Apibrėžimo sritis", en: "Domain of definition", symbol: "D(f)", desc: "All permissible x values where the mathematical expression has real meaning." },
+      { lt: "Greitosios daugybos formulės", en: "Short multiplication formulas", symbol: "(a±b)³", desc: "Formulas like sum and difference of cubes used to expand or factor quickly." },
+      { lt: "Iracionalumo naikinimas", en: "Rationalizing denominator", symbol: "c / √a", desc: "Multiplying top and bottom by a root or conjugate to eliminate roots from the denominator." },
       { lt: "Laipsnis", en: "Power / Degree", symbol: "xⁿ", desc: "A number multiplied by itself n times." },
       { lt: "Laipsnio rodiklis", en: "Exponent", symbol: "n", desc: "The small superscript number indicating the power." },
       { lt: "Laipsnio pagrindas", en: "Base", symbol: "x", desc: "The main number being raised to a power." },
@@ -1628,7 +2312,133 @@
       }
     }
 
-    window.addEventListener('resize', updateNavIndicators);
+
+    // Level Switcher Logic
+    let currentLevel = 1;
+
+    function switchLevel(lvl) {
+      currentLevel = lvl;
+      const btn1 = document.getElementById('btn-level-1');
+      const btn2 = document.getElementById('btn-level-2');
+      const view1 = document.getElementById('level-1-view');
+      const view2 = document.getElementById('level-2-view');
+
+      if (lvl === 1) {
+        btn1.classList.add('active');
+        btn2.classList.remove('active');
+        view1.classList.remove('hidden');
+        view2.classList.add('hidden');
+        setTimeout(updateNavIndicators, 50);
+      } else {
+        btn2.classList.add('active');
+        btn1.classList.remove('active');
+        view2.classList.remove('hidden');
+        view1.classList.add('hidden');
+        setTimeout(updateNavIndicators2, 50);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Level 2 Tab Navigation
+    function switchTab2(evt, tabId) {
+      document.querySelectorAll('#level-2-view .tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('#level-2-view .tab-btn').forEach(el => el.classList.remove('active'));
+      const target = document.getElementById(tabId);
+      if (target) target.classList.remove('hidden');
+      evt.currentTarget.classList.add('active');
+
+      evt.currentTarget.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest'
+      });
+      setTimeout(updateNavIndicators2, 250);
+    }
+
+    function scrollNav2(amount) {
+      const nav = document.getElementById('navBar2');
+      if (nav) {
+        nav.scrollBy({ left: amount, behavior: 'smooth' });
+        setTimeout(updateNavIndicators2, 200);
+      }
+    }
+
+    function updateNavIndicators2() {
+      const nav = document.getElementById('navBar2');
+      const arrowLeft = document.getElementById('navArrowLeft2');
+      const arrowRight = document.getElementById('navArrowRight2');
+      if (!nav || !arrowLeft || !arrowRight) return;
+
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      const scrollLeft = nav.scrollLeft;
+      const buffer = 8;
+
+      const canScrollLeft = scrollLeft > buffer;
+      const canScrollRight = scrollLeft < (maxScroll - buffer);
+
+      arrowLeft.disabled = !canScrollLeft;
+      arrowRight.disabled = !canScrollRight;
+
+      nav.classList.remove('fade-left', 'fade-right', 'fade-both');
+      if (canScrollLeft && canScrollRight) {
+        nav.classList.add('fade-both');
+      } else if (canScrollRight) {
+        nav.classList.add('fade-right');
+      } else if (canScrollLeft) {
+        nav.classList.add('fade-left');
+      }
+    }
+
+    // Level 2 Interactive Sandbox Functions
+    function calculateNthRoot() {
+      const n = parseInt(document.getElementById('root-n-input').value, 10);
+      const a = parseFloat(document.getElementById('root-a-input').value);
+      const disp = document.getElementById('root-result-display');
+
+      if (isNaN(n) || isNaN(a) || n < 1) {
+        disp.innerHTML = '<span style="color:var(--md-status-error-text)">&#10008; Please enter valid numbers (n &ge; 1).</span>';
+        return;
+      }
+
+      if (n % 2 === 0 && a < 0) {
+        disp.innerHTML = `<span style="color:var(--md-status-error-text)">&#10008; <strong>Undefined in Real Numbers!</strong> For even root n=${n}, radicand cannot be negative (${a} &lt; 0).</span>`;
+        return;
+      }
+
+      let res;
+      if (a < 0) {
+        res = -Math.pow(-a, 1 / n);
+      } else {
+        res = Math.pow(a, 1 / n);
+      }
+
+      const rounded = Math.round(res * 100000) / 100000;
+      const nature = (n % 2 === 0) ? 'Even root (|a| rule applies)' : 'Odd root (accepts negatives)';
+      disp.innerHTML = `<strong>Result:</strong> &radic;[${n}]{${a}} &approx; <strong>${rounded}</strong> <br><span style="color:var(--md-text-secondary); font-size:0.84rem;">Classification: ${nature}</span>`;
+    }
+
+    function calculateFracPower() {
+      const a = parseFloat(document.getElementById('frac-base-input').value);
+      const m = parseInt(document.getElementById('frac-m-input').value, 10);
+      const n = parseInt(document.getElementById('frac-n-input').value, 10);
+      const disp = document.getElementById('frac-result-display');
+
+      if (isNaN(a) || isNaN(m) || isNaN(n) || n < 1) {
+        disp.innerHTML = '<span style="color:var(--md-status-error-text)">&#10008; Please enter valid numbers (root n &ge; 1).</span>';
+        return;
+      }
+
+      if (a <= 0 && n % 2 === 0) {
+        disp.innerHTML = `<span style="color:var(--md-status-error-text)">&#10008; In standard rational powers, base a must be &gt; 0 for fractional exponent ${m}/${n}.</span>`;
+        return;
+      }
+
+      const val = Math.pow(a, m / n);
+      const rounded = Math.round(val * 100000) / 100000;
+      disp.innerHTML = `<strong>Breakdown:</strong> ${a}<sup>${m}/${n}</sup> = (&radic;[${n}]{${a}})<sup>${m}</sup> &approx; <strong>${rounded}</strong>`;
+    }
+
+    window.addEventListener('resize', () => { updateNavIndicators(); updateNavIndicators2(); });
     window.addEventListener('DOMContentLoaded', () => {
       updateModulusRuler(-3);
       renderGlossary(glossary);
